@@ -10,6 +10,10 @@ import (
 	"fmt"
 	"math"
 
+	"ariga.io/atlas/sql/schema"
+
+	"ariga.io/atlas/sql/mysql"
+
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/schema/field"
@@ -72,6 +76,13 @@ func WithHooks(hooks ...Hook) MigrateOption {
 	}
 }
 
+// WithAtlas replaces existing migration with atlas migratio.
+func WithAtlas(b bool) MigrateOption {
+	return func(m *Migrate) {
+		m.withAtlas = b
+	}
+}
+
 type (
 	// Creator is the interface that wraps the Create method.
 	Creator interface {
@@ -109,6 +120,7 @@ type Migrate struct {
 	dropIndexes     bool     // drop deleted indexes.
 	withFixture     bool     // with fks rename fixture.
 	withForeignKeys bool     // with foreign keys
+	withAtlas       bool     // migrate with atlas.
 	typeRanges      []string // types order by their range.
 	hooks           []Hook   // hooks to apply before creation
 }
@@ -132,6 +144,65 @@ func NewMigrate(d dialect.Driver, opts ...MigrateOption) (*Migrate, error) {
 	return m, nil
 }
 
+func (m *Migrate) atCreate(ctx context.Context, tables ...*Table) error {
+	if err := m.init(ctx, m.sqlDialect); err != nil {
+		return err
+	}
+	if m.universalID {
+		if err := m.types(ctx, m.sqlDialect); err != nil {
+			return err
+		}
+	}
+	if m.Dialect() != dialect.MySQL {
+		return fmt.Errorf("sql/migrate: WithAtlas does not support %q", m.Dialect())
+	}
+	db := m.sqlDialect.(*MySQL).Driver.(*sql.Driver).DB()
+	drv, err := mysql.Open(db)
+	if err != nil {
+		return err
+	}
+	var name string
+	if err := db.QueryRow("SELECT DATABASE()").Scan(&name); err != nil {
+		return err
+	}
+	current, err := drv.InspectSchema(ctx, name, &schema.InspectOptions{
+		Tables: func() (t []string) {
+			for i := range tables {
+				t = append(t, tables[i].Name)
+			}
+			return t
+		}(),
+	})
+	if err != nil {
+		return err
+	}
+	tt, err := m.aTables(ctx, m.sqlDialect.(*MySQL), tables)
+	if err != nil {
+		return err
+	}
+	changes, err := drv.SchemaDiff(current, &schema.Schema{
+		Name:   current.Name,
+		Attrs:  current.Attrs,
+		Tables: tt,
+	})
+	if err != nil {
+		return err
+	}
+	/*
+		// Debug.
+		plan, err := drv.PlanChanges(ctx, "plan", changes)
+		if err != nil {
+			return err
+		}
+		for _, c := range plan.Changes {
+			fmt.Printf("%s\n\t%s\n\n", c.Comment, c.Cmd)
+
+		}
+	*/
+	// TODO: Wrap with transaction in case the plan is transactional.
+	return drv.ApplyChanges(ctx, changes)
+}
+
 // Create creates all schema resources in the database. It works in an "append-only"
 // mode, which means, it only create tables, append column to tables or modifying column type.
 //
@@ -146,10 +217,12 @@ func (m *Migrate) Create(ctx context.Context, tables ...*Table) error {
 		m.setupTable(t)
 	}
 	var creator Creator = CreateFunc(m.create)
+	if m.withAtlas {
+		creator = CreateFunc(m.atCreate)
+	}
 	for i := len(m.hooks) - 1; i >= 0; i-- {
 		creator = m.hooks[i](creator)
 	}
-
 	return creator.Create(ctx, tables...)
 }
 
@@ -502,12 +575,12 @@ func (m *Migrate) verify(ctx context.Context, tx dialect.Tx, t *Table) error {
 	if id == -1 {
 		return nil
 	}
-	return vr.verifyRange(ctx, tx, t, id<<32)
+	return vr.verifyRange(ctx, tx, t, int64(id<<32))
 }
 
 // types loads the type list from the database.
 // If the table does not create, it will create one.
-func (m *Migrate) types(ctx context.Context, tx dialect.Tx) error {
+func (m *Migrate) types(ctx context.Context, tx dialect.ExecQuerier) error {
 	exists, err := m.tableExist(ctx, tx, TypeTable)
 	if err != nil {
 		return err
@@ -532,24 +605,31 @@ func (m *Migrate) types(ctx context.Context, tx dialect.Tx) error {
 	return sql.ScanSlice(rows, &m.typeRanges)
 }
 
-func (m *Migrate) allocPKRange(ctx context.Context, tx dialect.Tx, t *Table) error {
+func (m *Migrate) allocPKRange(ctx context.Context, conn dialect.ExecQuerier, t *Table) error {
+	r, err := m.pkRange(ctx, conn, t)
+	if err != nil {
+		return err
+	}
+	return m.setRange(ctx, conn, t, r)
+}
+
+func (m *Migrate) pkRange(ctx context.Context, conn dialect.ExecQuerier, t *Table) (int64, error) {
 	id := indexOf(m.typeRanges, t.Name)
 	// If the table re-created, re-use its range from
-	// the past. otherwise, allocate a new id-range.
+	// the past. Otherwise, allocate a new id-range.
 	if id == -1 {
 		if len(m.typeRanges) > MaxTypes {
-			return fmt.Errorf("max number of types exceeded: %d", MaxTypes)
+			return 0, fmt.Errorf("max number of types exceeded: %d", MaxTypes)
 		}
 		query, args := sql.Dialect(m.Dialect()).
 			Insert(TypeTable).Columns("type").Values(t.Name).Query()
-		if err := tx.Exec(ctx, query, args, nil); err != nil {
-			return fmt.Errorf("insert into type: %w", err)
+		if err := conn.Exec(ctx, query, args, nil); err != nil {
+			return 0, fmt.Errorf("insert into ent_types: %w", err)
 		}
 		id = len(m.typeRanges)
 		m.typeRanges = append(m.typeRanges, t.Name)
 	}
-	// Set the id offset for table.
-	return m.setRange(ctx, tx, t, id<<32)
+	return int64(id << 32), nil
 }
 
 // fkColumn returns the column name of a foreign-key.
@@ -630,9 +710,9 @@ func rollback(tx dialect.Tx, err error) error {
 }
 
 // exist checks if the given COUNT query returns a value >= 1.
-func exist(ctx context.Context, tx dialect.Tx, query string, args ...interface{}) (bool, error) {
+func exist(ctx context.Context, conn dialect.ExecQuerier, query string, args ...interface{}) (bool, error) {
 	rows := &sql.Rows{}
-	if err := tx.Query(ctx, query, args, rows); err != nil {
+	if err := conn.Query(ctx, query, args, rows); err != nil {
 		return false, fmt.Errorf("reading schema information %w", err)
 	}
 	defer rows.Close()
@@ -654,11 +734,11 @@ func indexOf(a []string, s string) int {
 
 type sqlDialect interface {
 	dialect.Driver
-	init(context.Context, dialect.Tx) error
+	init(context.Context, dialect.ExecQuerier) error
 	table(context.Context, dialect.Tx, string) (*Table, error)
-	tableExist(context.Context, dialect.Tx, string) (bool, error)
+	tableExist(context.Context, dialect.ExecQuerier, string) (bool, error)
 	fkExist(context.Context, dialect.Tx, string) (bool, error)
-	setRange(context.Context, dialect.Tx, *Table, int) error
+	setRange(context.Context, dialect.ExecQuerier, *Table, int64) error
 	dropIndex(context.Context, dialect.Tx, *Index, string) error
 	// table, column and index builder per dialect.
 	cType(*Column) string
@@ -683,5 +763,5 @@ type fkRenamer interface {
 
 // verifyRanger wraps the method for verifying global-id range correctness.
 type verifyRanger interface {
-	verifyRange(context.Context, dialect.Tx, *Table, int) error
+	verifyRange(context.Context, dialect.Tx, *Table, int64) error
 }

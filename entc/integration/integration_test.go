@@ -22,6 +22,7 @@ import (
 
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
+	sqlschema "entgo.io/ent/dialect/sql/schema"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/entc/integration/ent"
 	"entgo.io/ent/entc/integration/ent/card"
@@ -61,7 +62,11 @@ func TestMySQL(t *testing.T) {
 	for version, port := range map[string]int{"56": 3306, "57": 3307, "8": 3308} {
 		addr := net.JoinHostPort("localhost", strconv.Itoa(port))
 		t.Run(version, func(t *testing.T) {
-			client := enttest.Open(t, dialect.MySQL, fmt.Sprintf("root:pass@tcp(%s)/test?parseTime=True", addr), opts)
+			client := enttest.Open(t, dialect.MySQL, fmt.Sprintf("root:pass@tcp(%s)/test?parseTime=True", addr), enttest.WithMigrateOptions(
+				migrate.WithDropIndex(true),
+				migrate.WithDropColumn(true),
+				sqlschema.WithAtlas(true),
+			))
 			defer client.Close()
 			for _, tt := range tests {
 				name := runtime.FuncForPC(reflect.ValueOf(tt).Pointer()).Name()

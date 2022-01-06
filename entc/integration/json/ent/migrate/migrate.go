@@ -53,7 +53,7 @@ func (s *Schema) Create(ctx context.Context, opts ...schema.MigrateOption) error
 	if err != nil {
 		return fmt.Errorf("ent/migrate: %w", err)
 	}
-	return migrate.Create(ctx, Tables...)
+	return migrate.AtlasCreate(ctx, Tables...)
 }
 
 // WriteTo writes the schema changes to w instead of running them against the database.

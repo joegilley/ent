@@ -12,6 +12,8 @@ import (
 	"strings"
 	"testing"
 
+	"entgo.io/ent/dialect/sql/schema"
+
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/entc/integration/migrate/entv1"
@@ -118,11 +120,11 @@ func V1ToV2(t *testing.T, dialect string, clientv1 *entv1.Client, clientv2 *entv
 	ctx := context.Background()
 
 	// Run migration and execute queries on v1.
-	require.NoError(t, clientv1.Schema.Create(ctx, migratev1.WithGlobalUniqueID(true)))
+	require.NoError(t, clientv1.Schema.Create(ctx, migratev1.WithGlobalUniqueID(true), schema.WithAtlas(true)))
 	SanityV1(t, dialect, clientv1)
 
 	// Run migration and execute queries on v2.
-	require.NoError(t, clientv2.Schema.Create(ctx, migratev2.WithGlobalUniqueID(true), migratev2.WithDropIndex(true), migratev2.WithDropColumn(true)))
+	require.NoError(t, clientv2.Schema.Create(ctx, migratev2.WithGlobalUniqueID(true), migratev2.WithDropIndex(true), migratev2.WithDropColumn(true), schema.WithAtlas(true)))
 	require.NoError(t, clientv2.Schema.Create(ctx, migratev2.WithGlobalUniqueID(true)), "should not create additional resources on multiple runs")
 	SanityV2(t, dialect, clientv2)
 

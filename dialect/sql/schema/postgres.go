@@ -25,7 +25,7 @@ type Postgres struct {
 
 // init loads the Postgres version from the database for later use in the migration process.
 // It returns an error if the server version is lower than v10.
-func (d *Postgres) init(ctx context.Context, tx dialect.Tx) error {
+func (d *Postgres) init(ctx context.Context, tx dialect.ExecQuerier) error {
 	rows := &sql.Rows{}
 	if err := tx.Query(ctx, "SHOW server_version_num", []interface{}{}, rows); err != nil {
 		return fmt.Errorf("querying server version %w", err)
@@ -52,14 +52,14 @@ func (d *Postgres) init(ctx context.Context, tx dialect.Tx) error {
 }
 
 // tableExist checks if a table exists in the database and current schema.
-func (d *Postgres) tableExist(ctx context.Context, tx dialect.Tx, name string) (bool, error) {
+func (d *Postgres) tableExist(ctx context.Context, conn dialect.ExecQuerier, name string) (bool, error) {
 	query, args := sql.Dialect(dialect.Postgres).
 		Select(sql.Count("*")).From(sql.Table("tables").Schema("information_schema")).
 		Where(sql.And(
 			d.matchSchema(),
 			sql.EQ("table_name", name),
 		)).Query()
-	return exist(ctx, tx, query, args...)
+	return exist(ctx, conn, query, args...)
 }
 
 // tableExist checks if a foreign-key exists in the current schema.
@@ -75,7 +75,7 @@ func (d *Postgres) fkExist(ctx context.Context, tx dialect.Tx, name string) (boo
 }
 
 // setRange sets restart the identity column to the given offset. Used by the universal-id option.
-func (d *Postgres) setRange(ctx context.Context, tx dialect.Tx, t *Table, value int) error {
+func (d *Postgres) setRange(ctx context.Context, conn dialect.ExecQuerier, t *Table, value int64) error {
 	if value == 0 {
 		value = 1 // RESTART value cannot be < 1.
 	}
@@ -83,7 +83,7 @@ func (d *Postgres) setRange(ctx context.Context, tx dialect.Tx, t *Table, value 
 	if len(t.PrimaryKey) == 1 {
 		pk = t.PrimaryKey[0].Name
 	}
-	return tx.Exec(ctx, fmt.Sprintf("ALTER TABLE %s ALTER COLUMN %s RESTART WITH %d", t.Name, pk, value), []interface{}{}, nil)
+	return conn.Exec(ctx, fmt.Sprintf("ALTER TABLE %s ALTER COLUMN %s RESTART WITH %d", t.Name, pk, value), []interface{}{}, nil)
 }
 
 // table loads the current table description from the database.

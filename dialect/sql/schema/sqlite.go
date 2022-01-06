@@ -21,7 +21,7 @@ type SQLite struct {
 }
 
 // init makes sure that foreign_keys support is enabled.
-func (d *SQLite) init(ctx context.Context, tx dialect.Tx) error {
+func (d *SQLite) init(ctx context.Context, tx dialect.ExecQuerier) error {
 	on, err := exist(ctx, tx, "PRAGMA foreign_keys")
 	if err != nil {
 		return fmt.Errorf("sqlite: check foreign_keys pragma: %w", err)
@@ -34,7 +34,7 @@ func (d *SQLite) init(ctx context.Context, tx dialect.Tx) error {
 	return nil
 }
 
-func (d *SQLite) tableExist(ctx context.Context, tx dialect.Tx, name string) (bool, error) {
+func (d *SQLite) tableExist(ctx context.Context, conn dialect.ExecQuerier, name string) (bool, error) {
 	query, args := sql.Select().Count().
 		From(sql.Table("sqlite_master")).
 		Where(sql.And(
@@ -42,7 +42,7 @@ func (d *SQLite) tableExist(ctx context.Context, tx dialect.Tx, name string) (bo
 			sql.EQ("name", name),
 		)).
 		Query()
-	return exist(ctx, tx, query, args...)
+	return exist(ctx, conn, query, args...)
 }
 
 // setRange sets the start value of table PK.
@@ -50,12 +50,12 @@ func (d *SQLite) tableExist(ctx context.Context, tx dialect.Tx, name string) (bo
 // whenever a table that contains an AUTOINCREMENT column is created. However, it populates to it a rows (for tables)
 // only after the first insertion. Therefore, we check. If a record (for the given table) already exists in the "sqlite_sequence"
 // table, we updated it. Otherwise, we insert a new value.
-func (d *SQLite) setRange(ctx context.Context, tx dialect.Tx, t *Table, value int) error {
+func (d *SQLite) setRange(ctx context.Context, conn dialect.ExecQuerier, t *Table, value int64) error {
 	query, args := sql.Select().Count().
 		From(sql.Table("sqlite_sequence")).
 		Where(sql.EQ("name", t.Name)).
 		Query()
-	exists, err := exist(ctx, tx, query, args...)
+	exists, err := exist(ctx, conn, query, args...)
 	switch {
 	case err != nil:
 		return err
@@ -64,7 +64,7 @@ func (d *SQLite) setRange(ctx context.Context, tx dialect.Tx, t *Table, value in
 	default: // !exists
 		query, args = sql.Insert("sqlite_sequence").Columns("name", "seq").Values(t.Name, value).Query()
 	}
-	return tx.Exec(ctx, query, args, nil)
+	return conn.Exec(ctx, query, args, nil)
 }
 
 func (d *SQLite) tBuilder(t *Table) *sql.TableBuilder {

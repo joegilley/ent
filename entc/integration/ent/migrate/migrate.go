@@ -63,6 +63,7 @@ func (s *Schema) Create(ctx context.Context, opts ...schema.MigrateOption) error
 // 	}
 //
 func (s *Schema) WriteTo(ctx context.Context, w io.Writer, opts ...schema.MigrateOption) error {
+	return nil
 	drv := &schema.WriteDriver{
 		Writer: w,
 		Driver: s.drv,
