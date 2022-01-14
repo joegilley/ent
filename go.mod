@@ -1,4 +1,4 @@
-module entgo.io/ent
+module github.com/joegilley/ent
 
 go 1.17
 
