@@ -217,7 +217,7 @@ func createDir(target string) error {
 var tmpl = template.Must(template.New("schema").
 	Parse(`package schema
 
-import "github.com/joegilley/ent"
+import "entgo.io/ent"
 
 // {{ . }} holds the schema definition for the {{ . }} entity.
 type {{ . }} struct {
