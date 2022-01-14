@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/customid/ent/doc"
-	"entgo.io/ent/entc/integration/customid/ent/schema"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/customid/ent/doc"
+	"github.com/joegilley/ent/entc/integration/customid/ent/schema"
 )
 
 // Doc is the model entity for the Doc schema.

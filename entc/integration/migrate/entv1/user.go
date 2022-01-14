@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/migrate/entv1/car"
-	"entgo.io/ent/entc/integration/migrate/entv1/user"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/migrate/entv1/car"
+	"github.com/joegilley/ent/entc/integration/migrate/entv1/user"
 )
 
 // User is the model entity for the User schema.

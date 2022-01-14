@@ -10,11 +10,11 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgefield/ent/predicate"
-	"entgo.io/ent/entc/integration/edgefield/ent/rental"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/rental"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // RentalDelete is the builder for deleting a Rental entity.

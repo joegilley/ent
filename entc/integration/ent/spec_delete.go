@@ -10,11 +10,11 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/entc/integration/ent/spec"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/ent/spec"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // SpecDelete is the builder for deleting a Spec entity.

@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"sync"
 
-	"entgo.io/ent/entc/integration/cascadelete/ent/comment"
-	"entgo.io/ent/entc/integration/cascadelete/ent/post"
-	"entgo.io/ent/entc/integration/cascadelete/ent/predicate"
-	"entgo.io/ent/entc/integration/cascadelete/ent/user"
+	"github.com/joegilley/ent/entc/integration/cascadelete/ent/comment"
+	"github.com/joegilley/ent/entc/integration/cascadelete/ent/post"
+	"github.com/joegilley/ent/entc/integration/cascadelete/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/cascadelete/ent/user"
 
-	"entgo.io/ent"
+	"github.com/joegilley/ent"
 )
 
 const (

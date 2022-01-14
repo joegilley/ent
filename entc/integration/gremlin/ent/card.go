@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/entc/integration/gremlin/ent/user"
+	"github.com/joegilley/ent/dialect/gremlin"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/user"
 )
 
 // Card is the model entity for the Card schema.

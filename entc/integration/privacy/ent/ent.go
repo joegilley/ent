@@ -10,11 +10,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/privacy/ent/task"
-	"entgo.io/ent/entc/integration/privacy/ent/team"
-	"entgo.io/ent/entc/integration/privacy/ent/user"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/privacy/ent/task"
+	"github.com/joegilley/ent/entc/integration/privacy/ent/team"
+	"github.com/joegilley/ent/entc/integration/privacy/ent/user"
 )
 
 // ent aliases to avoid import conflicts in user's code.

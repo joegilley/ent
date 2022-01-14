@@ -8,9 +8,9 @@ import (
 	"regexp"
 	"strings"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/schema/edge"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // CheckError is returned by the validators.

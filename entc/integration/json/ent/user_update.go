@@ -14,12 +14,12 @@ import (
 	"net/http"
 	"net/url"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/json/ent/predicate"
-	"entgo.io/ent/entc/integration/json/ent/schema"
-	"entgo.io/ent/entc/integration/json/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/json/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/json/ent/schema"
+	"github.com/joegilley/ent/entc/integration/json/ent/user"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // UserUpdate is the builder for updating User entities.

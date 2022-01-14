@@ -11,15 +11,15 @@ import (
 	"fmt"
 	"log"
 
-	"entgo.io/ent/entc/integration/cascadelete/ent/migrate"
+	"github.com/joegilley/ent/entc/integration/cascadelete/ent/migrate"
 
-	"entgo.io/ent/entc/integration/cascadelete/ent/comment"
-	"entgo.io/ent/entc/integration/cascadelete/ent/post"
-	"entgo.io/ent/entc/integration/cascadelete/ent/user"
+	"github.com/joegilley/ent/entc/integration/cascadelete/ent/comment"
+	"github.com/joegilley/ent/entc/integration/cascadelete/ent/post"
+	"github.com/joegilley/ent/entc/integration/cascadelete/ent/user"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/dialect"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
 )
 
 // Client is the client that holds all ent builders.

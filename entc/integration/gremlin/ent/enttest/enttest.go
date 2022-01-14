@@ -7,9 +7,9 @@
 package enttest
 
 import (
-	"entgo.io/ent/entc/integration/gremlin/ent"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent"
 	// required by schema hooks.
-	_ "entgo.io/ent/entc/integration/gremlin/ent/runtime"
+	_ "github.com/joegilley/ent/entc/integration/gremlin/ent/runtime"
 )
 
 type (

@@ -17,9 +17,9 @@ import (
 	"strings"
 	"text/template/parse"
 
-	"entgo.io/ent/dialect/sql/schema"
-	"entgo.io/ent/entc/load"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql/schema"
+	"github.com/joegilley/ent/entc/load"
+	"github.com/joegilley/ent/schema/field"
 
 	"golang.org/x/tools/imports"
 )
@@ -668,7 +668,7 @@ func (g *Graph) templates() (*Template, []GraphTemplate) {
 
 // ModuleInfo returns the entgo.io/ent version.
 func (Config) ModuleInfo() (m debug.Module) {
-	const pkg = "entgo.io/ent"
+	const pkg = "github.com/joegilley/ent"
 	info, ok := debug.ReadBuildInfo()
 	if !ok {
 		return

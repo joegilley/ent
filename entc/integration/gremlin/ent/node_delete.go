@@ -10,12 +10,12 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/__"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/entc/integration/gremlin/ent/node"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
+	"github.com/joegilley/ent/dialect/gremlin"
+	"github.com/joegilley/ent/dialect/gremlin/graph/dsl"
+	"github.com/joegilley/ent/dialect/gremlin/graph/dsl/__"
+	"github.com/joegilley/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/node"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/predicate"
 )
 
 // NodeDelete is the builder for deleting a Node entity.

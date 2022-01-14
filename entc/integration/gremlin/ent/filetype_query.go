@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/__"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/entc/integration/gremlin/ent/filetype"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
+	"github.com/joegilley/ent/dialect/gremlin"
+	"github.com/joegilley/ent/dialect/gremlin/graph/dsl"
+	"github.com/joegilley/ent/dialect/gremlin/graph/dsl/__"
+	"github.com/joegilley/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/filetype"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/predicate"
 )
 
 // FileTypeQuery is the builder for querying FileType entities.

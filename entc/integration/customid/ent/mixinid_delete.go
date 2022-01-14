@@ -10,11 +10,11 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/mixinid"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/customid/ent/mixinid"
+	"github.com/joegilley/ent/entc/integration/customid/ent/predicate"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // MixinIDDelete is the builder for deleting a MixinID entity.

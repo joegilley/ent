@@ -14,12 +14,12 @@ import (
 	"net/http"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/fieldtype"
-	"entgo.io/ent/entc/integration/ent/role"
-	"entgo.io/ent/entc/integration/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/ent/fieldtype"
+	"github.com/joegilley/ent/entc/integration/ent/role"
+	"github.com/joegilley/ent/entc/integration/ent/schema"
+	"github.com/joegilley/ent/schema/field"
 	"github.com/google/uuid"
 )
 

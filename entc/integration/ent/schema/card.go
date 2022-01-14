@@ -5,13 +5,13 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/entc/integration/ent/template"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
-	"entgo.io/ent/schema/mixin"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/entc/integration/ent/template"
+	"github.com/joegilley/ent/schema"
+	"github.com/joegilley/ent/schema/edge"
+	"github.com/joegilley/ent/schema/field"
+	"github.com/joegilley/ent/schema/index"
+	"github.com/joegilley/ent/schema/mixin"
 )
 
 type CardMixin struct {

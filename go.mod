@@ -1,4 +1,4 @@
-module entgo.io/ent
+module github.com/joegilley/ent
 
 go 1.17
 
@@ -22,6 +22,8 @@ require (
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.9-0.20211216111533-8d383106f7e7
 )
+
+require entgo.io/ent v0.9.1
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect

@@ -7,7 +7,7 @@ package schema
 import (
 	"testing"
 
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/schema/field"
 
 	"github.com/stretchr/testify/require"
 )

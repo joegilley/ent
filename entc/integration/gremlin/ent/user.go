@@ -10,10 +10,10 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/entc/integration/gremlin/ent/card"
-	"entgo.io/ent/entc/integration/gremlin/ent/pet"
-	"entgo.io/ent/entc/integration/gremlin/ent/user"
+	"github.com/joegilley/ent/dialect/gremlin"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/card"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/pet"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/user"
 )
 
 // User is the model entity for the User schema.

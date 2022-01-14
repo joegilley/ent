@@ -10,7 +10,7 @@ import (
 	"context"
 	"errors"
 
-	"entgo.io/ent"
+	"github.com/joegilley/ent"
 )
 
 // List of policy decisions.

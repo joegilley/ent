@@ -8,8 +8,8 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect"
+	"github.com/joegilley/ent/dialect/sql"
 )
 
 // InspectOption allows for managing schema configuration using functional options.

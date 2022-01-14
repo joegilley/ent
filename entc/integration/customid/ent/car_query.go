@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/car"
-	"entgo.io/ent/entc/integration/customid/ent/pet"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/customid/ent/car"
+	"github.com/joegilley/ent/entc/integration/customid/ent/pet"
+	"github.com/joegilley/ent/entc/integration/customid/ent/predicate"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // CarQuery is the builder for querying Car entities.

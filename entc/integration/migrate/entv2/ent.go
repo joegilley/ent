@@ -10,15 +10,15 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/migrate/entv2/car"
-	"entgo.io/ent/entc/integration/migrate/entv2/conversion"
-	"entgo.io/ent/entc/integration/migrate/entv2/customtype"
-	"entgo.io/ent/entc/integration/migrate/entv2/group"
-	"entgo.io/ent/entc/integration/migrate/entv2/media"
-	"entgo.io/ent/entc/integration/migrate/entv2/pet"
-	"entgo.io/ent/entc/integration/migrate/entv2/user"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/car"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/conversion"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/customtype"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/group"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/media"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/pet"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/user"
 )
 
 // ent aliases to avoid import conflicts in user's code.

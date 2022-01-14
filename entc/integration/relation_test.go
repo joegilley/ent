@@ -10,12 +10,12 @@ import (
 	"testing"
 	"time"
 
-	"entgo.io/ent/entc/integration/ent"
-	"entgo.io/ent/entc/integration/ent/card"
-	"entgo.io/ent/entc/integration/ent/group"
-	"entgo.io/ent/entc/integration/ent/node"
-	"entgo.io/ent/entc/integration/ent/pet"
-	"entgo.io/ent/entc/integration/ent/user"
+	"github.com/joegilley/ent/entc/integration/ent"
+	"github.com/joegilley/ent/entc/integration/ent/card"
+	"github.com/joegilley/ent/entc/integration/ent/group"
+	"github.com/joegilley/ent/entc/integration/ent/node"
+	"github.com/joegilley/ent/entc/integration/ent/pet"
+	"github.com/joegilley/ent/entc/integration/ent/user"
 
 	"github.com/stretchr/testify/require"
 )

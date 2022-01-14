@@ -5,11 +5,11 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/mixin"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/dialect/entsql"
+	"github.com/joegilley/ent/schema"
+	"github.com/joegilley/ent/schema/field"
+	"github.com/joegilley/ent/schema/mixin"
 )
 
 var (

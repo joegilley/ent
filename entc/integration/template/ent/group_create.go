@@ -11,9 +11,9 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/template/ent/group"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/template/ent/group"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // GroupCreate is the builder for creating a Group entity.

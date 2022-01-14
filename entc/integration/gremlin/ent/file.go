@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/entc/integration/gremlin/ent/filetype"
-	"entgo.io/ent/entc/integration/gremlin/ent/user"
+	"github.com/joegilley/ent/dialect/gremlin"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/filetype"
+	"github.com/joegilley/ent/entc/integration/gremlin/ent/user"
 )
 
 // File is the model entity for the File schema.

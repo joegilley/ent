@@ -13,13 +13,13 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/file"
-	"entgo.io/ent/entc/integration/ent/filetype"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/ent/file"
+	"github.com/joegilley/ent/entc/integration/ent/filetype"
+	"github.com/joegilley/ent/entc/integration/ent/predicate"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // FileTypeQuery is the builder for querying FileType entities.

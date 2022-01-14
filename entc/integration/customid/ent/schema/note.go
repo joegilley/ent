@@ -5,10 +5,10 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/schema/edge"
+	"github.com/joegilley/ent/schema/field"
 )
 
 type NoteID string

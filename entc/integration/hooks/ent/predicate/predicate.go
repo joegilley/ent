@@ -7,7 +7,7 @@
 package predicate
 
 import (
-	"entgo.io/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql"
 )
 
 // Card is the predicate function for card builders.

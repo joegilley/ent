@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgefield/ent/info"
-	"entgo.io/ent/entc/integration/edgefield/ent/predicate"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/info"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/user"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // InfoQuery is the builder for querying Info entities.

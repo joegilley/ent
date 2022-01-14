@@ -12,7 +12,7 @@ import (
 	"strings"
 	"testing"
 
-	"entgo.io/ent/dialect"
+	"github.com/joegilley/ent/dialect"
 	"github.com/stretchr/testify/require"
 )
 

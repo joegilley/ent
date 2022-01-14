@@ -7,15 +7,15 @@
 package ent
 
 import (
-	"entgo.io/ent/entc/integration/customid/ent/blob"
-	"entgo.io/ent/entc/integration/customid/ent/car"
-	"entgo.io/ent/entc/integration/customid/ent/device"
-	"entgo.io/ent/entc/integration/customid/ent/doc"
-	"entgo.io/ent/entc/integration/customid/ent/mixinid"
-	"entgo.io/ent/entc/integration/customid/ent/note"
-	"entgo.io/ent/entc/integration/customid/ent/pet"
-	"entgo.io/ent/entc/integration/customid/ent/schema"
-	"entgo.io/ent/entc/integration/customid/ent/session"
+	"github.com/joegilley/ent/entc/integration/customid/ent/blob"
+	"github.com/joegilley/ent/entc/integration/customid/ent/car"
+	"github.com/joegilley/ent/entc/integration/customid/ent/device"
+	"github.com/joegilley/ent/entc/integration/customid/ent/doc"
+	"github.com/joegilley/ent/entc/integration/customid/ent/mixinid"
+	"github.com/joegilley/ent/entc/integration/customid/ent/note"
+	"github.com/joegilley/ent/entc/integration/customid/ent/pet"
+	"github.com/joegilley/ent/entc/integration/customid/ent/schema"
+	"github.com/joegilley/ent/entc/integration/customid/ent/session"
 	"github.com/google/uuid"
 )
 

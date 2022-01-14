@@ -11,12 +11,12 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/entv2/pet"
-	"entgo.io/ent/entc/integration/migrate/entv2/predicate"
-	"entgo.io/ent/entc/integration/migrate/entv2/user"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/pet"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/predicate"
+	"github.com/joegilley/ent/entc/integration/migrate/entv2/user"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // PetUpdate is the builder for updating Pet entities.

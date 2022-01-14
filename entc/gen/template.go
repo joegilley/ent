@@ -20,8 +20,8 @@ import (
 	"text/template"
 	"text/template/parse"
 
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/schema"
+	"github.com/joegilley/ent/schema/field"
 )
 
 type (

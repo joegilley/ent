@@ -5,10 +5,10 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/mixin"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/schema/edge"
+	"github.com/joegilley/ent/schema/field"
+	"github.com/joegilley/ent/schema/mixin"
 )
 
 // User holds the schema for the user entity.

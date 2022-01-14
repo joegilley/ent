@@ -7,7 +7,7 @@ package ocgremlin
 import (
 	"context"
 
-	"entgo.io/ent/dialect/gremlin"
+	"github.com/joegilley/ent/dialect/gremlin"
 
 	"go.opencensus.io/trace"
 )

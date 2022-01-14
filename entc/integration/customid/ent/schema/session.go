@@ -10,9 +10,9 @@ import (
 
 	"github.com/google/uuid"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/schema/edge"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // Session holds the schema definition for the Session entity.

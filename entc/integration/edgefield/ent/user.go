@@ -10,10 +10,10 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgefield/ent/card"
-	"entgo.io/ent/entc/integration/edgefield/ent/metadata"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/card"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/metadata"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/user"
 )
 
 // User is the model entity for the User schema.

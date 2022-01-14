@@ -12,10 +12,10 @@ import (
 	"fmt"
 	"sync"
 
-	"entgo.io/ent/entc/integration/config/ent/predicate"
-	"entgo.io/ent/entc/integration/config/ent/user"
+	"github.com/joegilley/ent/entc/integration/config/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/config/ent/user"
 
-	"entgo.io/ent"
+	"github.com/joegilley/ent"
 )
 
 const (

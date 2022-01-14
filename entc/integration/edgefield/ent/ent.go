@@ -10,17 +10,17 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgefield/ent/car"
-	"entgo.io/ent/entc/integration/edgefield/ent/card"
-	"entgo.io/ent/entc/integration/edgefield/ent/info"
-	"entgo.io/ent/entc/integration/edgefield/ent/metadata"
-	"entgo.io/ent/entc/integration/edgefield/ent/node"
-	"entgo.io/ent/entc/integration/edgefield/ent/pet"
-	"entgo.io/ent/entc/integration/edgefield/ent/post"
-	"entgo.io/ent/entc/integration/edgefield/ent/rental"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/car"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/card"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/info"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/metadata"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/node"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/pet"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/post"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/rental"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/user"
 )
 
 // ent aliases to avoid import conflicts in user's code.

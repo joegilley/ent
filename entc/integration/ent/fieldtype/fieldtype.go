@@ -12,9 +12,9 @@ import (
 	"net/http"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/ent/role"
-	"entgo.io/ent/entc/integration/ent/schema"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/ent/role"
+	"github.com/joegilley/ent/entc/integration/ent/schema"
 )
 
 const (

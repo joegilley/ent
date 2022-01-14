@@ -16,10 +16,10 @@ import (
 	"text/template"
 	"unicode"
 
-	"entgo.io/ent/cmd/internal/printer"
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/cmd/internal/printer"
+	"github.com/joegilley/ent/entc"
+	"github.com/joegilley/ent/entc/gen"
+	"github.com/joegilley/ent/schema/field"
 
 	"github.com/spf13/cobra"
 )
@@ -217,7 +217,7 @@ func createDir(target string) error {
 var tmpl = template.Must(template.New("schema").
 	Parse(`package schema
 
-import "entgo.io/ent"
+import "github.com/joegilley/ent"
 
 // {{ . }} holds the schema definition for the {{ . }} entity.
 type {{ . }} struct {

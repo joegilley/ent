@@ -12,13 +12,13 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/card"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/entc/integration/ent/spec"
-	"entgo.io/ent/entc/integration/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/ent/card"
+	"github.com/joegilley/ent/entc/integration/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/ent/spec"
+	"github.com/joegilley/ent/entc/integration/ent/user"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // CardUpdate is the builder for updating Card entities.

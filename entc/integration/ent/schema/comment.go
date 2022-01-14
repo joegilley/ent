@@ -5,8 +5,8 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // Comment holds the schema definition for the Comment entity.

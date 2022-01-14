@@ -13,12 +13,12 @@ import (
 	"testing"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/ent"
-	"entgo.io/ent/entc/integration/ent/fieldtype"
-	"entgo.io/ent/entc/integration/ent/role"
-	"entgo.io/ent/entc/integration/ent/schema"
-	"entgo.io/ent/entc/integration/ent/task"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/ent"
+	"github.com/joegilley/ent/entc/integration/ent/fieldtype"
+	"github.com/joegilley/ent/entc/integration/ent/role"
+	"github.com/joegilley/ent/entc/integration/ent/schema"
+	"github.com/joegilley/ent/entc/integration/ent/task"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"

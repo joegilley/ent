@@ -10,14 +10,14 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgefield/ent/card"
-	"entgo.io/ent/entc/integration/edgefield/ent/info"
-	"entgo.io/ent/entc/integration/edgefield/ent/metadata"
-	"entgo.io/ent/entc/integration/edgefield/ent/pet"
-	"entgo.io/ent/entc/integration/edgefield/ent/rental"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/card"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/info"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/metadata"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/pet"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/rental"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/user"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // UserCreate is the builder for creating a User entity.

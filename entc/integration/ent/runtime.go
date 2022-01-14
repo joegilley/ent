@@ -11,17 +11,17 @@ import (
 	"net/http"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/ent/card"
-	"entgo.io/ent/entc/integration/ent/fieldtype"
-	"entgo.io/ent/entc/integration/ent/file"
-	"entgo.io/ent/entc/integration/ent/group"
-	"entgo.io/ent/entc/integration/ent/groupinfo"
-	"entgo.io/ent/entc/integration/ent/item"
-	"entgo.io/ent/entc/integration/ent/pet"
-	"entgo.io/ent/entc/integration/ent/schema"
-	"entgo.io/ent/entc/integration/ent/task"
-	"entgo.io/ent/entc/integration/ent/user"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/entc/integration/ent/card"
+	"github.com/joegilley/ent/entc/integration/ent/fieldtype"
+	"github.com/joegilley/ent/entc/integration/ent/file"
+	"github.com/joegilley/ent/entc/integration/ent/group"
+	"github.com/joegilley/ent/entc/integration/ent/groupinfo"
+	"github.com/joegilley/ent/entc/integration/ent/item"
+	"github.com/joegilley/ent/entc/integration/ent/pet"
+	"github.com/joegilley/ent/entc/integration/ent/schema"
+	"github.com/joegilley/ent/entc/integration/ent/task"
+	"github.com/joegilley/ent/entc/integration/ent/user"
 )
 
 // The init function reads all schema descriptors with runtime code

@@ -5,10 +5,10 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/entc/integration/privacy/ent/privacy"
-	"entgo.io/ent/entc/integration/privacy/rule"
-	"entgo.io/ent/schema/mixin"
+	"github.com/joegilley/ent"
+	"github.com/joegilley/ent/entc/integration/privacy/ent/privacy"
+	"github.com/joegilley/ent/entc/integration/privacy/rule"
+	"github.com/joegilley/ent/schema/mixin"
 )
 
 // BaseMixin for all schemas.

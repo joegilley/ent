@@ -7,7 +7,7 @@ package edge
 import (
 	"reflect"
 
-	"entgo.io/ent/schema"
+	"github.com/joegilley/ent/schema"
 )
 
 // A Descriptor for edge configuration.

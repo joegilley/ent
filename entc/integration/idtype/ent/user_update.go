@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/idtype/ent/predicate"
-	"entgo.io/ent/entc/integration/idtype/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/idtype/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/idtype/ent/user"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // UserUpdate is the builder for updating User entities.

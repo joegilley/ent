@@ -7,22 +7,22 @@
 package ent
 
 import (
-	"entgo.io/ent/entc/integration/customid/ent/blob"
-	"entgo.io/ent/entc/integration/customid/ent/car"
-	"entgo.io/ent/entc/integration/customid/ent/device"
-	"entgo.io/ent/entc/integration/customid/ent/doc"
-	"entgo.io/ent/entc/integration/customid/ent/group"
-	"entgo.io/ent/entc/integration/customid/ent/mixinid"
-	"entgo.io/ent/entc/integration/customid/ent/note"
-	"entgo.io/ent/entc/integration/customid/ent/pet"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
-	"entgo.io/ent/entc/integration/customid/ent/session"
-	"entgo.io/ent/entc/integration/customid/ent/user"
+	"github.com/joegilley/ent/entc/integration/customid/ent/blob"
+	"github.com/joegilley/ent/entc/integration/customid/ent/car"
+	"github.com/joegilley/ent/entc/integration/customid/ent/device"
+	"github.com/joegilley/ent/entc/integration/customid/ent/doc"
+	"github.com/joegilley/ent/entc/integration/customid/ent/group"
+	"github.com/joegilley/ent/entc/integration/customid/ent/mixinid"
+	"github.com/joegilley/ent/entc/integration/customid/ent/note"
+	"github.com/joegilley/ent/entc/integration/customid/ent/pet"
+	"github.com/joegilley/ent/entc/integration/customid/ent/predicate"
+	"github.com/joegilley/ent/entc/integration/customid/ent/session"
+	"github.com/joegilley/ent/entc/integration/customid/ent/user"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entql"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entql"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // schemaGraph holds a representation of ent/schema at runtime.

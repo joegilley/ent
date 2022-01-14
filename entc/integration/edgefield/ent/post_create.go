@@ -11,10 +11,10 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgefield/ent/post"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/joegilley/ent/dialect/sql/sqlgraph"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/post"
+	"github.com/joegilley/ent/entc/integration/edgefield/ent/user"
+	"github.com/joegilley/ent/schema/field"
 )
 
 // PostCreate is the builder for creating a Post entity.
