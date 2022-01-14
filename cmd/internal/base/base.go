@@ -229,6 +229,16 @@ func ({{ . }}) Fields() []ent.Field {
 	return nil
 }
 
+// Mixin for {{ . }}.
+func ({{ . }}) Mixin() []ent.Mixin {
+	return nil
+}
+
+// Indexes of the {{ . }}.
+func ({{ . }}) Indexes() []ent.Index {
+	return nil
+}
+
 // Edges of the {{ . }}.
 func ({{ . }}) Edges() []ent.Edge {
 	return nil
