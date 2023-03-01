@@ -1,4 +1,4 @@
-module entgo.io/ent
+module github.com/jogly/ent
 
 go 1.19
 
