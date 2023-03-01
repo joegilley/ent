@@ -11,12 +11,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/hooks/ent/pet"
-	"entgo.io/ent/entc/integration/hooks/ent/predicate"
-	"entgo.io/ent/entc/integration/hooks/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/hooks/ent/pet"
+	"github.com/jogly/ent/entc/integration/hooks/ent/predicate"
+	"github.com/jogly/ent/entc/integration/hooks/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // PetQuery is the builder for querying Pet entities.

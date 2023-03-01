@@ -12,11 +12,11 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgefield/ent/car"
-	"entgo.io/ent/entc/integration/edgefield/ent/rental"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/car"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/rental"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/user"
+	"github.com/jogly/ent/schema/field"
 	"github.com/google/uuid"
 )
 

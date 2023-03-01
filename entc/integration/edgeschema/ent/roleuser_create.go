@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/role"
-	"entgo.io/ent/entc/integration/edgeschema/ent/roleuser"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/role"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/roleuser"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // RoleUserCreate is the builder for creating a RoleUser entity.

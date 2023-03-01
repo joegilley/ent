@@ -11,9 +11,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/jsonencode/ent/pet"
-	"entgo.io/ent/examples/jsonencode/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/jsonencode/ent/pet"
+	"github.com/jogly/ent/examples/jsonencode/ent/user"
 )
 
 // Pet is the model entity for the Pet schema.

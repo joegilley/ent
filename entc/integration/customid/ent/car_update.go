@@ -11,12 +11,12 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/car"
-	"entgo.io/ent/entc/integration/customid/ent/pet"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/car"
+	"github.com/jogly/ent/entc/integration/customid/ent/pet"
+	"github.com/jogly/ent/entc/integration/customid/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CarUpdate is the builder for updating Car entities.

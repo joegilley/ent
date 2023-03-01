@@ -7,7 +7,7 @@
 package predicate
 
 import (
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
 )
 
 // Api is the predicate function for api builders.

@@ -9,9 +9,9 @@ import (
 	"fmt"
 	"log"
 
-	"entgo.io/ent/examples/encryptfield/ent"
-	_ "entgo.io/ent/examples/encryptfield/ent/runtime"
-	"entgo.io/ent/examples/encryptfield/ent/user"
+	"github.com/jogly/ent/examples/encryptfield/ent"
+	_ "github.com/jogly/ent/examples/encryptfield/ent/runtime"
+	"github.com/jogly/ent/examples/encryptfield/ent/user"
 
 	_ "github.com/mattn/go-sqlite3"
 	"gocloud.dev/secrets/localsecrets"

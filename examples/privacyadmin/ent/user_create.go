@@ -11,9 +11,9 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/privacyadmin/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/privacyadmin/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserCreate is the builder for creating a User entity.

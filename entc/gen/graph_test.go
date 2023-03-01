@@ -11,9 +11,9 @@ import (
 	"reflect"
 	"testing"
 
-	"entgo.io/ent/entc/load"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/entc/load"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 
 	"github.com/stretchr/testify/require"
 )

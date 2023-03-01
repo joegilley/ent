@@ -9,11 +9,11 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/license"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/license"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // LicenseDelete is the builder for deleting a License entity.

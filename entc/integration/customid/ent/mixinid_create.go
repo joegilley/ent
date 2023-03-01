@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/mixinid"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/mixinid"
+	"github.com/jogly/ent/schema/field"
 	"github.com/google/uuid"
 )
 

@@ -3,8 +3,8 @@ id: privacy
 title: Privacy
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 The `Policy` option in the schema allows configuring privacy policy for queries and mutations of entities in the database.
 
@@ -18,13 +18,13 @@ the policy feature to your project, and finish with a few examples.
 
 ## Basic Terms
 
-### Policy 
+### Policy
 
 The `ent.Policy` interface contains two methods: `EvalQuery` and `EvalMutation`. The first defines the read-policy, and
 the second defines the write-policy. A policy contains zero or more privacy rules (see below). These rules are evaluated
 in the same order they are declared in the schema.
 
-If all rules are evaluated without returning an error, the evaluation finishes successfully, and the executed operation 
+If all rules are evaluated without returning an error, the evaluation finishes successfully, and the executed operation
 gets access to the target nodes.
 
 ![privacy-rules](https://entgo.io/images/assets/permission_1.png)
@@ -51,11 +51,11 @@ func(Policy) EvalMutation(context.Context, Mutation) error
 There are three types of decision that can help you control the privacy rules evaluation.
 
 - `privacy.Allow` - If returned from a privacy rule, the evaluation stops (next rules will be skipped), and the executed
-   operation (query or mutation) gets access to the target nodes.
-   
+  operation (query or mutation) gets access to the target nodes.
+
 - `privacy.Deny` - If returned from a privacy rule, the evaluation stops (next rules will be skipped), and the executed
-  operation is cancelled. This equivalent to returning any error. 
-  
+  operation is cancelled. This equivalent to returning any error.
+
 - `privacy.Skip` - Skip the current rule, and jump to the next privacy rule. This equivalent to returning a `nil` error.
 
 ![privacy-allow](https://entgo.io/images/assets/permission_3.png)
@@ -74,14 +74,14 @@ If you are using the default go generate config, add `--feature privacy` option 
 ```go title="ent/generate.go"
 package ent
 
-//go:generate go run -mod=mod entgo.io/ent/cmd/ent generate --feature privacy ./schema
+//go:generate go run -mod=mod github.com/jogly/ent/cmd/ent generate --feature privacy ./schema
 ```
 
 It is recommended to add the [`schema/snapshot`](features.md#auto-solve-merge-conflicts) feature-flag along with the
 `privacy` flag to enhance the development experience, for example:
 
 ```go
-//go:generate go run -mod=mod entgo.io/ent/cmd/ent generate --feature privacy,schema/snapshot ./schema
+//go:generate go run -mod=mod github.com/jogly/ent/cmd/ent generate --feature privacy,schema/snapshot ./schema
 ```
 
 </TabItem>
@@ -98,8 +98,8 @@ package main
 import (
     "log"
 
-    "entgo.io/ent/entc"
-    "entgo.io/ent/entc/gen"
+    "github.com/jogly/ent/entc"
+    "github.com/jogly/ent/entc/gen"
 )
 
 func main() {
@@ -111,7 +111,6 @@ func main() {
 	}
 }
 ```
-
 
 It is recommended to add the [`schema/snapshot`](features.md#auto-solve-merge-conflicts) feature-flag along with the
 `privacy` flag to enhance the development experience, for example:
@@ -136,6 +135,7 @@ and the generated ent package:
 ```go
 import _ "<project>/ent/runtime"
 ```
+
 :::
 
 ## Examples
@@ -147,7 +147,7 @@ with admin role. We will create 2 additional packages for the purpose of the exa
 
 - `rule` - for holding the different privacy rules in our schema.
 - `viewer` - for getting and setting the user/viewer who's executing the operation. In this simple example, it can be
-   either a normal user or an admin.
+  either a normal user or an admin.
 
 After running the code-generation (with the feature-flag for privacy), we add the `Policy` method with 2 generated policy rules.
 
@@ -155,8 +155,8 @@ After running the code-generation (with the feature-flag for privacy), we add th
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/examples/privacyadmin/ent/privacy"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/examples/privacyadmin/ent/privacy"
 )
 
 // User holds the schema definition for the User entity.
@@ -168,7 +168,7 @@ type User struct {
 func (User) Policy() ent.Policy {
 	return privacy.Policy{
 		Mutation: privacy.MutationPolicy{
-            // Deny if not set otherwise. 
+            // Deny if not set otherwise.
 			privacy.AlwaysDenyRule(),
 		},
 		Query: privacy.QueryPolicy{
@@ -188,8 +188,8 @@ package rule
 import (
 	"context"
 
-	"entgo.io/ent/examples/privacyadmin/ent/privacy"
-	"entgo.io/ent/examples/privacyadmin/viewer"
+	"github.com/jogly/ent/examples/privacyadmin/ent/privacy"
+	"github.com/jogly/ent/examples/privacyadmin/viewer"
 )
 
 // DenyIfNoViewer is a rule that returns Deny decision if the viewer is
@@ -238,7 +238,7 @@ func (User) Policy() ent.Policy {
 }
 ```
 
-Since we define the `DenyIfNoViewer` first, it will be executed before all other rules, and accessing the 
+Since we define the `DenyIfNoViewer` first, it will be executed before all other rules, and accessing the
 `viewer.Viewer` object is safe in the `AllowIfAdmin` rule.
 
 After adding the rules above and running the code-generation, we expect the privacy-layer logic to be applied on
@@ -385,7 +385,7 @@ func Example_CreateTenants(ctx context.Context, client *ent.Client) {
 		log.Fatal("expect tenant creation to pass, but got:", err)
 	}
 	fmt.Println(lab)
-	
+
 	// Output:
 	// Tenant(id=1, name=GitHub)
 	// Tenant(id=2, name=GitLab)
@@ -426,7 +426,7 @@ func (TenantMixin) Edges() []ent.Edge {
 Next, we may want to enforce a rule that will limit viewers to only query groups and users that are connected to the tenant they belong to.
 For use cases like this, Ent has an additional type of privacy rule named `Filter`.
 We can use `Filter` rules to filter out entities based on the identity of the viewer.
-Unlike the rules we previously discussed, `Filter` rules can limit the scope of the queries a viewer can make, in addition to returning privacy decisions. 
+Unlike the rules we previously discussed, `Filter` rules can limit the scope of the queries a viewer can make, in addition to returning privacy decisions.
 
 :::info Note
 The privacy filtering option needs to be enabled using the [`entql`](features.md#entql-filtering) feature-flag (see instructions [above](#configuration)).
@@ -661,7 +661,7 @@ viewer-context.
 ```go title="examples/privacytenant/example_test.go"
 func Example_DenyMismatchedView(ctx context.Context, client *ent.Client) {
 	// Continuation of the code above.
-	
+
 	// Expect operation to fail, because the FilterTenantRule rule makes sure
 	// that tenants can update and delete only their groups.
 	if err := entgo.Update().SetName("fail.go").Exec(labView); !ent.IsNotFound(err) {

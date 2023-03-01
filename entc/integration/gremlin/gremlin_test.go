@@ -16,14 +16,14 @@ import (
 	"testing"
 	"time"
 
-	"entgo.io/ent/entc/integration/gremlin/ent"
-	"entgo.io/ent/entc/integration/gremlin/ent/card"
-	"entgo.io/ent/entc/integration/gremlin/ent/file"
-	"entgo.io/ent/entc/integration/gremlin/ent/group"
-	"entgo.io/ent/entc/integration/gremlin/ent/groupinfo"
-	"entgo.io/ent/entc/integration/gremlin/ent/node"
-	"entgo.io/ent/entc/integration/gremlin/ent/pet"
-	"entgo.io/ent/entc/integration/gremlin/ent/user"
+	"github.com/jogly/ent/entc/integration/gremlin/ent"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/card"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/file"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/group"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/groupinfo"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/node"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/pet"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/user"
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
@@ -1075,11 +1075,10 @@ func O2OSameType(t *testing.T, client *ent.Client) {
 // has the same name in both directions. A couple. User A has "spouse" B (and vice versa).
 // When setting B as a spouse of A, this sets A as spouse of B as well. In other words:
 //
-//		foo := client.User.Create().SetName("foo").SaveX(ctx)
-//		bar := client.User.Create().SetName("bar").SetSpouse(foo).SaveX(ctx)
-// 		count := client.User.Query.Where(user.HasSpouse()).CountX(ctx)
-// 		// count will be 2, even though we've created only one relation above.
-//
+//	foo := client.User.Create().SetName("foo").SaveX(ctx)
+//	bar := client.User.Create().SetName("bar").SetSpouse(foo).SaveX(ctx)
+//	count := client.User.Query.Where(user.HasSpouse()).CountX(ctx)
+//	// count will be 2, even though we've created only one relation above.
 func O2OSelfRef(t *testing.T, client *ent.Client) {
 	require := require.New(t)
 	ctx := context.Background()
@@ -1581,11 +1580,10 @@ func O2MSameType(t *testing.T, client *ent.Client) {
 // User A has "friend" B (and vice versa). When setting B as a friend of A, this sets A
 // as friend of B as well. In other words:
 //
-//		foo := client.User.Create().SetName("foo").SaveX(ctx)
-//		bar := client.User.Create().SetName("bar").AddFriends(foo).SaveX(ctx)
-// 		count := client.User.Query.Where(user.HasFriends()).CountX(ctx)
-// 		// count will be 2, even though we've created only one relation above.
-//
+//	foo := client.User.Create().SetName("foo").SaveX(ctx)
+//	bar := client.User.Create().SetName("bar").AddFriends(foo).SaveX(ctx)
+//	count := client.User.Query.Where(user.HasFriends()).CountX(ctx)
+//	// count will be 2, even though we've created only one relation above.
 func M2MSelfRef(t *testing.T, client *ent.Client) {
 	require := require.New(t)
 	ctx := context.Background()

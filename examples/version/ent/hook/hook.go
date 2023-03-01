@@ -10,7 +10,7 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/examples/version/ent"
+	"github.com/jogly/ent/examples/version/ent"
 )
 
 // The UserFunc type is an adapter to allow the use of ordinary

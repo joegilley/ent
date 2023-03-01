@@ -10,9 +10,9 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/encryptfield/ent"
-	"entgo.io/ent/examples/encryptfield/ent/predicate"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/encryptfield/ent"
+	"github.com/jogly/ent/examples/encryptfield/ent/predicate"
 )
 
 // The Query interface represents an operation that queries a graph.
@@ -36,7 +36,7 @@ type Query interface {
 
 // The Func type is an adapter that allows ordinary functions to be used as interceptors.
 // Unlike traversal functions, interceptors are skipped during graph traversals. Note that the
-// implementation of Func is different from the one defined in entgo.io/ent.InterceptFunc.
+// implementation of Func is different from the one defined in github.com/jogly/ent.InterceptFunc.
 type Func func(context.Context, Query) error
 
 // Intercept calls f(ctx, q) and then applied the next Querier.

@@ -6,8 +6,8 @@ package schema
 
 // User holds the schema definition for the User entity.
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Revision holds the schema definition for the Revision entity.

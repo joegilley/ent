@@ -7,7 +7,7 @@ package sql
 import (
 	"testing"
 
-	"entgo.io/ent/dialect"
+	"github.com/jogly/ent/dialect"
 )
 
 func BenchmarkInsertBuilder_Default(b *testing.B) {

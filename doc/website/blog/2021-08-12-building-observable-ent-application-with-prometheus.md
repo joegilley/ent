@@ -8,8 +8,8 @@ authorTwitter: yonidavidson
 
 Observability is a quality of a system that refers to how well its internal state can be measured externally.
 As a computer program evolves into a full-blown production system this quality becomes increasingly important.
-One of the ways to make a software system more observable is to export metrics, that is, to report in some externally 
-visible way a quantitative description of the running system's state. For instance, to expose an HTTP endpoint where we 
+One of the ways to make a software system more observable is to export metrics, that is, to report in some externally
+visible way a quantitative description of the running system's state. For instance, to expose an HTTP endpoint where we
 can see how many errors occurred since the process has started. In this post, we will explore how to build more
 observable Ent applications using Prometheus.
 
@@ -88,7 +88,7 @@ There are 5 types of mutations:
 4. DeleteOne.
 5. Delete.
 
-Hooks are functions that get an [ent.Mutator](https://pkg.go.dev/entgo.io/ent#Mutator) and return a mutator back.
+Hooks are functions that get an [ent.Mutator](https://pkg.go.dev/github.com/jogly/ent#Mutator) and return a mutator back.
 They function similar to the popular [HTTP middleware pattern](https://github.com/go-chi/chi#middleware-handlers).
 
 ```go
@@ -97,7 +97,7 @@ package example
 import (
 	"context"
 
-	"entgo.io/ent"
+	"github.com/jogly/ent"
 )
 
 func exampleHook() ent.Hook {
@@ -148,7 +148,7 @@ With all of the introductions complete, let’s cut to the chase and show how to
 create an observable application. Our goal with this example is to export these metrics using a hook:
 
 | Metric Name                    | Description                              |
-|--------------------------------|------------------------------------------|
+| ------------------------------ | ---------------------------------------- |
 | ent_operation_total            | Number of ent mutation operations        |
 | ent_operation_error            | Number of failed ent mutation operations |
 | ent_operation_duration_seconds | Time in seconds per operation            |
@@ -343,7 +343,7 @@ switch between the different implementations. Such changes are happening in rece
 for example, the [Open Container Initiative](https://opencontainers.org/) or the
 [Service Mesh Interface](https://smi-spec.io/): both are initiatives that strive to define a standard interface
 for a problem space. This interface is supposed to create an ecosystem of implementations of
-the standard.  In the observability space, the exact same convergence is occurring with [OpenCensus](https://opencensus.io/) and 
+the standard.  In the observability space, the exact same convergence is occurring with [OpenCensus](https://opencensus.io/) and
 [OpenTracing](https://opentracing.io/) currently merging into [OpenTelemetry](https://opentelemetry.io/).
 
 As nice as it would be to publish an Ent + Prometheus extension similar to the one presented in this post, we are firm

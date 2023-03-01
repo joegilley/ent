@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/migrate/entv2/customtype"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/customtype"
 )
 
 // CustomType is the model entity for the CustomType schema.

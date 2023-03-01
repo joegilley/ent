@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"log"
 
-	"entgo.io/ent/examples/o2mrecur/ent"
-	"entgo.io/ent/examples/o2mrecur/ent/node"
+	"github.com/jogly/ent/examples/o2mrecur/ent"
+	"github.com/jogly/ent/examples/o2mrecur/ent/node"
 
 	_ "github.com/mattn/go-sqlite3"
 )

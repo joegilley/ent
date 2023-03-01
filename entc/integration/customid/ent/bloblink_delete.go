@@ -9,10 +9,10 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/bloblink"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/bloblink"
+	"github.com/jogly/ent/entc/integration/customid/ent/predicate"
 )
 
 // BlobLinkDelete is the builder for deleting a BlobLink entity.

@@ -9,11 +9,11 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/comment"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/comment"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CommentDelete is the builder for deleting a Comment entity.

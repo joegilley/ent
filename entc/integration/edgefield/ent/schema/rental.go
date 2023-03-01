@@ -9,10 +9,10 @@ import (
 
 	"github.com/google/uuid"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
 )
 
 // Rental holds the schema definition for the Rental entity.

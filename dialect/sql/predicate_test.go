@@ -7,7 +7,7 @@ package sql
 import (
 	"testing"
 
-	"entgo.io/ent/dialect"
+	"github.com/jogly/ent/dialect"
 
 	"github.com/stretchr/testify/require"
 )

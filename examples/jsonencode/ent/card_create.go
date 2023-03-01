@@ -11,9 +11,9 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/jsonencode/ent/card"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/jsonencode/ent/card"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CardCreate is the builder for creating a Card entity.

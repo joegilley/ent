@@ -9,13 +9,13 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent"
-	gen "entgo.io/ent/entc/integration/hooks/ent"
-	"entgo.io/ent/entc/integration/hooks/ent/card"
-	"entgo.io/ent/entc/integration/hooks/ent/hook"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/mixin"
+	"github.com/jogly/ent"
+	gen "github.com/jogly/ent/entc/integration/hooks/ent"
+	"github.com/jogly/ent/entc/integration/hooks/ent/card"
+	"github.com/jogly/ent/entc/integration/hooks/ent/hook"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/mixin"
 )
 
 // RejectUpdate rejects ~all update operations

@@ -12,13 +12,13 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/file"
-	"entgo.io/ent/entc/integration/ent/group"
-	"entgo.io/ent/entc/integration/ent/groupinfo"
-	"entgo.io/ent/entc/integration/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/file"
+	"github.com/jogly/ent/entc/integration/ent/group"
+	"github.com/jogly/ent/entc/integration/ent/groupinfo"
+	"github.com/jogly/ent/entc/integration/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // GroupCreate is the builder for creating a Group entity.

@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/customid/ent/blob"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/customid/ent/blob"
 	"github.com/google/uuid"
 )
 

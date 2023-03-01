@@ -12,7 +12,7 @@ image: "https://entgo.io/images/assets/entviz-v2.png"
 To get a public link to a visualization of your Ent schema, run:
 
 ```
-go run -mod=mod ariga.io/entviz ./path/to/ent/schema 
+go run -mod=mod ariga.io/entviz ./path/to/ent/schema
 ```
 
 ![](https://entgo.io/images/assets/erd/edges-quick-summary.png)
@@ -28,8 +28,8 @@ and [Edges](https://entgo.io/docs/schema-edges):
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
 )
 
 // User schema.
@@ -76,7 +76,7 @@ by [Pedro Henrique (crossworth)](https://github.com/crossworth) which is a compl
 With (the new) entviz you run a simple Go command:
 
 ```
-go run -mod=mod ariga.io/entviz ./path/to/ent/schema 
+go run -mod=mod ariga.io/entviz ./path/to/ent/schema
 ```
 
 The tool will analyze your Ent schema and create a visualization on the [Atlas Playground](https://gh.atlasgo.cloud) and

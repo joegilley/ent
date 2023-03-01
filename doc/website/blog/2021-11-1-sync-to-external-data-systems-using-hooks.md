@@ -34,7 +34,7 @@ In our example, we are going to create a simple `User` schema with 2 immutable s
 `"avatar_url"`. Let's run the `ent init` command for creating a skeleton schema for our `User`:
 
 ```shell
-go run entgo.io/ent/cmd/ent new User
+go run github.com/jogly/ent/cmd/ent new User
 ```
 
 Then, add the `name` and the `avatar_url` fields and run `go generate` to generate the assets.
@@ -66,14 +66,14 @@ this discussion  we want to make sure that:
 - When a user is created, an image with the URL stored in `"avatar_url"` exists in our bucket.
 - Orphan images are deleted from the bucket. This means that when a user is deleted from our system, its avatar image
   is deleted as well.
-  
+
 For interacting with blobs, we will use the [`gocloud.dev/blob`](https://gocloud.dev/howto/blob) package. This package
 provides abstraction for reading, writing, deleting and listing blobs in a bucket. Similar to the `database/sql`
-package, it allows interacting with variety of object storages with the same API by configuring its driver URL. 
+package, it allows interacting with variety of object storages with the same API by configuring its driver URL.
 For example:
 
 ```go
-// Open an in-memory bucket. 
+// Open an in-memory bucket.
 if bucket, err := blob.OpenBucket(ctx, "mem://photos/"); err != nil {
 	log.Fatal("failed opening in-memory bucket:", err)
 }
@@ -241,7 +241,7 @@ import (
 	"github.com/a8m/ent-sync-example/ent"
 	_ "github.com/a8m/ent-sync-example/ent/runtime"
 
-	"entgo.io/ent/dialect"
+	"github.com/jogly/ent/dialect"
 	_ "github.com/mattn/go-sqlite3"
 	"gocloud.dev/blob"
 	_ "gocloud.dev/blob/memblob"
@@ -290,7 +290,7 @@ func Example_SyncCreate() {
 
 ### Wrapping Up
 
-Great! We have configured Ent to extend our generated code and inject the `blob.Bucket` as an 
+Great! We have configured Ent to extend our generated code and inject the `blob.Bucket` as an
 [External Dependency](https://entgo.io/docs/code-gen#external-dependencies). Next, we defined two mutation hooks and
 used the `blob.Bucket` API to ensure our product constraints are satisfied.
 

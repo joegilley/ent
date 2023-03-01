@@ -12,10 +12,10 @@ import (
 	"fmt"
 	"sync"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/o2orecur/ent/node"
-	"entgo.io/ent/examples/o2orecur/ent/predicate"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/o2orecur/ent/node"
+	"github.com/jogly/ent/examples/o2orecur/ent/predicate"
 )
 
 const (

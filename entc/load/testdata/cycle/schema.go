@@ -5,9 +5,9 @@
 package cycle
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/entc/load/testdata/cycle/fakent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/entc/load/testdata/cycle/fakent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // User holds the user schema.

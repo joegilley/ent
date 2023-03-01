@@ -9,11 +9,11 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/privacy/ent/predicate"
-	"entgo.io/ent/entc/integration/privacy/ent/task"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/privacy/ent/predicate"
+	"github.com/jogly/ent/entc/integration/privacy/ent/task"
+	"github.com/jogly/ent/schema/field"
 )
 
 // TaskDelete is the builder for deleting a Task entity.

@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/migration/ent/pet"
-	"entgo.io/ent/examples/migration/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/migration/ent/pet"
+	"github.com/jogly/ent/examples/migration/ent/user"
 	"github.com/google/uuid"
 )
 

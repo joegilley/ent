@@ -11,13 +11,13 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/multischema/ent/internal"
-	"entgo.io/ent/entc/integration/multischema/ent/pet"
-	"entgo.io/ent/entc/integration/multischema/ent/predicate"
-	"entgo.io/ent/entc/integration/multischema/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/multischema/ent/internal"
+	"github.com/jogly/ent/entc/integration/multischema/ent/pet"
+	"github.com/jogly/ent/entc/integration/multischema/ent/predicate"
+	"github.com/jogly/ent/entc/integration/multischema/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // PetUpdate is the builder for updating Pet entities.

@@ -5,15 +5,15 @@ title: Indexes
 
 ## Multiple Fields
 
-Indexes can be configured on one or more fields in order to improve 
+Indexes can be configured on one or more fields in order to improve
 speed of data retrieval, or defining uniqueness.
 
 ```go
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/index"
 )
 
 // User holds the schema definition for the User entity.
@@ -150,7 +150,7 @@ The full example exists in [GitHub](https://github.com/ent/ent/tree/master/examp
 
 ## Index On Edge Fields
 
-Currently `Edges` columns are always added after `Fields` columns. However, some indexes require these columns to come first in order to achieve specific optimizations. You can work around this problem by making use of [Edge Fields](schema-edges#edge-field). 
+Currently `Edges` columns are always added after `Fields` columns. However, some indexes require these columns to come first in order to achieve specific optimizations. You can work around this problem by making use of [Edge Fields](schema-edges#edge-field).
 
 ```go
 // Card holds the schema definition for the Card entity.
@@ -244,7 +244,7 @@ func (User) Indexes() []ent.Index {
 		index.Fields("nickname").
 			Annotations(
 				entsql.IndexWhere("active"),
-			),	
+			),
 		// Define a custom operator class.
 		index.Fields("phone").
 			Annotations(

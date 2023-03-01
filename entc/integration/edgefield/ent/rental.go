@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgefield/ent/car"
-	"entgo.io/ent/entc/integration/edgefield/ent/rental"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/car"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/rental"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/user"
 	"github.com/google/uuid"
 )
 

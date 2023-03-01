@@ -10,9 +10,9 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/entv2/zoo"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/zoo"
+	"github.com/jogly/ent/schema/field"
 )
 
 // ZooCreate is the builder for creating a Zoo entity.

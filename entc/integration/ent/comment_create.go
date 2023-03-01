@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/comment"
-	schemadir "entgo.io/ent/entc/integration/ent/schema/dir"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/comment"
+	schemadir "github.com/jogly/ent/entc/integration/ent/schema/dir"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CommentCreate is the builder for creating a Comment entity.

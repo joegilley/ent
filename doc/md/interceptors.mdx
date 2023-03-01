@@ -3,8 +3,8 @@ id: interceptors
 title: Interceptors
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 Interceptors are execution middleware for various types of Ent queries. Contrary to hooks, interceptors are applied on
 the read-path and implemented as interfaces, allows them to intercept and modify the query at different stages, providing
@@ -53,14 +53,14 @@ If you are using the default go generate config, add `--feature intercept` optio
 ```go title="ent/generate.go"
 package ent
 
-//go:generate go run -mod=mod entgo.io/ent/cmd/ent generate --feature intercept ./schema
+//go:generate go run -mod=mod github.com/jogly/ent/cmd/ent generate --feature intercept ./schema
 ```
 
 It is recommended to add the [`schema/snapshot`](features.md#auto-solve-merge-conflicts) feature-flag along with the
 `intercept` flag to enhance the development experience, for example:
 
 ```go
-//go:generate go run -mod=mod entgo.io/ent/cmd/ent generate --feature intercept,schema/snapshot ./schema
+//go:generate go run -mod=mod github.com/jogly/ent/cmd/ent generate --feature intercept,schema/snapshot ./schema
 ```
 
 </TabItem>
@@ -77,8 +77,8 @@ package main
 import (
     "log"
 
-    "entgo.io/ent/entc"
-    "entgo.io/ent/entc/gen"
+    "github.com/jogly/ent/entc"
+    "github.com/jogly/ent/entc/gen"
 )
 
 func main() {
@@ -90,7 +90,6 @@ func main() {
 	}
 }
 ```
-
 
 It is recommended to add the [`schema/snapshot`](features.md#auto-solve-merge-conflicts) feature-flag along with the
 `intercept` flag to enhance the development experience, for example:
@@ -111,9 +110,11 @@ opts := []entc.Option{
 You should notice that similar to [schema hooks](hooks.md#hooks-registration), if you use the **`Interceptors`** option
 in your schema, you **MUST** add the following import in the main package, because a circular import is possible between
 the schema package and the generated ent package:
+
 ```go
 import _ "<project>/ent/runtime"
 ```
+
 :::
 
 #### Using the generated `intercept` package

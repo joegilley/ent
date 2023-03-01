@@ -7,11 +7,11 @@ package schema
 import (
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
 
-	"entgo.io/ent/entc/integration/ent/schema/task"
+	"github.com/jogly/ent/entc/integration/ent/schema/task"
 )
 
 // Task holds the schema definition for the Task entity.

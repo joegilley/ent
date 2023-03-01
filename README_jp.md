@@ -19,7 +19,7 @@ src="https://s3.eu-central-1.amazonaws.com/entgo.io/assets/gopher_graph.png"/>
 
 ## クイックインストール
 ```console
-go install entgo.io/ent/cmd/ent@latest
+go install github.com/jogly/ent/cmd/ent@latest
 ```
 
 [Go modules]を使ったインストールについては、[entgo.ioのWebサイト](https://entgo.io/ja/docs/code-gen/#entc-%E3%81%A8-ent-%E3%81%AE%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E3%82%92%E4%B8%80%E8%87%B4%E3%81%95%E3%81%9B%E3%82%8B)をご覧ください。

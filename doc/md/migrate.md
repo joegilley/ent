@@ -17,7 +17,7 @@ if err := client.Schema.Create(ctx); err != nil {
 ```
 
 `Create` creates all database resources needed for your `ent` project. By default, `Create` works
-in an *"append-only"* mode; which means, it only creates new tables and indexes, appends columns to tables or 
+in an *"append-only"* mode; which means, it only creates new tables and indexes, appends columns to tables or
 extends column types. For example, changing `int` to `bigint`.
 
 What about dropping columns or indexes?
@@ -32,7 +32,7 @@ package main
 import (
 	"context"
 	"log"
-	
+
 	"<project>/ent"
 	"<project>/ent/migrate"
 )
@@ -46,9 +46,9 @@ func main() {
 	ctx := context.Background()
 	// Run migration.
 	err = client.Schema.Create(
-		ctx, 
+		ctx,
 		migrate.WithDropIndex(true),
-		migrate.WithDropColumn(true), 
+		migrate.WithDropColumn(true),
 	)
 	if err != nil {
 		log.Fatalf("failed creating schema resources: %v", err)
@@ -60,7 +60,7 @@ In order to run the migration in debug mode (printing all SQL queries), run:
 
 ```go
 err := client.Debug().Schema.Create(
-	ctx, 
+	ctx,
 	migrate.WithDropIndex(true),
 	migrate.WithDropColumn(true),
 )
@@ -90,7 +90,7 @@ package main
 import (
 	"context"
 	"log"
-	
+
 	"<project>/ent"
 	"<project>/ent/migrate"
 )
@@ -113,7 +113,7 @@ func main() {
 and store this information in a table named `ent_types`. For example, type `A` will have the range
 of `[1,4294967296)` for its IDs, and type `B` will have the range of `[4294967296,8589934592)`, etc.
 
-Note that if this option is enabled, the maximum number of possible tables is **65535**. 
+Note that if this option is enabled, the maximum number of possible tables is **65535**.
 
 ## Offline Mode
 
@@ -122,7 +122,7 @@ by [versioned migrations](versioned-migrations.mdx).**
 
 Offline mode allows you to write the schema changes to an `io.Writer` before executing them on the database.
 It's useful for verifying the SQL commands before they're executed on the database, or to get an SQL script
-to run manually. 
+to run manually.
 
 **Print changes**
 ```go
@@ -132,7 +132,7 @@ import (
 	"context"
 	"log"
 	"os"
-	
+
 	"<project>/ent"
 	"<project>/ent/migrate"
 )
@@ -159,7 +159,7 @@ import (
 	"context"
 	"log"
 	"os"
-	
+
 	"<project>/ent"
 	"<project>/ent/migrate"
 )
@@ -239,7 +239,7 @@ import (
     "<project>/ent"
     "<project>/ent/migrate"
 
-    "entgo.io/ent/dialect/sql/schema"
+    "github.com/jogly/ent/dialect/sql/schema"
 )
 
 func main() {
@@ -281,7 +281,7 @@ import (
     "<project>/ent"
     "<project>/ent/migrate"
 
-    "entgo.io/ent/dialect/sql/schema"
+    "github.com/jogly/ent/dialect/sql/schema"
 )
 
 func main() {
@@ -321,8 +321,8 @@ import (
 
 	"ariga.io/atlas/sql/migrate"
 	atlas "ariga.io/atlas/sql/schema"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql/schema"
 )
 
 func main() {

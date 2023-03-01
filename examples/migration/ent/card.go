@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/migration/ent/card"
-	"entgo.io/ent/examples/migration/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/migration/ent/card"
+	"github.com/jogly/ent/examples/migration/ent/user"
 )
 
 // Card is the model entity for the Card schema.

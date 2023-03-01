@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/entc/integration/gremlin/ent/filetype"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/filetype"
 )
 
 // FileType is the model entity for the FileType schema.

@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"log"
 
-	"entgo.io/ent/examples/jsonencode/ent"
+	"github.com/jogly/ent/examples/jsonencode/ent"
 	_ "github.com/mattn/go-sqlite3"
 )
 

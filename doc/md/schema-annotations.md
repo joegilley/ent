@@ -5,9 +5,9 @@ title: Annotations
 
 Schema annotations allow attaching metadata to schema objects like fields and edges and inject them to external templates.
 An annotation must be a Go type that is serializable to JSON raw value (e.g. struct, map or slice)
-and implement the [Annotation](https://pkg.go.dev/entgo.io/ent/schema?tab=doc#Annotation) interface.
+and implement the [Annotation](https://pkg.go.dev/github.com/jogly/ent/schema?tab=doc#Annotation) interface.
 
-The builtin annotations allow configuring the different storage drivers (like SQL) and control the code generation output. 
+The builtin annotations allow configuring the different storage drivers (like SQL) and control the code generation output.
 
 ## Custom Table Name
 
@@ -17,10 +17,10 @@ A custom table name can be provided for types using the `entsql` annotation as f
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/field"
 )
 
 // User holds the schema definition for the User entity.
@@ -53,10 +53,10 @@ for the `ON DELETE` clause:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // User holds the schema definition for the User entity.
@@ -95,9 +95,9 @@ By default, column comments are not stored in the database. However, this functi
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/schema/field"
 )
 
 // User holds the schema definition for the User entity.

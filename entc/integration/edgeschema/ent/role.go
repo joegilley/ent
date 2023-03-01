@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgeschema/ent/role"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/role"
 )
 
 // Role is the model entity for the Role schema.

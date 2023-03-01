@@ -7,9 +7,9 @@ package edge_test
 import (
 	"testing"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/edge"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/edge"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

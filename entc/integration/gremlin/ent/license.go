@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/gremlin"
+	"github.com/jogly/ent/dialect/gremlin"
 )
 
 // License is the model entity for the License schema.

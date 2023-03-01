@@ -16,11 +16,11 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/ent/role"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/ent/role"
+	"github.com/jogly/ent/schema/field"
 
 	"github.com/google/uuid"
 )

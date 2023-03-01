@@ -13,9 +13,9 @@ import (
 	"net/url"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/json/ent/schema"
-	"entgo.io/ent/entc/integration/json/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/json/ent/schema"
+	"github.com/jogly/ent/entc/integration/json/ent/user"
 )
 
 // User is the model entity for the User schema.

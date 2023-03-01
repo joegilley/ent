@@ -11,9 +11,9 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgeschema/ent/friendship"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/friendship"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
 )
 
 // Friendship is the model entity for the Friendship schema.

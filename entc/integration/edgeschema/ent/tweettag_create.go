@@ -12,13 +12,13 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tag"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tweet"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tweettag"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tag"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tweet"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tweettag"
+	"github.com/jogly/ent/schema/field"
 	"github.com/google/uuid"
 )
 

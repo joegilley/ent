@@ -1,6 +1,6 @@
 ---
-title: Generating OpenAPI Specification with Ent 
-author: MasseElch 
+title: Generating OpenAPI Specification with Ent
+author: MasseElch
 authorURL: "https://github.com/masseelch"
 authorImageURL: "https://avatars.githubusercontent.com/u/12862103?v=4"
 ---
@@ -39,8 +39,8 @@ package main
 import (
 	"log"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 	"github.com/masseelch/elk"
 )
 
@@ -75,7 +75,7 @@ over to the [Setup Tutorial](https://entgo.io/docs/tutorial-setup/).
 The first step on our way to the OAS file is to create an Ent schema graph:
 
 ```shell
-go run -mod=mod entgo.io/ent/cmd/ent new Fridge Compartment Item
+go run -mod=mod github.com/jogly/ent/cmd/ent new Fridge Compartment Item
 ```
 
 To demonstrate `elk`'s OAS generation capabilities, we will build together an example application. Suppose I have
@@ -92,9 +92,9 @@ Let's create our schema:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Fridge holds the schema definition for the Fridge entity.
@@ -121,9 +121,9 @@ func (Fridge) Edges() []ent.Edge {
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Compartment holds the schema definition for the Compartment entity.
@@ -153,9 +153,9 @@ func (Compartment) Edges() []ent.Edge {
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Item holds the schema definition for the Item entity.
@@ -188,7 +188,7 @@ go generate ./...
 
 In addition to the files Ent normally generates, another file named `openapi.json` has been created. Copy its contents
 and paste them into the [Swagger Editor](https://editor.swagger.io/). You should see three groups: **Compartment**, **
-Item** and **Fridge**. 
+Item** and **Fridge**.
 
 <div style={{textAlign: 'center'}}>
   <img alt="Swagger Editor Example" src="https://entgo.io/images/assets/elkopa/1.png" />
@@ -218,8 +218,8 @@ package main
 import (
 	"log"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 	"github.com/masseelch/elk"
 )
 
@@ -228,9 +228,9 @@ func main() {
 		elk.GenerateSpec(
 			"openapi.json",
 			// It is a Content-Management-System ...
-			elk.SpecTitle("Fridge CMS"), 
+			elk.SpecTitle("Fridge CMS"),
 			// You can use CommonMark syntax (https://commonmark.org/).
-			elk.SpecDescription("API to manage fridges and their cooled contents. **ICY!**"), 
+			elk.SpecDescription("API to manage fridges and their cooled contents. **ICY!**"),
 			elk.SpecVersion("0.0.1"),
 		),
 	)
@@ -373,7 +373,7 @@ in any supported language and forget about writing a RESTful client ever _ever_ 
 ### Wrapping Up
 
 In this post we introduced a new feature of `elk` - automatic OpenAPI Specification generation. This feature connects
-between Ent's code-generation capabilities and OpenAPI/Swagger's rich tooling ecosystem. 
+between Ent's code-generation capabilities and OpenAPI/Swagger's rich tooling ecosystem.
 
 Have questions? Need help with getting started? Feel free to join our [Discord server](https://discord.gg/qZmPgTE6RX) or [Slack channel](https://entgo.io/docs/slack/).
 

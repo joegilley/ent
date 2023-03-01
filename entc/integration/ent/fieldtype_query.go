@@ -11,12 +11,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/fieldtype"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/fieldtype"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // FieldTypeQuery is the builder for querying FieldType entities.

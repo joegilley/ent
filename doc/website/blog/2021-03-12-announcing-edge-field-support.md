@@ -70,7 +70,7 @@ func Test(t *testing.T) {
     ctx := context.Background()
 	c := enttest.Open(t, dialect.SQLite, "file:ent?mode=memory&cache=shared&_fk=1")
 	defer c.Close()
-	
+
 	// Create the User
 	u := c.User.Create().
 		SetUserName("rotem").
@@ -97,7 +97,7 @@ func Test(t *testing.T) {
 Aside from being very verbose, retrieving the pet with the owner this way was inefficient in-terms of database queries. If we execute the query with the `.Debug()` we can see the DB queries ent generates to satisfy this call:
 
 ```sql
-SELECT DISTINCT `pets`.`id`, `pets`.`name`, `pets`.`pet_owner` FROM `pets` WHERE `pets`.`id` = ? LIMIT 2 
+SELECT DISTINCT `pets`.`id`, `pets`.`name`, `pets`.`pet_owner` FROM `pets` WHERE `pets`.`id` = ? LIMIT 2
 SELECT DISTINCT `users`.`id` FROM `users` WHERE `users`.`id` IN (?)
 ```
 
@@ -203,7 +203,7 @@ In the near future we plan to implement Schema Versioning, which will store the 
 
 ### Wrapping Up
 
-Edge-field support is readily available and can be installed by `go get -u entgo.io/ent@v0.7.0`.
+Edge-field support is readily available and can be installed by `go get -u github.com/jogly/ent@v0.7.0`.
 
 Many thanks 🙏 to all the good people who took the time to give feedback and helped design this feature properly: [Alex Snast](https://github.com/alexsn), [Ruben de Vries](https://github.com/rubensayshi), [Marwan Sulaiman](https://github.com/marwan-at-work), [Andy Day](https://github.com/adayNU), [Sebastian Fekete](https://github.com/aight8) and [Joe Harvey](https://github.com/errorhandler).
 

@@ -5,11 +5,11 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
-	"entgo.io/ent/schema/mixin"
 	"github.com/google/uuid"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
+	"github.com/jogly/ent/schema/mixin"
 )
 
 // BaseMixin holds the schema definition for the BaseMixin entity.

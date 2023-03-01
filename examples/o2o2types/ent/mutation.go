@@ -13,11 +13,11 @@ import (
 	"sync"
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/o2o2types/ent/card"
-	"entgo.io/ent/examples/o2o2types/ent/predicate"
-	"entgo.io/ent/examples/o2o2types/ent/user"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/o2o2types/ent/card"
+	"github.com/jogly/ent/examples/o2o2types/ent/predicate"
+	"github.com/jogly/ent/examples/o2o2types/ent/user"
 )
 
 const (

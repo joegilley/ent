@@ -7,8 +7,8 @@
 package link
 
 import (
-	"entgo.io/ent/entc/integration/customid/ent/schema"
-	uuidc "entgo.io/ent/entc/integration/customid/uuidcompatible"
+	"github.com/jogly/ent/entc/integration/customid/ent/schema"
+	uuidc "github.com/jogly/ent/entc/integration/customid/uuidcompatible"
 )
 
 const (

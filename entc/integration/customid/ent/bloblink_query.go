@@ -11,11 +11,11 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/blob"
-	"entgo.io/ent/entc/integration/customid/ent/bloblink"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/blob"
+	"github.com/jogly/ent/entc/integration/customid/ent/bloblink"
+	"github.com/jogly/ent/entc/integration/customid/ent/predicate"
 	"github.com/google/uuid"
 )
 

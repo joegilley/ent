@@ -11,13 +11,13 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/predicate"
-	"entgo.io/ent/entc/integration/edgeschema/ent/relationship"
-	"entgo.io/ent/entc/integration/edgeschema/ent/relationshipinfo"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/predicate"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/relationship"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/relationshipinfo"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // RelationshipUpdate is the builder for updating Relationship entities.

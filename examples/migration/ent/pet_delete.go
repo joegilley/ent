@@ -9,11 +9,11 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/migration/ent/pet"
-	"entgo.io/ent/examples/migration/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/migration/ent/pet"
+	"github.com/jogly/ent/examples/migration/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // PetDelete is the builder for deleting a Pet entity.

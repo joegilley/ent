@@ -4,7 +4,7 @@
 
 package schema
 
-import "entgo.io/ent"
+import "github.com/jogly/ent"
 
 // Api represents an example schema with wrong usage of acronym (e.g., API).
 // nolint:stylecheck

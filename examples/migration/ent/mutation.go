@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"sync"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/migration/ent/card"
-	"entgo.io/ent/examples/migration/ent/pet"
-	"entgo.io/ent/examples/migration/ent/predicate"
-	"entgo.io/ent/examples/migration/ent/user"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/migration/ent/card"
+	"github.com/jogly/ent/examples/migration/ent/pet"
+	"github.com/jogly/ent/examples/migration/ent/predicate"
+	"github.com/jogly/ent/examples/migration/ent/user"
 	"github.com/google/uuid"
 )
 

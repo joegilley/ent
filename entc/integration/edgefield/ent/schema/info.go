@@ -7,9 +7,9 @@ package schema
 import (
 	"encoding/json"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Info holds the schema definition for the Info entity.

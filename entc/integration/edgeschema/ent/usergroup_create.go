@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/group"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
-	"entgo.io/ent/entc/integration/edgeschema/ent/usergroup"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/group"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/usergroup"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserGroupCreate is the builder for creating a UserGroup entity.

@@ -13,12 +13,12 @@ import (
 	"sync"
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/template/ent/group"
-	"entgo.io/ent/entc/integration/template/ent/pet"
-	"entgo.io/ent/entc/integration/template/ent/predicate"
-	"entgo.io/ent/entc/integration/template/ent/user"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/template/ent/group"
+	"github.com/jogly/ent/entc/integration/template/ent/pet"
+	"github.com/jogly/ent/entc/integration/template/ent/predicate"
+	"github.com/jogly/ent/entc/integration/template/ent/user"
 )
 
 const (

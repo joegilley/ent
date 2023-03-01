@@ -7,7 +7,7 @@
 package device
 
 import (
-	"entgo.io/ent/entc/integration/customid/ent/schema"
+	"github.com/jogly/ent/entc/integration/customid/ent/schema"
 )
 
 const (

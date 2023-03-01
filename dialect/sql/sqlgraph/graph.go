@@ -14,9 +14,9 @@ import (
 	"math"
 	"sort"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Rel is an edge relation type.

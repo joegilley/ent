@@ -8,7 +8,7 @@ image: "https://entgo.io/images/assets/migrate/versioned-share.png"
 
 When [Ariel](https://github.com/a8m) released Ent v0.10.0 at the end of January,
 he [introduced](2022-01-20-announcing-new-migration-engine.md) a new migration engine for Ent based on another
-open-source project called [Atlas](https://github.com/ariga/atlas). 
+open-source project called [Atlas](https://github.com/ariga/atlas).
 
 Initially, Atlas supported a style of managing database schemas that we call "declarative migrations". With declarative
 migrations, the desired state of the database schema is given as input to the migration engine, which plans and executes
@@ -22,7 +22,7 @@ For this reason, most industry standard solutions, like [Flyway](https://flywayd
 common in the Go ecosystem), support a workflow that they call "versioned migrations".
 
 With versioned migrations (sometimes called "change base migrations") instead of describing the desired state ("what the
-database should look like"), you describe the changes itself ("how to reach the state"). Most of the time this is done 
+database should look like"), you describe the changes itself ("how to reach the state"). Most of the time this is done
 by creating a set of SQL files containing the statements needed. Each of the files is assigned a unique version and a
 description of the changes. Tools like the ones mentioned earlier are then able to interpret the migration files and to
 apply (some of) them in the correct order to transition to the desired database structure.
@@ -34,14 +34,14 @@ declare their desired state and use the Atlas engine to plan a safe migration fr
 However, instead of coupling the planning and execution, it is instead written into a file which can be checked into
 source control, fine-tuned manually and reviewed in normal code review processes.
 
-As an example, I will demonstrate the workflow with `golang-migrate/migrate`. 
+As an example, I will demonstrate the workflow with `golang-migrate/migrate`.
 
 ### Getting Started
 
 The very first thing to do, is to make sure you have an up-to-date Ent version:
 
 ```shell
-go get -u entgo.io/ent@master
+go get -u github.com/jogly/ent@master
 ```
 
 There are two ways to have Ent generate migration files for schema changes. The first one is to use an instantiated Ent
@@ -58,9 +58,9 @@ migration files. Consider the following schema for a fresh Ent project:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
 )
 
 // User holds the schema definition for the User entity.
@@ -105,10 +105,10 @@ import (
 	"os"
 
 	"ariga.io/atlas/sql/migrate"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/schema"
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/schema"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -222,10 +222,10 @@ admin User in it. Go ahead and make the following changes:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
 )
 
 // User holds the schema definition for the User entity.
@@ -260,10 +260,10 @@ func (User) Indexes() []ent.Index {
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
 )
 
 // Group holds the schema definition for the Group entity.
@@ -350,7 +350,7 @@ migrate -source file://migrations -database 'mysql://root:pass@tcp(localhost:330
 
 In this post, we demonstrated the general workflow when using Ent Versioned Migrations with `golang-migate/migrate`. We
 created a small example schema, generated the migration files for it and learned how to apply them. We now know the
-workflow and how to add custom migration files. 
+workflow and how to add custom migration files.
 
 Have questions? Need help with getting started? Feel free to join our [Discord server](https://discord.gg/qZmPgTE6RX) or [Slack channel](https://entgo.io/docs/slack/).
 

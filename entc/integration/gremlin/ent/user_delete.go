@@ -9,12 +9,12 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/__"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
-	"entgo.io/ent/entc/integration/gremlin/ent/user"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/__"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/predicate"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/user"
 )
 
 // UserDelete is the builder for deleting a User entity.

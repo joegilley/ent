@@ -7,7 +7,7 @@
 package token
 
 import (
-	"entgo.io/ent/entc/integration/customid/sid"
+	"github.com/jogly/ent/entc/integration/customid/sid"
 )
 
 const (

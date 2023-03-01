@@ -11,12 +11,12 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/file"
-	"entgo.io/ent/entc/integration/edgeschema/ent/predicate"
-	"entgo.io/ent/entc/integration/edgeschema/ent/process"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/file"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/predicate"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/process"
+	"github.com/jogly/ent/schema/field"
 )
 
 // FileUpdate is the builder for updating File entities.

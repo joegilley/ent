@@ -3,8 +3,8 @@ id: paging
 title: Paging And Ordering
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 ## Limit
 
@@ -17,10 +17,9 @@ users, err := client.User.
 	All(ctx)
 ```
 
-
 ## Offset
 
-`Offset` sets the first node to return from the query. 
+`Offset` sets the first node to return from the query.
 
 ```go
 users, err := client.User.
@@ -46,6 +45,7 @@ In order to sort by fields of an edge (relation), start the traversal from the e
 apply the ordering, and then jump to the neighbours (target type).
 
 The following shows how to order the users by the `"name"` of their `"pets"` in ascending order.
+
 ```go
 users, err := client.Pet.Query().
 	Order(ent.Asc(pet.FieldName)).
@@ -73,7 +73,7 @@ names, err := client.Pet.Query().
 
 #### Order by JSON fields
 
-The [`sqljson`](https://pkg.go.dev/entgo.io/ent/dialect/sql/sqljson) package allows to easily sort data based on the
+The [`sqljson`](https://pkg.go.dev/github.com/jogly/ent/dialect/sql/sqljson) package allows to easily sort data based on the
 value of a JSON object:
 
 <Tabs>

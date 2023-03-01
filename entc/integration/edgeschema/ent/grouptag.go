@@ -10,10 +10,10 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgeschema/ent/group"
-	"entgo.io/ent/entc/integration/edgeschema/ent/grouptag"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tag"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/group"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/grouptag"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tag"
 )
 
 // GroupTag is the model entity for the GroupTag schema.

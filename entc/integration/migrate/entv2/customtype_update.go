@@ -12,11 +12,11 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/entv2/customtype"
-	"entgo.io/ent/entc/integration/migrate/entv2/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/customtype"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CustomTypeUpdate is the builder for updating CustomType entities.

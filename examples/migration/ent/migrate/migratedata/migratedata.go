@@ -12,12 +12,12 @@ import (
 	"fmt"
 
 	"ariga.io/atlas/sql/migrate"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/schema"
-	"entgo.io/ent/dialect/sql/sqljson"
-	"entgo.io/ent/examples/migration/ent"
-	"entgo.io/ent/examples/migration/ent/user"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect/sql/sqljson"
+	"github.com/jogly/ent/examples/migration/ent"
+	"github.com/jogly/ent/examples/migration/ent/user"
 )
 
 // BackfillUserTags was used to generate the migration file '20221126185750_backfill_user_tags.sql'.

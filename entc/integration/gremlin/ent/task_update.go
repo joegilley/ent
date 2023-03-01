@@ -11,13 +11,13 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/__"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/entc/integration/ent/schema/task"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
-	enttask "entgo.io/ent/entc/integration/gremlin/ent/task"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/__"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/jogly/ent/entc/integration/ent/schema/task"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/predicate"
+	enttask "github.com/jogly/ent/entc/integration/gremlin/ent/task"
 )
 
 // TaskUpdate is the builder for updating Task entities.

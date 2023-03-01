@@ -12,11 +12,11 @@ import (
 	"fmt"
 	"reflect"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/versioned/group"
-	"entgo.io/ent/entc/integration/migrate/versioned/user"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/versioned/group"
+	"github.com/jogly/ent/entc/integration/migrate/versioned/user"
 )
 
 // ent aliases to avoid import conflicts in user's code.

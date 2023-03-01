@@ -12,10 +12,10 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/start/ent/car"
-	"entgo.io/ent/examples/start/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/start/ent/car"
+	"github.com/jogly/ent/examples/start/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CarCreate is the builder for creating a Car entity.

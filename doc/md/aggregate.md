@@ -50,7 +50,7 @@ package main
 
 import (
 	"context"
-	
+
 	"<project>/ent"
 	"<project>/ent/user"
 )
@@ -76,7 +76,7 @@ package main
 
 import (
 	"context"
-	
+
 	"<project>/ent"
 	"<project>/ent/user"
 )
@@ -137,7 +137,7 @@ import (
 	"context"
 	"log"
 
-	"entgo.io/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql"
 	"<project>/ent"
 	"<project>/ent/user"
 )

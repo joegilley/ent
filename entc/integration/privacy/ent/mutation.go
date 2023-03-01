@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"sync"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/privacy/ent/predicate"
-	"entgo.io/ent/entc/integration/privacy/ent/task"
-	"entgo.io/ent/entc/integration/privacy/ent/team"
-	"entgo.io/ent/entc/integration/privacy/ent/user"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/privacy/ent/predicate"
+	"github.com/jogly/ent/entc/integration/privacy/ent/task"
+	"github.com/jogly/ent/entc/integration/privacy/ent/team"
+	"github.com/jogly/ent/entc/integration/privacy/ent/user"
 	"github.com/google/uuid"
 )
 

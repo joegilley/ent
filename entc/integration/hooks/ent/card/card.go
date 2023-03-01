@@ -9,7 +9,7 @@ package card
 import (
 	"time"
 
-	"entgo.io/ent"
+	"github.com/jogly/ent"
 )
 
 const (
@@ -75,7 +75,7 @@ func ValidColumn(column string) bool {
 // package on the initialization of the application. Therefore,
 // it should be imported in the main as follows:
 //
-//	import _ "entgo.io/ent/entc/integration/hooks/ent/runtime"
+//	import _ "github.com/jogly/ent/entc/integration/hooks/ent/runtime"
 var (
 	Hooks        [3]ent.Hook
 	Interceptors [1]ent.Interceptor

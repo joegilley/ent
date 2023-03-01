@@ -15,13 +15,13 @@ a good time!
 
 With versioned migration authoring, the resulting migration files are still "change-based", but have been safely planned
 by the Atlas engine. This means that you can still use your favorite migration management tool,
-like [Flyway](https://flywaydb.org/), [Liquibase](https://liquibase.org/), 
-[golang-migrate/migrate](https://github.com/golang-migrate/migrate), or 
+like [Flyway](https://flywaydb.org/), [Liquibase](https://liquibase.org/),
+[golang-migrate/migrate](https://github.com/golang-migrate/migrate), or
 [pressly/goose](https://github.com/pressly/goose) when developing services with Ent.
 
-In this blog post I want to show you another new feature of the Atlas project we call the **Migration Directory 
-Integrity File**, which is now supported in Ent, and how you can use it with any of the migration management tools you 
-are already used to and like. 
+In this blog post I want to show you another new feature of the Atlas project we call the **Migration Directory
+Integrity File**, which is now supported in Ent, and how you can use it with any of the migration management tools you
+are already used to and like.
 
 ### The Problem
 
@@ -42,7 +42,7 @@ For the second (and third) issue, consider the following scenario:
 
 ![atlas-versioned-migrations-no-conflict](https://entgo.io/images/assets/migrate/no-conflict-2.svg)
 
-This diagram shows two possible errors that go undetected. The first one being the order of the migration files. 
+This diagram shows two possible errors that go undetected. The first one being the order of the migration files.
 
 Team A and Team B both branch a feature roughly at the same time. Team B generates a migration file with a version
 timestamp **x** and continues to work on the feature. Team A generates a migration file at a later point in time and
@@ -68,7 +68,7 @@ possible. In our opinion, the best place to do so is in version control and cont
 product. Atlas' solution to this is the introduction of a new file we call the **Migration Directory Integrity File**.
 It is simply another file named `atlas.sum` that is stored together with the migration files and contains some
 metadata about the migration directory. Its format is inspired by the `go.sum` file of a Go module, and it would look
-similar to this: 
+similar to this:
 
 ```text
 h1:KRFsSi68ZOarsQAJZ1mfSiMSkIOZlMq4RzyF//Pwf8A=
@@ -93,8 +93,8 @@ To follow along, run the following commands to quickly have an example to work w
 mkdir ent-sum-file
 cd ent-sum-file
 go mod init ent-sum-file
-go install entgo.io/ent/cmd/ent@master
-go run entgo.io/ent/cmd/ent new User
+go install github.com/jogly/ent/cmd/ent@master
+go run github.com/jogly/ent/cmd/ent new User
 sed -i -E 's|^//go(.*)$|//go\1 --feature sql/versioned-migration|' ent/generate.go
 go generate ./...
 docker run --rm --name atlas-sum --detach --env MYSQL_ROOT_PASSWORD=pass --env MYSQL_DATABASE=ent -p 3306:3306 mysql
@@ -116,7 +116,7 @@ import (
 	"ent-sum-file/ent"
 
 	"ariga.io/atlas/sql/migrate"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect/sql/schema"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -170,13 +170,13 @@ h1:SxbWjP6gufiBpBjOVtFXgXy7q3pq1X11XYUxvT4ErxM=
 
 As you can see the `atlas.sum` file contains one entry for each migration file generated. With the `atlas.sum`
 generation file enabled, both Team A and Team B will have such a file once they generate migrations for a schema change.
-Now the version control will raise a merge conflict once the second Team attempts to merge their feature. 
+Now the version control will raise a merge conflict once the second Team attempts to merge their feature.
 
 ![atlas-versioned-migrations-no-conflict](https://entgo.io/images/assets/migrate/conflict-2.svg)
 
 :::note
 In the following steps we invoke the Atlas CLI by calling `go run -mod=mod ariga.io/atlas/cmd/atlas`, but you can also
-install the CLI globally (and then simply invoke it by calling `atlas`) to your system by following the installation 
+install the CLI globally (and then simply invoke it by calling `atlas`) to your system by following the installation
 instructions [here](https://atlasgo.io/cli/getting-started/setting-up#install-the-cli).
 :::
 
@@ -205,15 +205,15 @@ The `atlas migrate validate` command will tell you the same:
 ```shell
 go run -mod=mod ariga.io/atlas/cmd/atlas migrate validate
 # Error: checksum mismatch
-# 
+#
 # You have a checksum error in your migration directory.
 # This happens if you manually create or edit a migration file.
 # Please check your migration files and run
-# 
+#
 # 'atlas migrate hash --force'
-# 
+#
 # to re-hash the contents and resolve the error.
-# 
+#
 # exit status 1
 ```
 
@@ -224,10 +224,10 @@ go run -mod=mod ariga.io/atlas/cmd/atlas migrate hash --force
 ```
 
 As a safety measure, the Atlas CLI does not operate on a migration directory that is not in sync with its `atlas.sum`
-file. Therefore, you need to add the `--force` flag to the command. 
+file. Therefore, you need to add the `--force` flag to the command.
 
 For cases, where a developer forgets to update the `atlas.sum` file after making a manual change, you can add
-an `atlas migrate validate` call to your CI. We are actively working on a GitHub action and CI solution, that does this 
+an `atlas migrate validate` call to your CI. We are actively working on a GitHub action and CI solution, that does this
 (among and other things) for you _out-of-the-box_.
 
 ### Wrapping Up

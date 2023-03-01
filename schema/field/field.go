@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/schema"
+	"github.com/jogly/ent/schema"
 )
 
 // String returns a new Field with type string.

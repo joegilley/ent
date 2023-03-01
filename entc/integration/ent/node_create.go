@@ -12,10 +12,10 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/node"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/node"
+	"github.com/jogly/ent/schema/field"
 )
 
 // NodeCreate is the builder for creating a Node entity.

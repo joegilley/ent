@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgeschema/ent/attachedfile"
-	"entgo.io/ent/entc/integration/edgeschema/ent/file"
-	"entgo.io/ent/entc/integration/edgeschema/ent/process"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/attachedfile"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/file"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/process"
 )
 
 // AttachedFile is the model entity for the AttachedFile schema.

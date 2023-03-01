@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"entgo.io/ent/dialect/gremlin/encoding/graphson"
+	"github.com/jogly/ent/dialect/gremlin/encoding/graphson"
 
 	jsoniter "github.com/json-iterator/go"
 )

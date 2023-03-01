@@ -11,11 +11,11 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
-	"entgo.io/ent/entc/integration/customid/ent/revision"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/predicate"
+	"github.com/jogly/ent/entc/integration/customid/ent/revision"
+	"github.com/jogly/ent/schema/field"
 )
 
 // RevisionQuery is the builder for querying Revision entities.

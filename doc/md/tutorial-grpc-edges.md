@@ -13,10 +13,10 @@ package schema
 
 import (
 	"entgo.io/contrib/entproto"
-	"entgo.io/ent"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 type Category struct {
@@ -123,7 +123,7 @@ func TestServiceWithEdges(t *testing.T) {
 	defer client.Close()
 
 	// next, initialize the UserService. Notice we won't be opening an actual port and
-	// creating a gRPC server and instead we are just calling the library code directly. 
+	// creating a gRPC server and instead we are just calling the library code directly.
 	svc := entpb.NewUserService(client)
 
 	// next, we create a category directly using the ent client.
@@ -131,7 +131,7 @@ func TestServiceWithEdges(t *testing.T) {
 	cat := client.Category.Create().SetName("cat_1").SaveX(ctx)
 
 	// next, we invoke the User service's `Create` method. Notice we are
-	// passing a list of entpb.Category instances with only the ID set. 
+	// passing a list of entpb.Category instances with only the ID set.
 	create, err := svc.Create(ctx, &entpb.CreateUserRequest{
 		User: &entpb.User{
 			Name:         "user",
@@ -182,7 +182,7 @@ func (svc *UserService) createBuilder(user *User) (*ent.UserCreate, error) {
 ### Retrieving Edge IDs for Entities
 
 We have seen how to create relations between entities, but how do we retrieve that data from the generated gRPC
-service? 
+service?
 
 Consider this example test:
 

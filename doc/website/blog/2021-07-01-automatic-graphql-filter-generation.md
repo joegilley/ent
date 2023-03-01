@@ -64,9 +64,9 @@ query FilterTodos {
 Many libraries that deal with data in Go choose the path of passing around empty interface instances
 (`interface{}`) and use reflection at runtime to figure out how to map data to struct fields. Aside from the
 performance penalty of using reflection everywhere, the big negative impact on teams is the
-loss of type-safety. 
+loss of type-safety.
 
-When APIs are explicit, known at compile-time (or even as we type), the feedback a developer receives around a 
+When APIs are explicit, known at compile-time (or even as we type), the feedback a developer receives around a
 large class of errors is almost immediate. Many defects are found early, and development is also much more fun!
 
 Ent was designed to provide an excellent developer experience for teams working on applications with
@@ -143,8 +143,8 @@ import (
 	"log"
 
 	"entgo.io/contrib/entgql"
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 )
 
 func main() {
@@ -204,7 +204,7 @@ input TodoWhereInput {
   not: TodoWhereInput
   and: [TodoWhereInput!]
   or: [TodoWhereInput!]
-  
+
   """created_at field predicates"""
   createdAt: Time
   createdAtNEQ: Time
@@ -214,13 +214,13 @@ input TodoWhereInput {
   createdAtGTE: Time
   createdAtLT: Time
   createdAtLTE: Time
-  
+
   """status field predicates"""
   status: Status
   statusNEQ: Status
   statusIn: [Status!]
   statusNotIn: [Status!]
-    
+
   # .. truncated ..
 }
 ```
@@ -254,7 +254,7 @@ func (r *queryResolver) Todos(ctx context.Context, after *ent.Cursor, first *int
 
 ### Filter Specification
 
-As mentioned above, with the new GraphQL filter types, you can express the same Ent filters you use in your 
+As mentioned above, with the new GraphQL filter types, you can express the same Ent filters you use in your
 Go code.
 
 #### Conjunction, disjunction and negation
@@ -328,13 +328,13 @@ client.Todo.
 
 ### Implementation Example
 
-A working example exists in [github.com/a8m/ent-graphql-example](https://github.com/a8m/ent-graphql-example). 
+A working example exists in [github.com/a8m/ent-graphql-example](https://github.com/a8m/ent-graphql-example).
 
 ### Wrapping Up
 
 As we've discussed earlier, Ent has set creating a "statically typed and explicit API using code generation"
 as a core design principle. With automatic GraphQL filter generation, we are doubling down on this
-idea to provide developers with the same explicit, type-safe development experience on the RPC layer as well. 
+idea to provide developers with the same explicit, type-safe development experience on the RPC layer as well.
 
 Have questions? Need help with getting started? Feel free to join our [Discord server](https://discord.gg/qZmPgTE6RX) or [Slack channel](https://entgo.io/docs/slack).
 

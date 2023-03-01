@@ -15,11 +15,11 @@ import (
 	"net/url"
 	"sync"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/json/ent/predicate"
-	"entgo.io/ent/entc/integration/json/ent/schema"
-	"entgo.io/ent/entc/integration/json/ent/user"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/json/ent/predicate"
+	"github.com/jogly/ent/entc/integration/json/ent/schema"
+	"github.com/jogly/ent/entc/integration/json/ent/user"
 )
 
 const (

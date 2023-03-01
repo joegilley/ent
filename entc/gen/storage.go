@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/sql"
 )
 
 // A SchemaMode defines what type of schema feature a storage driver support.
@@ -53,10 +53,10 @@ var drivers = []*Storage{
 		Dialects:  []string{"dialect.SQLite", "dialect.MySQL", "dialect.Postgres"},
 		Imports: []string{
 			"database/sql/driver",
-			"entgo.io/ent/dialect/sql",
-			"entgo.io/ent/dialect/sql/sqlgraph",
-			"entgo.io/ent/dialect/sql/sqljson",
-			"entgo.io/ent/schema/field",
+			"github.com/jogly/ent/dialect/sql",
+			"github.com/jogly/ent/dialect/sql/sqlgraph",
+			"github.com/jogly/ent/dialect/sql/sqljson",
+			"github.com/jogly/ent/schema/field",
 		},
 		SchemaMode: Unique | Indexes | Cascade | Migrate,
 		Ops: func(f *Field) []Op {
@@ -73,12 +73,12 @@ var drivers = []*Storage{
 		Builder:   reflect.TypeOf(&dsl.Traversal{}),
 		Dialects:  []string{"dialect.Gremlin"},
 		Imports: []string{
-			"entgo.io/ent/dialect/gremlin",
-			"entgo.io/ent/dialect/gremlin/graph/dsl",
-			"entgo.io/ent/dialect/gremlin/graph/dsl/__",
-			"entgo.io/ent/dialect/gremlin/graph/dsl/g",
-			"entgo.io/ent/dialect/gremlin/graph/dsl/p",
-			"entgo.io/ent/dialect/gremlin/encoding/graphson",
+			"github.com/jogly/ent/dialect/gremlin",
+			"github.com/jogly/ent/dialect/gremlin/graph/dsl",
+			"github.com/jogly/ent/dialect/gremlin/graph/dsl/__",
+			"github.com/jogly/ent/dialect/gremlin/graph/dsl/g",
+			"github.com/jogly/ent/dialect/gremlin/graph/dsl/p",
+			"github.com/jogly/ent/dialect/gremlin/encoding/graphson",
 		},
 		SchemaMode: Unique,
 		OpCode:     opCodes(gremlinCode[:]),

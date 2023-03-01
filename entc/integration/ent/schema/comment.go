@@ -5,9 +5,9 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	schemadir "entgo.io/ent/entc/integration/ent/schema/dir"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	schemadir "github.com/jogly/ent/entc/integration/ent/schema/dir"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Comment holds the schema definition for the Comment entity.

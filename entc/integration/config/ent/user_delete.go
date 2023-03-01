@@ -9,11 +9,11 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/config/ent/predicate"
-	"entgo.io/ent/entc/integration/config/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/config/ent/predicate"
+	"github.com/jogly/ent/entc/integration/config/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserDelete is the builder for deleting a User entity.

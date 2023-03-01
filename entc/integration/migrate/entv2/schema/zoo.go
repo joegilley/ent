@@ -5,10 +5,10 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Zoo holds the schema definition for the Zoo entity.

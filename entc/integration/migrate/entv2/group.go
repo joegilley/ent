@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/migrate/entv2/group"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/group"
 )
 
 // Group is the model entity for the Group schema.

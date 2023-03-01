@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/version/ent/predicate"
-	"entgo.io/ent/examples/version/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/version/ent/predicate"
+	"github.com/jogly/ent/examples/version/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserUpdate is the builder for updating User entities.

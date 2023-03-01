@@ -12,13 +12,13 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/predicate"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tweet"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
-	"entgo.io/ent/entc/integration/edgeschema/ent/usertweet"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/predicate"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tweet"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/usertweet"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserTweetUpdate is the builder for updating UserTweet entities.

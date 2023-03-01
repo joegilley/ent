@@ -14,10 +14,10 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/entc/integration/ent/role"
-	"entgo.io/ent/entc/integration/ent/schema"
-	"entgo.io/ent/entc/integration/gremlin/ent/fieldtype"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/entc/integration/ent/role"
+	"github.com/jogly/ent/entc/integration/ent/schema"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/fieldtype"
 	"github.com/google/uuid"
 )
 

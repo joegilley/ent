@@ -166,7 +166,7 @@ go mod init entgo-aws-appsync
 Third, we create the `Todo` schema while pulling in the ent dependencies:
 
 ```console
-go run -mod=mod entgo.io/ent/cmd/ent new Todo
+go run -mod=mod github.com/jogly/ent/cmd/ent new Todo
 ```
 
 and add the `title` field:
@@ -175,8 +175,8 @@ and add the `title` field:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Todo holds the schema definition for the Todo entity.
@@ -385,8 +385,8 @@ import (
 	"log"
 	"os"
 
-	"entgo.io/ent/dialect"
-	entsql "entgo.io/ent/dialect/sql"
+	"github.com/jogly/ent/dialect"
+	entsql "github.com/jogly/ent/dialect/sql"
 
 	"github.com/aws/aws-lambda-go/lambda"
 	_ "github.com/jackc/pgx/v4/stdlib"

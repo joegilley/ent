@@ -11,13 +11,13 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/cascadelete/ent/comment"
-	"entgo.io/ent/entc/integration/cascadelete/ent/post"
-	"entgo.io/ent/entc/integration/cascadelete/ent/predicate"
-	"entgo.io/ent/entc/integration/cascadelete/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/cascadelete/ent/comment"
+	"github.com/jogly/ent/entc/integration/cascadelete/ent/post"
+	"github.com/jogly/ent/entc/integration/cascadelete/ent/predicate"
+	"github.com/jogly/ent/entc/integration/cascadelete/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // PostUpdate is the builder for updating Post entities.

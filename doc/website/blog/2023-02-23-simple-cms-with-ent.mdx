@@ -7,13 +7,13 @@ authorTwitter: _rtam
 image: "https://entgo.io/images/assets/cms-blog/share.png"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-[Ent](https://entgo.io) is an open-source entity framework for Go. It is similar to more traditional ORMs, but has a 
+[Ent](https://entgo.io) is an open-source entity framework for Go. It is similar to more traditional ORMs, but has a
 few distinct features that have made it very popular in the Go community. Ent was first open-sourced by
-[Ariel](https://github.com/a8m) in 2019, when he was working at Facebook. Ent grew from the pains of managing the 
-development of applications with very large and complex data models and ran successfully inside Facebook for a year 
+[Ariel](https://github.com/a8m) in 2019, when he was working at Facebook. Ent grew from the pains of managing the
+development of applications with very large and complex data models and ran successfully inside Facebook for a year
 before open-sourcing it. After graduating from Facebook Open Source, Ent joined the Linux Foundation in September 2021.
 
 This tutorial is intended for Ent and Go novices who want to start by building a simple project: a very minimal content management system.
@@ -21,18 +21,19 @@ This tutorial is intended for Ent and Go novices who want to start by building a
 Over the last few years, Ent has become one of the fastest growing ORMs in Go:
 
 ![](https://entgo.io/images/assets/cms-blog/oss-insight-table.png)
+
 <div style={{textAlign: 'center'}}>
 
-*Source: [@ossinsight_bot on Twitter](https://twitter.com/ossinsight_bot/status/1593182222626213888), November 2022*
+_Source: [@ossinsight_bot on Twitter](https://twitter.com/ossinsight_bot/status/1593182222626213888), November 2022_
 
 </div>
 
 Some of Ent's most cited features are:
 
-* **A type-safe Go API for working with your database.** Forget about using `interface{}` or reflection to work with 
+- **A type-safe Go API for working with your database.** Forget about using `interface{}` or reflection to work with
   your database. Use pure Go that your editor understands and your compiler enforces.
   ![](https://entgo.io/images/assets/cms-blog/static.gif)
-* **Model your data in graph semantics** - Ent uses graph semantics to model your application's data. This makes it very easy to traverse complex datasets in a simple API.
+- **Model your data in graph semantics** - Ent uses graph semantics to model your application's data. This makes it very easy to traverse complex datasets in a simple API.
 
   Let’s say we want to get all users that are in groups that are about dogs. Here are two ways to write something like this with Ent:
 
@@ -43,31 +44,31 @@ Some of Ent's most cited features are:
       QueryGroups().
       QueryUsers().
       All(ctx)
-  
+
   // OR: Start traversing from the users and filter.
   client.User.Query().
-      Where(		
-          user.HasGroupsWith(  
-              group.HasTopicsWith(  
-                  topic.Name("dogs"),  
-              ),  
+      Where(
+          user.HasGroupsWith(
+              group.HasTopicsWith(
+                  topic.Name("dogs"),
+              ),
           ),
       ).
       All(ctx)
   ```
 
-
-* **Automatically generate servers** - whether you need GraphQL, gRPC or an OpenAPI compliant API layer, Ent can 
+- **Automatically generate servers** - whether you need GraphQL, gRPC or an OpenAPI compliant API layer, Ent can
   generate the necessary code you need to create a performant server on top of your database. Ent will generate
   both the third-party schemas (GraphQL types, Protobuf messages, etc.) and optimized code for the repetitive
   tasks for reading and writing from the database.
-* **Bundled with Atlas** - Ent is built with a rich integration with [Atlas](https://atlasgo.io), a robust schema 
+- **Bundled with Atlas** - Ent is built with a rich integration with [Atlas](https://atlasgo.io), a robust schema
   management tool with many advanced capabilities. Atlas can automatically plan schema migrations for you as
   well as verify them in CI or deploy them to production for you. (Full disclosure: Ariel and I are the creators and maintainers)
 
 #### Prerequisities
-* [Install Go](https://go.dev/doc/install)
-* [Install Docker](https://docs.docker.com/get-docker/)
+
+- [Install Go](https://go.dev/doc/install)
+- [Install Docker](https://docs.docker.com/get-docker/)
 
 :::info Supporting repo
 
@@ -80,11 +81,13 @@ You can find of the code shown in this tutorial in [this repo](https://github.co
 You can find the code described in this step in [this commit](https://github.com/rotemtam/ent-blog-example/commit/d4e4916231f05aa9a4b9ce93e75afdb72ab25799).
 
 Let's start by initializing our project using `go mod init`:
+
 ```
 go mod init github.com/rotemtam/ent-blog-example
 ```
 
 Go confirms our new module was created:
+
 ```
 go: creating new go.mod: module github.com/rotemtam/ent-blog-example
 ```
@@ -92,12 +95,13 @@ go: creating new go.mod: module github.com/rotemtam/ent-blog-example
 The first thing we will handle in our demo project will be to setup our database. We create our application data model using Ent. Let's fetch it using `go get`:
 
 ```
-go get -u entgo.io/ent@master
+go get -u github.com/jogly/ent@master
 ```
 
 Once installed, we can use the Ent CLI to initialize the models for the two types of entities we will be dealing with in this tutorial: the `User` and the `Post`.
+
 ```
-go run -mod=mod entgo.io/ent/cmd/ent new User Post
+go run -mod=mod github.com/jogly/ent/cmd/ent new User Post
 ```
 
 Notice that a few files are created:
@@ -114,70 +118,73 @@ Notice that a few files are created:
 ```
 
 Ent created the basic structure for our project:
-* `generate.go` - we will see in a bit how this file is used to invoke Ent's code-generation engine.
-* The `schema` directory, with a bare `ent.Schema` for each of the entities we requested.
+
+- `generate.go` - we will see in a bit how this file is used to invoke Ent's code-generation engine.
+- The `schema` directory, with a bare `ent.Schema` for each of the entities we requested.
 
 Let's continue by defining the schema for our entities. This is the schema definition for `User`:
+
 ```go
-// Fields of the User.  
-func (User) Fields() []ent.Field {  
-   return []ent.Field{  
-      field.String("name"),  
+// Fields of the User.
+func (User) Fields() []ent.Field {
+   return []ent.Field{
+      field.String("name"),
       field.String("email").
-            Unique(),  
+            Unique(),
       field.Time("created_at").
-            Default(time.Now),  
-   }  
-}  
-  
-// Edges of the User.  
-func (User) Edges() []ent.Edge {  
-   return []ent.Edge{  
-      edge.To("posts", Post.Type),  
-   }  
+            Default(time.Now),
+   }
+}
+
+// Edges of the User.
+func (User) Edges() []ent.Edge {
+   return []ent.Edge{
+      edge.To("posts", Post.Type),
+   }
 }
 ```
 
 Observe that we defined three fields, `name`, `email` and `created_at` (which takes the default value of `time.Now()`).
-Since we expect emails to be unique in our system we added that constraint on the `email` field.  In addition, we
-defined an edge named `posts` to the `Post` type.  Edges are used in Ent to define relationships between entities.
+Since we expect emails to be unique in our system we added that constraint on the `email` field. In addition, we
+defined an edge named `posts` to the `Post` type. Edges are used in Ent to define relationships between entities.
 When working with a relational database, edges are translated into foreign keys and association tables.
 
 ```go
 // Post holds the schema definition for the Post entity.
-type Post struct {  
-   ent.Schema  
-}  
-  
-// Fields of the Post.  
-func (Post) Fields() []ent.Field {  
-   return []ent.Field{  
-      field.String("title"),  
-      field.Text("body"),  
+type Post struct {
+   ent.Schema
+}
+
+// Fields of the Post.
+func (Post) Fields() []ent.Field {
+   return []ent.Field{
+      field.String("title"),
+      field.Text("body"),
       field.Time("created_at").
-            Default(time.Now),  
-   }  
-}  
-  
-// Edges of the Post.func (Post) Edges() []ent.Edge {  
-   return []ent.Edge{  
-      edge.From("author", User.Type).  
-         Unique().  
-         Ref("posts"),  
-   }  
+            Default(time.Now),
+   }
+}
+
+// Edges of the Post.func (Post) Edges() []ent.Edge {
+   return []ent.Edge{
+      edge.From("author", User.Type).
+         Unique().
+         Ref("posts"),
+   }
 }
 ```
 
-On the `Post` schema, we defined three fields as well: `title`, `body` and `created_at`. In addition, we  defined an edge named `author` from `Post` to the `User` entity. We marked this edge as `Unique` because in our budding system, each post can have only one author. We used `Ref` to tell Ent that this edge's back reference is the `posts` edge on the `User`.
+On the `Post` schema, we defined three fields as well: `title`, `body` and `created_at`. In addition, we defined an edge named `author` from `Post` to the `User` entity. We marked this edge as `Unique` because in our budding system, each post can have only one author. We used `Ref` to tell Ent that this edge's back reference is the `posts` edge on the `User`.
 
 Ent's power stems from it's code-generation engine. When developing with Ent, whenever we make any change to our application schema, we must invoke Ent's code-gen engine to regenerate our database access code. This is what allows Ent to maintain a type-safe and efficient Go API for us.
 
 Let's see this in action, run:
+
 ```
 go generate ./...
 ```
 
-Observe that a whole *lot* of new Go files were created for us:
+Observe that a whole _lot_ of new Go files were created for us:
 
 ```
 .
@@ -187,7 +194,7 @@ Observe that a whole *lot* of new Go files were created for us:
     |-- ent.go
     |-- enttest
     |   `-- enttest.go
-/// .. Truncated for brevity 
+/// .. Truncated for brevity
     |-- user_query.go
     `-- user_update.go
 
@@ -196,14 +203,15 @@ Observe that a whole *lot* of new Go files were created for us:
 
 :::info
 If you're interested to see what the actual database schema for our application looks like, you can use a useful tool called `entviz`:
+
 ```
 go run -mod=mod ariga.io/entviz ./ent/schema
 ```
+
 To view the result, [click here](https://gh.atlasgo.cloud/explore/a0e79415).
 :::
 
 Once we have our data model defined, let's create the database schema for it.
-
 
 To install the latest release of Atlas, simply run one of the following commands in your terminal, or check out the
 [Atlas website](https://atlasgo.io/getting-started#installation):
@@ -265,13 +273,16 @@ move the atlas binary to a file location on your system PATH.
 </Tabs>
 
 With Atlas installed, we can create the initial migration script:
+
 ```
 atlas migrate diff add_users_posts \
   --dir "file://ent/migrate/migrations" \
   --to "ent://ent/schema" \
   --dev-url "docker://mysql/8/ent"
 ```
+
 Observe that two new files were created:
+
 ```
 ent/migrate/migrations
 |-- 20230226150934_add_users_posts.sql
@@ -279,24 +290,29 @@ ent/migrate/migrations
 ```
 
 The SQL file (the actual file name will vary on your machine depending on the timestamp in which you run `atlas migrate diff`) contains the SQL DDL statements required to set up the database schema on an empty MySQL database:
+
 ```sql
--- create "users" table  
-CREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `created_at` timestamp NOT NULL, PRIMARY KEY (`id`), UNIQUE INDEX `email` (`email`)) CHARSET utf8mb4 COLLATE utf8mb4_bin;  
--- create "posts" table  
+-- create "users" table
+CREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `created_at` timestamp NOT NULL, PRIMARY KEY (`id`), UNIQUE INDEX `email` (`email`)) CHARSET utf8mb4 COLLATE utf8mb4_bin;
+-- create "posts" table
 CREATE TABLE `posts` (`id` bigint NOT NULL AUTO_INCREMENT, `title` varchar(255) NOT NULL, `body` longtext NOT NULL, `created_at` timestamp NOT NULL, `user_posts` bigint NULL, PRIMARY KEY (`id`), INDEX `posts_users_posts` (`user_posts`), CONSTRAINT `posts_users_posts` FOREIGN KEY (`user_posts`) REFERENCES `users` (`id`) ON UPDATE NO ACTION ON DELETE SET NULL) CHARSET utf8mb4 COLLATE utf8mb4_bin;
 ```
 
 To setup our development environment, let's use Docker to run a local `mysql` container:
+
 ```
 docker run --rm --name entdb -d -p 3306:3306 -e MYSQL_DATABASE=ent -e MYSQL_ROOT_PASSWORD=pass mysql:8
 ```
 
 Finally, let's run the migration script on our local database:
+
 ```
 atlas migrate apply --dir file://ent/migrate/migrations \
   --url mysql://root:pass@localhost:3306/ent
 ```
+
 Atlas reports that it successfully created the tables:
+
 ```
 Migrating to version 20230220115943 (1 migrations in total):
 
@@ -307,7 +323,7 @@ Migrating to version 20230220115943 (1 migrations in total):
 
   -------------------------
   -- 67.18167ms
-  -- 1 migrations 
+  -- 1 migrations
   -- 2 sql statements
 
 ```
@@ -323,6 +339,7 @@ The code for this step can be found in [this commit](https://github.com/rotemtam
 While we are developing our content management system, it would be sad to load a web page for our system and not see content for it. Let's start by seeding data into our database and learn some Ent concepts.
 
 To access our local MySQL database, we need a driver for it, use `go get` to fetch it:
+
 ```
 go get -u github.com/go-sql-driver/mysql
 ```
@@ -399,6 +416,7 @@ func seed(ctx context.Context, client *ent.Client) error {
 As you can see, this program first checks if any `Post` entity exists in the database, if it does not it invokes the `seed` function. This function uses Ent to retrieve the user named `rotemtam` from the database and in case it does not exist, tries to create it. Finally, the function creates a blog post with this user as its author.
 
 Run it:
+
 ```
  go run main.go -dsn "root:pass@tcp(localhost:3306)/ent?parseTime=true"
 ```
@@ -410,6 +428,7 @@ The code described in this step can be found in [this commit](https://github.com
 :::
 
 Let's now create the home page of the blog. This will consist of a few parts:
+
 1. **The view** - this is a Go html/template that renders the actual HTML the user will see.
 2. **The server code** - this contains the HTTP request handlers that our users' browsers will communicate with and will render our templates with data they retrieve from the database.
 3. **The router** - registers different paths to handlers.
@@ -417,7 +436,7 @@ Let's now create the home page of the blog. This will consist of a few parts:
 
 #### The view
 
-Go has an excellent templating engine that comes in two flavors: `text/template` for rendering general purpose text and `html/template` which had some extra security features to prevent code injection when working with HTML documents.  Read more about it [here](https://pkg.go.dev/html/template) .
+Go has an excellent templating engine that comes in two flavors: `text/template` for rendering general purpose text and `html/template` which had some extra security features to prevent code injection when working with HTML documents. Read more about it [here](https://pkg.go.dev/html/template) .
 
 Let's create our first template that will be used to display a list of blog posts. Create a new file named `templates/list.tmpl`:
 
@@ -457,7 +476,7 @@ Let's create our first template that will be used to display a list of blog post
         <p>
             This is the Ent Blog Demo. It is a simple blog application built with Ent and Go. Get started:
         </p>
-        <pre>go get entgo.io/ent</pre>
+        <pre>go get github.com/jogly/ent</pre>
     </footer>
 </div>
 
@@ -471,17 +490,22 @@ Let's create our first template that will be used to display a list of blog post
 Here we are using a modified version of the [Bootstrap Starter Template](https://getbootstrap.com/docs/5.3/examples/starter-template/) as the basis of our UI. Let's highlight the important parts. As you will see below, in our `index` handler, we will pass this template a slice of `Post` objects.
 
 Inside the Go-template, whatever we pass to it as data is available as "`.`", this explains this line, where we use `range` to iterate over each post:
+
 ```
 {{- range . }}
 ```
+
 Next, we print the title, creation time and the author name, via the `Author` edge:
+
 ```
 <h2>{{ .Title }}</h2>
 <p>
 	{{ .CreatedAt.Format "2006-01-02" }} by {{ .Edges.Author.Name }}
 </p>
 ```
+
 Finally, we print the post body and close the loop.
+
 ```
 	<p>
 		{{ .Body }}
@@ -492,16 +516,17 @@ Finally, we print the post body and close the loop.
 After defining the template, we need to make it available to our program. We embed this template into our binary using the `embed` package ([docs](https://pkg.go.dev/embed)):
 
 ```go
-var (  
-   //go:embed templates/*   
-   resources embed.FS  
-   tmpl      = template.Must(template.ParseFS(resources, "templates/*"))  
+var (
+   //go:embed templates/*
+   resources embed.FS
+   tmpl      = template.Must(template.ParseFS(resources, "templates/*"))
 )
 ```
 
 #### Server code
 
 We continue by defining a type named `server` and a constructor for it, `newServer`. This struct will have receiver methods for each HTTP handler we create and binds the Ent client we created at init to the server code.
+
 ```go
 type server struct {
 	client *ent.Client
@@ -533,6 +558,7 @@ func (s *server) index(w http.ResponseWriter, r *http.Request) {
 ```
 
 Let's zoom in on the Ent code here that is used to retrieve the posts from the database:
+
 ```go
 // s.client.Post contains methods for interacting with Post entities
 s.client.Post.
@@ -566,8 +592,9 @@ func newRouter(srv *server) chi.Router {
 ```
 
 In this function, we first instantiate a new `chi.Router`, then register two middlewares:
-* `middleware.Logger` is a basic access logger that prints out some information on every request our server handles.
-* `middleware.Recoverer` recovers from when our handlers panic, preventing a case where our entire server will crash because of an application error.
+
+- `middleware.Logger` is a basic access logger that prints out some information on every request our server handles.
+- `middleware.Recoverer` recovers from when our handlers panic, preventing a case where our entire server will crash because of an application error.
 
 Finally, we register the `index` function of the `server` struct to handle `GET` requests to the `/` path of our server.
 
@@ -576,6 +603,7 @@ Finally, we register the `index` function of the `server` struct to handle `GET`
 Before wiring everything together, let's write a simple unit test to check that our code works as expected.
 
 To simplify our tests we will install the SQLite driver for Go which allows us to use an in-memory database:
+
 ```
 go get -u github.com/mattn/go-sqlite3
 ```
@@ -583,7 +611,7 @@ go get -u github.com/mattn/go-sqlite3
 Next, we install `testify`, a utility library that is commonly used for writing assertions in tests.
 
 ```
-go get github.com/stretchr/testify 
+go get github.com/stretchr/testify
 ```
 
 With these dependencies installed, create a new file named `main_test.go`:
@@ -607,7 +635,7 @@ func TestIndex(t *testing.T) {
 	// Initialize an Ent client that uses an in memory SQLite db.
 	client := enttest.Open(t, "sqlite3", "file:ent?mode=memory&cache=shared&_fk=1")
 	defer client.Close()
-	
+
 	// seed the database with our "Hello, world" post and user.
 	err := seed(context.Background(), client)
 	require.NoError(t, err)
@@ -641,6 +669,7 @@ go test ./...
 ```
 
 Observe our test passes:
+
 ```
 ok      github.com/rotemtam/ent-blog-example    0.719s
 ?       github.com/rotemtam/ent-blog-example/ent        [no test files]
@@ -660,29 +689,29 @@ ok      github.com/rotemtam/ent-blog-example    0.719s
 Finally, let's update our `main` function to put everything together:
 
 ```go
-func main() {  
-   // Read the connection string to the database from a CLI flag.  
-   var dsn string  
-   flag.StringVar(&dsn, "dsn", "", "database DSN")  
-   flag.Parse()  
-  
-   // Instantiate the Ent client.  
-   client, err := ent.Open("mysql", dsn)  
-   if err != nil {  
-      log.Fatalf("failed connecting to mysql: %v", err)  
-   }  
-   defer client.Close()  
-  
-   ctx := context.Background()  
-   // If we don't have any posts yet, seed the database.  
-   if !client.Post.Query().ExistX(ctx) {  
-      if err := seed(ctx, client); err != nil {  
-         log.Fatalf("failed seeding the database: %v", err)  
-      }  
-   }  
-   srv := newServer(client)  
-   r := newRouter(srv)  
-   log.Fatal(http.ListenAndServe(":8080", r))  
+func main() {
+   // Read the connection string to the database from a CLI flag.
+   var dsn string
+   flag.StringVar(&dsn, "dsn", "", "database DSN")
+   flag.Parse()
+
+   // Instantiate the Ent client.
+   client, err := ent.Open("mysql", dsn)
+   if err != nil {
+      log.Fatalf("failed connecting to mysql: %v", err)
+   }
+   defer client.Close()
+
+   ctx := context.Background()
+   // If we don't have any posts yet, seed the database.
+   if !client.Post.Query().ExistX(ctx) {
+      if err := seed(ctx, client); err != nil {
+         log.Fatalf("failed seeding the database: %v", err)
+      }
+   }
+   srv := newServer(client)
+   r := newRouter(srv)
+   log.Fatal(http.ListenAndServe(":8080", r))
 }
 ```
 
@@ -696,13 +725,14 @@ We can now run our application and stand amazed at our achievement: a working bl
 
 ### Step 4: Adding content
 
-:::info 
+:::info
 You can follow the changes in this step in [this commit](https://github.com/rotemtam/ent-blog-example/commit/2e412ab2cda0fd251ccb512099b802174d917511).
 :::
 
 No content mangement system would be complete without the ability, well, to manage content. Let's demonstrate how we can add support for publishing new posts on our blog.
 
 Let's start by creating the backend handler:
+
 ```go
 // add creates a new blog post.
 func (s *server) add(w http.ResponseWriter, r *http.Request) {
@@ -721,11 +751,13 @@ func (s *server) add(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/", http.StatusFound)
 }
 ```
-As you can see, the handler currently loads the *only* user from the `users` table (since we have yet to create a user management system or login capabilities). `Only` will fail unless exactly one result is retrieved from the database.
+
+As you can see, the handler currently loads the _only_ user from the `users` table (since we have yet to create a user management system or login capabilities). `Only` will fail unless exactly one result is retrieved from the database.
 
 Next, our handler creates a new post, by setting the title and body fields to values retrieved from `r.FormValue`. This is where Go stores all of the form input passed to an HTTP request.
 
 After creating the handler, we should wire it to our router:
+
 ```go
 // newRouter creates a new router with the blog handlers mounted.
 func newRouter(srv *server) chi.Router {
@@ -738,28 +770,37 @@ func newRouter(srv *server) chi.Router {
 	return r
 }
 ```
+
 Next, we can add an HTML `<form>` component that will be used by our user to write their content:
+
 ```html
 <div class="col-md-12">
-	<hr/>
-	<h2>Create a new post</h2>
-	<form action="/add" method="post">
-		<div class="mb-3">
-			<label for="title" class="form-label">Title</label>
-			<input name="title" type="text" class="form-control" id="title" placeholder="Once upon a time..">
-		</div>
-		<div class="mb-3">
-			<label for="body" class="form-label">Body</label>
-			<textarea name="body" class="form-control" id="body" rows="8"></textarea>
-		</div>
-		<div class="mb-3">
-			<button type="submit" class="btn btn-primary mb-3">Post</button>
-		</div>
-	</form>
+  <hr />
+  <h2>Create a new post</h2>
+  <form action="/add" method="post">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        name="title"
+        type="text"
+        class="form-control"
+        id="title"
+        placeholder="Once upon a time.."
+      />
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Body</label>
+      <textarea name="body" class="form-control" id="body" rows="8"></textarea>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary mb-3">Post</button>
+    </div>
+  </form>
 </div>
 ```
 
 Also, let's add a nice touch, where we display the blog posts from newest to oldest. To do this, modify the `index` handler to order the posts in a descending order using the `created_at` column:
+
 ```go
 posts, err := s.client.Post.
 	Query().
@@ -770,6 +811,7 @@ posts, err := s.client.Post.
 ```
 
 Finally, let's add another unit test that verifies the add post flow works as expected:
+
 ```go
 func TestAdd(t *testing.T) {
 	client := enttest.Open(t, "sqlite3", "file:ent?mode=memory&cache=shared&_fk=1")
@@ -794,13 +836,14 @@ func TestAdd(t *testing.T) {
 
 	body, err := io.ReadAll(resp.Body)
 	require.NoError(t, err)
-	
+
 	// The home page should contain our new post.
 	require.Contains(t, string(body), "This is a test")
 }
 ```
 
 Let's run the test:
+
 ```
 go test ./...
 ```
@@ -833,10 +876,9 @@ Our new post is displayed. Well done!
 
 ### Wrapping up
 
-In this post we demonstrated how to build a simple web application with Ent and Go. Our app is definitely bare but it deals with many of the bases that you will need to cover when building an application: defining your data model, managing your database schema, writing  server code, defining routes and building a UI.
+In this post we demonstrated how to build a simple web application with Ent and Go. Our app is definitely bare but it deals with many of the bases that you will need to cover when building an application: defining your data model, managing your database schema, writing server code, defining routes and building a UI.
 
 As things go with introductory content, we only touched the tip of the iceberg of what you can do with Ent, but I hope you got a taste for some of its core features.
-
 
 :::note For more Ent news and updates:
 

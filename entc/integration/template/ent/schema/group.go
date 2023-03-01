@@ -5,8 +5,8 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Group holds the schema definition for the Group entity.

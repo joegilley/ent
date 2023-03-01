@@ -9,13 +9,13 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	gen "entgo.io/ent/entc/integration/hooks/ent"
-	"entgo.io/ent/entc/integration/hooks/ent/hook"
-	"entgo.io/ent/entc/integration/hooks/ent/intercept"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/mixin"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	gen "github.com/jogly/ent/entc/integration/hooks/ent"
+	"github.com/jogly/ent/entc/integration/hooks/ent/hook"
+	"github.com/jogly/ent/entc/integration/hooks/ent/intercept"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/mixin"
 )
 
 type SoftDeleteMixin struct {

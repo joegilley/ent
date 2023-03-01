@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/privacyadmin/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/privacyadmin/ent/user"
 )
 
 // User is the model entity for the User schema.

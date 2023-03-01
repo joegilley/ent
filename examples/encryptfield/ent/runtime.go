@@ -6,4 +6,4 @@
 
 package ent
 
-// The schema-stitching logic is generated in entgo.io/ent/examples/encryptfield/ent/runtime/runtime.go
+// The schema-stitching logic is generated in github.com/jogly/ent/examples/encryptfield/ent/runtime/runtime.go

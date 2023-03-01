@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/customid/ent/revision"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/customid/ent/revision"
 )
 
 // Revision is the model entity for the Revision schema.

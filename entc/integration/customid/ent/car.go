@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/customid/ent/car"
-	"entgo.io/ent/entc/integration/customid/ent/pet"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/customid/ent/car"
+	"github.com/jogly/ent/entc/integration/customid/ent/pet"
 )
 
 // Car is the model entity for the Car schema.

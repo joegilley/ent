@@ -5,12 +5,12 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/entc/integration/privacy/ent/privacy"
-	"entgo.io/ent/entc/integration/privacy/rule"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/entc/integration/privacy/ent/privacy"
+	"github.com/jogly/ent/entc/integration/privacy/rule"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Task defines the schema of a task.

@@ -11,8 +11,8 @@ import (
 	"log"
 	"net/http"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 )
 
 func main() {

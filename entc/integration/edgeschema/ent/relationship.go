@@ -10,10 +10,10 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgeschema/ent/relationship"
-	"entgo.io/ent/entc/integration/edgeschema/ent/relationshipinfo"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/relationship"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/relationshipinfo"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
 )
 
 // Relationship is the model entity for the Relationship schema.

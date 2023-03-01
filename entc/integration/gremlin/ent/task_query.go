@@ -11,12 +11,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/__"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
-	enttask "entgo.io/ent/entc/integration/gremlin/ent/task"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/__"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/predicate"
+	enttask "github.com/jogly/ent/entc/integration/gremlin/ent/task"
 )
 
 // TaskQuery is the builder for querying Task entities.

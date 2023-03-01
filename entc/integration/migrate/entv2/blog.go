@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/migrate/entv2/blog"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/blog"
 )
 
 // Blog is the model entity for the Blog schema.

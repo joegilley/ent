@@ -9,11 +9,11 @@ package enttask
 import (
 	"time"
 
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/__"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/p"
-	"entgo.io/ent/entc/integration/ent/schema/task"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/__"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/p"
+	"github.com/jogly/ent/entc/integration/ent/schema/task"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/predicate"
 )
 
 // ID filters vertices based on their ID field.

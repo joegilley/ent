@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/ent/api"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/ent/api"
 )
 
 // Api is the model entity for the Api schema.

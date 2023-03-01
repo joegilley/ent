@@ -11,12 +11,12 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/entc/integration/ent/schema/task"
-	enttask "entgo.io/ent/entc/integration/ent/task"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	"github.com/jogly/ent/entc/integration/ent/schema/task"
+	enttask "github.com/jogly/ent/entc/integration/ent/task"
+	"github.com/jogly/ent/schema/field"
 )
 
 // TaskUpdate is the builder for updating Task entities.

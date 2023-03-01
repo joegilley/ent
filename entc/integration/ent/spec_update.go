@@ -11,12 +11,12 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/card"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/entc/integration/ent/spec"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/card"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	"github.com/jogly/ent/entc/integration/ent/spec"
+	"github.com/jogly/ent/schema/field"
 )
 
 // SpecUpdate is the builder for updating Spec entities.

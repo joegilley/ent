@@ -6,9 +6,9 @@ authorImageURL: "https://avatars.githubusercontent.com/u/8277210?v=4"
 authorTwitter: itsamitush
 ---
 
-Joining an existing project with a large codebase can be a daunting task.  
+Joining an existing project with a large codebase can be a daunting task.
 
-Understanding the data model of an application is key for developers to start working on an existing project. One  commonly used tool to help overcome this challenge, and enable developers to grasp an application's data model is an [ER (Entity Relation) diagram](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model).  
+Understanding the data model of an application is key for developers to start working on an existing project. One  commonly used tool to help overcome this challenge, and enable developers to grasp an application's data model is an [ER (Entity Relation) diagram](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model).
 
 ER diagrams provide a visual representation of your data model, and details each field of the entities. Many tools can help create these, where one example is Jetbrains DataGrip, that can generate an ER diagram by connecting to and inspecting an existing database:
 
@@ -19,7 +19,7 @@ ER diagrams provide a visual representation of your data model, and details each
 
 [Ent](https://entgo.io/docs/getting-started/), a simple, yet powerful entity framework for Go, was originally developed inside Facebook specifically for dealing with projects with large and complex data models.
 This is why Ent uses code generation - it gives type-safety and code-completion out-of-the-box which helps explain the data model and improves developer velocity.
-On top of all of this, wouldn't it be great to automatically generate ER diagrams that maintain a high-level view of the data model in a visually appealing representation? (I mean, who doesn't love visualizations?) 
+On top of all of this, wouldn't it be great to automatically generate ER diagrams that maintain a high-level view of the data model in a visually appealing representation? (I mean, who doesn't love visualizations?)
 
 ### Introducing entviz
 [entviz](https://github.com/hedwigz/entviz) is an ent extension that automatically generates a static HTML page that visualizes your data graph.
@@ -32,7 +32,7 @@ Most ER diagram generation tools need to connect to your database and introspect
 
 If you want to know more about how entviz was implemented, checkout the [implementation section](#implementation).
 
-  
+
 ### See it in action
 First, let's add the entviz extension to our entc.go file:
 ```bash
@@ -45,8 +45,8 @@ If you are not familiar with `entc` you're welcome to read [entc documentation](
 import (
 	"log"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 	"github.com/hedwigz/entviz"
 )
 
@@ -69,7 +69,7 @@ func (User) Fields() []ent.Field {
 	}
 }
 ```
-Now, entviz will automatically generate a visualization of our graph everytime we run: 
+Now, entviz will automatically generate a visualization of our graph everytime we run:
 ```bash
 go generate ./...
 ```
@@ -127,11 +127,11 @@ We define an extension struct which embeds the default extension, and we export 
 ```go
 //go:embed entviz.go.tmpl
 var tmplfile string
- 
+
 type Extension struct {
 	entc.DefaultExtension
 }
- 
+
 func (Extension) Templates() []*gen.Template {
 	return []*gen.Template{
 		gen.MustParse(gen.NewTemplate("entviz").Parse(tmplfile)),
@@ -141,7 +141,7 @@ func (Extension) Templates() []*gen.Template {
 The template file is the code that we want to generate:
 ```gotemplate
 {{ define "entviz"}}
- 
+
 {{ $pkg := base $.Config.Package }}
 {{ template "header" $ }}
 import (
@@ -162,7 +162,7 @@ func ServeEntviz() http.Handler {
 }
 {{ end }}
 ```
-That's it! now we have a new method in ent package.  
+That's it! now we have a new method in ent package.
 
 ### Wrapping-Up
 

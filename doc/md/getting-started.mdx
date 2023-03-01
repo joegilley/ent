@@ -4,10 +4,10 @@ title: Quick Introduction
 sidebar_label: Quick Introduction
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import AtlasMigrateDiff from './components/_atlas_migrate_diff.mdx';
-import AtlasMigrateApply from './components/_atlas_migrate_apply.mdx';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import AtlasMigrateDiff from "./components/_atlas_migrate_diff.mdx";
+import AtlasMigrateApply from "./components/_atlas_migrate_apply.mdx";
 
 **ent** is a simple, yet powerful entity framework for Go, that makes it easy to build
 and maintain applications with large data-models and sticks with the following principles:
@@ -34,7 +34,7 @@ go mod init entdemo
 Go to the root directory of your project, and run:
 
 ```console
-go run -mod=mod entgo.io/ent/cmd/ent new User
+go run -mod=mod github.com/jogly/ent/cmd/ent new User
 ```
 
 The command above will generate the schema for `User` under `entdemo/ent/schema/` directory:
@@ -43,7 +43,7 @@ The command above will generate the schema for `User` under `entdemo/ent/schema/
 
 package schema
 
-import "entgo.io/ent"
+import "github.com/jogly/ent"
 
 // User holds the schema definition for the User entity.
 type User struct {
@@ -69,8 +69,8 @@ Add 2 fields to the `User` schema:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Fields of the User.
@@ -91,6 +91,7 @@ go generate ./ent
 ```
 
 This produces the following files:
+
 ```console {12-20}
 ent
 ├── client.go
@@ -112,7 +113,6 @@ ent
 ├── user_query.go
 └── user_update.go
 ```
-
 
 ## Create Your First Entity
 
@@ -258,15 +258,14 @@ func QueryUser(ctx context.Context, client *ent.Client) (*ent.User, error) {
 }
 ```
 
-
 ## Add Your First Edge (Relation)
 
-In this part of the tutorial, we want to declare an edge (relation) to another entity in the schema.  
+In this part of the tutorial, we want to declare an edge (relation) to another entity in the schema.
 Let's create 2 additional entities named `Car` and `Group` with a few fields. We use `ent` CLI
 to generate the initial schemas:
 
 ```console
-go run -mod=mod entgo.io/ent/cmd/ent new Car Group
+go run -mod=mod github.com/jogly/ent/cmd/ent new Car Group
 ```
 
 And then we add the rest of the fields manually:
@@ -357,6 +356,7 @@ func CreateCars(ctx context.Context, client *ent.Client) (*ent.User, error) {
 }
 
 ```
+
 But what about querying the `cars` edge (relation)? Here's how we do it:
 
 ```go title="entdemo/start.go"
@@ -387,6 +387,7 @@ func QueryCars(ctx context.Context, a8m *ent.User) error {
 ```
 
 ## Add Your First Inverse Edge (BackRef)
+
 Assume we have a `Car` object and we want to get its owner; the user that this car belongs to.
 For this, we have another type of edge called "inverse edge" that is defined using the `edge.From`
 function.
@@ -414,6 +415,7 @@ func (Car) Edges() []ent.Edge {
 	}
 }
 ```
+
 We'll continue the user/cars example above by querying the inverse edge.
 
 ```go title="entdemo/start.go"
@@ -477,17 +479,17 @@ func (User) Edges() []ent.Edge {
 ```
 
 We run `ent` on the schema directory to re-generate the assets.
+
 ```console
 go generate ./ent
 ```
 
 ## Run Your First Graph Traversal
 
-In order to run our first graph traversal, we need to generate some data (nodes and edges, or in other words, 
+In order to run our first graph traversal, we need to generate some data (nodes and edges, or in other words,
 entities and relations). Let's create the following graph using the framework:
 
 ![re-graph](https://entgo.io/images/assets/re_graph_getting_started.png)
-
 
 ```go title="entdemo/start.go"
 func CreateGraph(ctx context.Context, client *ent.Client) error {
@@ -565,91 +567,91 @@ Now when we have a graph with data, we can run a few queries on it:
 
 1. Get all user's cars within the group named "GitHub":
 
-	```go title="entdemo/start.go"
-	import (
-		"log"
-		
-		"entdemo/ent"
-		"entdemo/ent/group"
-	)
+   ```go title="entdemo/start.go"
+   import (
+   	"log"
 
-	func QueryGithub(ctx context.Context, client *ent.Client) error {
-		cars, err := client.Group.
-			Query().
-			Where(group.Name("GitHub")). // (Group(Name=GitHub),)
-			QueryUsers().                // (User(Name=Ariel, Age=30),)
-			QueryCars().                 // (Car(Model=Tesla, RegisteredAt=<Time>), Car(Model=Mazda, RegisteredAt=<Time>),)
-			All(ctx)
-		if err != nil {
-			return fmt.Errorf("failed getting cars: %w", err)
-		}
-		log.Println("cars returned:", cars)
-		// Output: (Car(Model=Tesla, RegisteredAt=<Time>), Car(Model=Mazda, RegisteredAt=<Time>),)
-		return nil
-	}
-	```
+   	"entdemo/ent"
+   	"entdemo/ent/group"
+   )
 
-2. Change the query above, so that the source of the traversal is the user *Ariel*:
-   
-	```go title="entdemo/start.go"
-	import (
-		"log"
-		
-		"entdemo/ent"
-		"entdemo/ent/car"
-	)
+   func QueryGithub(ctx context.Context, client *ent.Client) error {
+   	cars, err := client.Group.
+   		Query().
+   		Where(group.Name("GitHub")). // (Group(Name=GitHub),)
+   		QueryUsers().                // (User(Name=Ariel, Age=30),)
+   		QueryCars().                 // (Car(Model=Tesla, RegisteredAt=<Time>), Car(Model=Mazda, RegisteredAt=<Time>),)
+   		All(ctx)
+   	if err != nil {
+   		return fmt.Errorf("failed getting cars: %w", err)
+   	}
+   	log.Println("cars returned:", cars)
+   	// Output: (Car(Model=Tesla, RegisteredAt=<Time>), Car(Model=Mazda, RegisteredAt=<Time>),)
+   	return nil
+   }
+   ```
 
-	func QueryArielCars(ctx context.Context, client *ent.Client) error {
-		// Get "Ariel" from previous steps.
-		a8m := client.User.
-			Query().
-			Where(
-				user.HasCars(),
-				user.Name("Ariel"),
-			).
-			OnlyX(ctx)
-		cars, err := a8m. 						// Get the groups, that a8m is connected to:
-				QueryGroups(). 					// (Group(Name=GitHub), Group(Name=GitLab),)
-				QueryUsers().  					// (User(Name=Ariel, Age=30), User(Name=Neta, Age=28),)
-				QueryCars().   					//
-				Where(         					//
-					car.Not( 					//	Get Neta and Ariel cars, but filter out
-						car.Model("Mazda"),		//	those who named "Mazda"
-					), 							//
-				). 								//
-				All(ctx)
-		if err != nil {
-			return fmt.Errorf("failed getting cars: %w", err)
-		}
-		log.Println("cars returned:", cars)
-		// Output: (Car(Model=Tesla, RegisteredAt=<Time>), Car(Model=Ford, RegisteredAt=<Time>),)
-		return nil
-	}
-	```
+2. Change the query above, so that the source of the traversal is the user _Ariel_:
+
+   ```go title="entdemo/start.go"
+   import (
+   	"log"
+
+   	"entdemo/ent"
+   	"entdemo/ent/car"
+   )
+
+   func QueryArielCars(ctx context.Context, client *ent.Client) error {
+   	// Get "Ariel" from previous steps.
+   	a8m := client.User.
+   		Query().
+   		Where(
+   			user.HasCars(),
+   			user.Name("Ariel"),
+   		).
+   		OnlyX(ctx)
+   	cars, err := a8m. 						// Get the groups, that a8m is connected to:
+   			QueryGroups(). 					// (Group(Name=GitHub), Group(Name=GitLab),)
+   			QueryUsers().  					// (User(Name=Ariel, Age=30), User(Name=Neta, Age=28),)
+   			QueryCars().   					//
+   			Where(         					//
+   				car.Not( 					//	Get Neta and Ariel cars, but filter out
+   					car.Model("Mazda"),		//	those who named "Mazda"
+   				), 							//
+   			). 								//
+   			All(ctx)
+   	if err != nil {
+   		return fmt.Errorf("failed getting cars: %w", err)
+   	}
+   	log.Println("cars returned:", cars)
+   	// Output: (Car(Model=Tesla, RegisteredAt=<Time>), Car(Model=Ford, RegisteredAt=<Time>),)
+   	return nil
+   }
+   ```
 
 3. Get all groups that have users (query with a look-aside predicate):
 
-	```go title="entdemo/start.go"
-	import (
-		"log"
-		
-		"entdemo/ent"
-		"entdemo/ent/group"
-	)
+   ```go title="entdemo/start.go"
+   import (
+   	"log"
 
-	func QueryGroupWithUsers(ctx context.Context, client *ent.Client) error {
-    	groups, err := client.Group.
-    		Query().
-    		Where(group.HasUsers()).
-    		All(ctx)
-    	if err != nil {
-    		return fmt.Errorf("failed getting groups: %w", err)
-    	}
-    	log.Println("groups returned:", groups)
-    	// Output: (Group(Name=GitHub), Group(Name=GitLab),)
-    	return nil
-    }
-    ```
+   	"entdemo/ent"
+   	"entdemo/ent/group"
+   )
+
+   func QueryGroupWithUsers(ctx context.Context, client *ent.Client) error {
+   	groups, err := client.Group.
+   		Query().
+   		Where(group.HasUsers()).
+   		All(ctx)
+   	if err != nil {
+   		return fmt.Errorf("failed getting groups: %w", err)
+   	}
+   	log.Println("groups returned:", groups)
+   	// Output: (Group(Name=GitHub), Group(Name=GitLab),)
+   	return nil
+   }
+   ```
 
 ## Schema Migration
 
@@ -660,6 +662,7 @@ Ent provides two approaches for running schema migrations: [Automatic Migrations
 
 With Automatic Migrations, users can use the following API to keep the database schema aligned with the schema objects
 defined in the generated SQL schema `ent/migrate/schema.go`:
+
 ```go
 if err := client.Schema.Create(ctx); err != nil {
     log.Fatalf("failed creating schema resources: %v", err)
@@ -681,11 +684,11 @@ involves two primary steps.
 
 #### Generating migrations
 
-<AtlasMigrateDiff/>
+<AtlasMigrateDiff />
 
 #### Applying migrations
 
-<AtlasMigrateApply/>
+<AtlasMigrateApply />
 
 Read more about this approach in the [Versioned Migrations](/docs/versioned-migrations) documentation.
 

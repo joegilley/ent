@@ -7,9 +7,9 @@
 package car
 
 import (
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/entv2/predicate"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/predicate"
 )
 
 // ID filters vertices based on their ID field.

@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/o2mrecur/ent/node"
-	"entgo.io/ent/examples/o2mrecur/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/o2mrecur/ent/node"
+	"github.com/jogly/ent/examples/o2mrecur/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // NodeUpdate is the builder for updating Node entities.

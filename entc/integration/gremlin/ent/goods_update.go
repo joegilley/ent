@@ -10,11 +10,11 @@ import (
 	"context"
 	"errors"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/entc/integration/gremlin/ent/goods"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/goods"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/predicate"
 )
 
 // GoodsUpdate is the builder for updating Goods entities.

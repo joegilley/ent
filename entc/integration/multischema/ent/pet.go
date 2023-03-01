@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/multischema/ent/pet"
-	"entgo.io/ent/entc/integration/multischema/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/multischema/ent/pet"
+	"github.com/jogly/ent/entc/integration/multischema/ent/user"
 )
 
 // Pet is the model entity for the Pet schema.

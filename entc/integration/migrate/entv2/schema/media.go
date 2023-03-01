@@ -5,11 +5,11 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
 )
 
 // Media holds the schema definition for the Media entity.

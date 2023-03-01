@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/customid/ent/account"
-	"entgo.io/ent/entc/integration/customid/sid"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/customid/ent/account"
+	"github.com/jogly/ent/entc/integration/customid/sid"
 )
 
 // Account is the model entity for the Account schema.

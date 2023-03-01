@@ -18,13 +18,13 @@ import (
 	"unicode"
 
 	"ariga.io/atlas/sql/postgres"
-	"entgo.io/ent"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/dialect/sql/schema"
-	"entgo.io/ent/entc/load"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/dialect/sql/schema"
+	"github.com/jogly/ent/entc/load"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // The following types and their exported methods used by the codegen

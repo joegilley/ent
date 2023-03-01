@@ -18,8 +18,8 @@ package schema
 import (
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // User schema.
@@ -64,8 +64,8 @@ import (
 	"net/url"
 
 	"github.com/google/uuid"
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // User schema.
@@ -171,9 +171,9 @@ there is an option to override the default behavior using the `SchemaType` metho
 package schema
 
 import (
-    "entgo.io/ent"
-    "entgo.io/ent/dialect"
-    "entgo.io/ent/schema/field"
+    "github.com/jogly/ent"
+    "github.com/jogly/ent/dialect"
+    "github.com/jogly/ent/schema/field"
 )
 
 // Card schema.
@@ -200,7 +200,7 @@ and for time fields, the type is `time.Time`. The `GoType` method provides an op
 default ent type with a custom one.
 
 The custom type must be either a type that is convertible to the Go basic type, or a type that implements the
-[ValueScanner](https://pkg.go.dev/entgo.io/ent/schema/field?tab=doc#ValueScanner) interface.
+[ValueScanner](https://pkg.go.dev/github.com/jogly/ent/schema/field?tab=doc#ValueScanner) interface.
 
 
 ```go
@@ -209,9 +209,9 @@ package schema
 import (
     "database/sql"
 
-    "entgo.io/ent"
-    "entgo.io/ent/dialect"
-    "entgo.io/ent/schema/field"
+    "github.com/jogly/ent"
+    "github.com/jogly/ent/dialect"
+    "github.com/jogly/ent/schema/field"
     "github.com/shopspring/decimal"
 )
 
@@ -255,10 +255,10 @@ Examples are a Postgres Range type or Geospatial type
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/schema/field"
-	
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/schema/field"
+
 	"github.com/jackc/pgtype"
 )
 
@@ -303,7 +303,7 @@ func (User) Fields() []ent.Field {
 ```
 
 SQL-specific literals or expressions like function calls can be added to default value configuration using the
-[`entsql.Annotation`](https://pkg.go.dev/entgo.io/ent@master/dialect/entsql#Annotation):
+[`entsql.Annotation`](https://pkg.go.dev/github.com/jogly/ent@master/dialect/entsql#Annotation):
 
 ```go {9,16,23-27}
 // Fields of the User.
@@ -339,7 +339,7 @@ func (User) Fields() []ent.Field {
 ```
 
 In case your `DefaultFunc` is also returning an error, it is better to handle it properly using [schema-hooks](hooks.md#schema-hooks).
-See [this FAQ](faq.md#how-to-use-a-custom-generator-of-ids) for more information. 
+See [this FAQ](faq.md#how-to-use-a-custom-generator-of-ids) for more information.
 
 ## Validators
 
@@ -358,8 +358,8 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 
@@ -387,8 +387,8 @@ Here is another example for writing a reusable validator:
 
 ```go
 import (
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/schema/field"
 )
 
 // MaxRuneCount validates the rune length of a string by using the unicode/utf8 package.
@@ -573,7 +573,7 @@ func (User) Fields() []ent.Field {
 ## Comments
 
 A comment can be added to a field using the `.Comment()` method. This comment
-appears before the field in the generated entity code. Newlines are supported 
+appears before the field in the generated entity code. Newlines are supported
 using the `\n` escape sequence.
 
 ```go
@@ -709,7 +709,7 @@ func (User) Fields() []ent.Field {
 
 ## Enum Fields
 
-The `Enum` builder allows creating enum fields with a list of permitted values. 
+The `Enum` builder allows creating enum fields with a list of permitted values.
 
 ```go
 // Fields of the User.
@@ -723,11 +723,11 @@ func (User) Fields() []ent.Field {
 }
 ```
 
-When a custom [`GoType`](#go-type) is being used, it is must be convertible to the basic `string` type or it needs to implement the [ValueScanner](https://pkg.go.dev/entgo.io/ent/schema/field#ValueScanner) interface. 
+When a custom [`GoType`](#go-type) is being used, it is must be convertible to the basic `string` type or it needs to implement the [ValueScanner](https://pkg.go.dev/github.com/jogly/ent/schema/field#ValueScanner) interface.
 
-The [EnumValues](https://pkg.go.dev/entgo.io/ent/schema/field#EnumValues) interface is also required by the custom Go type to tell Ent what are the permitted values of the enum. 
+The [EnumValues](https://pkg.go.dev/github.com/jogly/ent/schema/field#EnumValues) interface is also required by the custom Go type to tell Ent what are the permitted values of the enum.
 
-The following example shows how to define an `Enum` field with a custom Go type that is convertible to `string`: 
+The following example shows how to define an `Enum` field with a custom Go type that is convertible to `string`:
 
 ```go
 // Fields of the User.
@@ -742,7 +742,7 @@ func (User) Fields() []ent.Field {
 }
 ```
 
-Implement the [EnumValues](https://pkg.go.dev/entgo.io/ent/schema/field#EnumValues) interface.
+Implement the [EnumValues](https://pkg.go.dev/github.com/jogly/ent/schema/field#EnumValues) interface.
 ```go
 package property
 
@@ -762,7 +762,7 @@ func (Shape) Values() (kinds []string) {
 }
 
 ```
-The following example shows how to define an `Enum` field with a custom Go type that is not convertible to `string`, but it implements the [ValueScanner](https://pkg.go.dev/entgo.io/ent/schema/field#ValueScanner) interface: 
+The following example shows how to define an `Enum` field with a custom Go type that is not convertible to `string`, but it implements the [ValueScanner](https://pkg.go.dev/github.com/jogly/ent/schema/field#ValueScanner) interface:
 
 ```go
 // Fields of the User.
@@ -776,7 +776,7 @@ func (User) Fields() []ent.Field {
 	}
 }
 ```
-Implement also the [ValueScanner](https://pkg.go.dev/entgo.io/ent/schema/field?tab=doc#ValueScanner) interface.
+Implement also the [ValueScanner](https://pkg.go.dev/github.com/jogly/ent/schema/field?tab=doc#ValueScanner) interface.
 
 ```go
 package property
@@ -855,7 +855,7 @@ func (User) Fields() []ent.Field {
 ```
 
 After code generation usage is trivial:
-```go 
+```go
 client.User.Create().
 	SetFirstName("John").
 	SetLastName("Dow").
@@ -863,7 +863,7 @@ client.User.Create().
 	SetShape(property.Triangle).
 	SetLevel(property.Low).
 	SaveX(context.Background())
-	
+
 john := client.User.Query().FirstX(context.Background())
 fmt.Println(john)
 // User(id=1, first_name=John, last_name=Dow, size=small, shape=TRIANGLE, level=LOW)

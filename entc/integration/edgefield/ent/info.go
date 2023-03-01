@@ -11,9 +11,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgefield/ent/info"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/info"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/user"
 )
 
 // Info is the model entity for the Info schema.

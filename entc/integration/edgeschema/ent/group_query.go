@@ -12,15 +12,15 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/group"
-	"entgo.io/ent/entc/integration/edgeschema/ent/grouptag"
-	"entgo.io/ent/entc/integration/edgeschema/ent/predicate"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tag"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
-	"entgo.io/ent/entc/integration/edgeschema/ent/usergroup"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/group"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/grouptag"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/predicate"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tag"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/usergroup"
+	"github.com/jogly/ent/schema/field"
 )
 
 // GroupQuery is the builder for querying Group entities.

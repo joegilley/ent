@@ -11,13 +11,13 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/car"
-	"entgo.io/ent/entc/integration/customid/ent/pet"
-	"entgo.io/ent/entc/integration/customid/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/car"
+	"github.com/jogly/ent/entc/integration/customid/ent/pet"
+	"github.com/jogly/ent/entc/integration/customid/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // PetCreate is the builder for creating a Pet entity.

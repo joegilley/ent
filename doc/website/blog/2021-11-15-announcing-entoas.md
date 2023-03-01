@@ -1,6 +1,6 @@
 ---
-title: Announcing "entoas" - An Extension to Automatically Generate OpenAPI Specification Documents from Ent Schemas 
-author: MasseElch 
+title: Announcing "entoas" - An Extension to Automatically Generate OpenAPI Specification Documents from Ent Schemas
+author: MasseElch
 authorURL: "https://github.com/masseelch"
 authorImageURL: "https://avatars.githubusercontent.com/u/12862103?v=4"
 image: https://entgo.io/images/assets/elkopa/entoas-code.png
@@ -41,8 +41,8 @@ import (
 	"log"
 
 	"entgo.io/contrib/entoas"
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 )
 
 func main() {
@@ -78,9 +78,9 @@ example schema to use:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Fridge holds the schema definition for the Fridge entity.
@@ -199,14 +199,14 @@ import (
 	"log"
 
 	"entgo.io/contrib/entoas"
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 )
 
 func main() {
 	ex, err := entoas.NewExtension(
 		entoas.SpecTitle("Fridge CMS"),
-		entoas.SpecDescription("API to manage fridges and their cooled contents. **ICY!**"), 
+		entoas.SpecDescription("API to manage fridges and their cooled contents. **ICY!**"),
 		entoas.SpecVersion("0.0.1"),
 	)
 	if err != nil {
@@ -257,7 +257,7 @@ func (Fridge) Edges() []ent.Edge {
 				entoas.CreateOperation(
 					entoas.OperationPolicy(entoas.PolicyExclude),
 				),
-			), 
+			),
 	}
 }
 
@@ -286,7 +286,7 @@ the [godoc](https://pkg.go.dev/entgo.io/contrib/entoas#Config).
 </div>
 
 Many users have requested to change this behaviour to simply map the Ent schema to the OAS document. Therefore, you now
-can configure `entoas` to do that: 
+can configure `entoas` to do that:
 
 ```go {5}
 ex, err := entoas.NewExtension(
@@ -294,7 +294,7 @@ ex, err := entoas.NewExtension(
     entoas.SpecDescription("API to manage fridges and their cooled contents. **ICY!**"),
     entoas.SpecVersion("0.0.1"),
     entoas.SimpleModels(),
-) 
+)
 ```
 
 <div style={{textAlign: 'center'}}>
@@ -305,7 +305,7 @@ ex, err := entoas.NewExtension(
 ### Wrapping Up
 
 In this post we announced `entoas`, the official integration of the former `elk` OpenAPI Specification generation into
-Ent. This feature connects between Ent's code-generation capabilities and OpenAPI/Swagger's rich tooling ecosystem. 
+Ent. This feature connects between Ent's code-generation capabilities and OpenAPI/Swagger's rich tooling ecosystem.
 
 Have questions? Need help with getting started? Feel free to join our [Discord server](https://discord.gg/qZmPgTE6RX) or [Slack channel](https://entgo.io/docs/slack/).
 

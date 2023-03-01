@@ -11,12 +11,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/license"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/license"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // LicenseQuery is the builder for querying License entities.

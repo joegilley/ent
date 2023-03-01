@@ -3,11 +3,11 @@ id: versioned-migrations
 title: Versioned Migrations
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import InstallationInstructions from './components/_installation_instructions.mdx';
-import AtlasMigrateDiff from './components/_atlas_migrate_diff.mdx';
-import AtlasMigrateApply from './components/_atlas_migrate_apply.mdx';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import InstallationInstructions from "./components/_installation_instructions.mdx";
+import AtlasMigrateDiff from "./components/_atlas_migrate_diff.mdx";
+import AtlasMigrateApply from "./components/_atlas_migrate_apply.mdx";
 
 ## Quick Guide
 
@@ -20,7 +20,7 @@ a more in-depth explanation, continue reading the [next section](#in-depth-guide
 
 Then, run the following command to automatically generate migration files for your Ent schema:
 
-<AtlasMigrateDiff/>
+<AtlasMigrateDiff />
 
 :::info The role of the [dev database](https://atlasgo.io/concepts/dev-database)
 Atlas loads the **current state** by executing the SQL files stored in the migration directory onto the provided
@@ -30,10 +30,9 @@ defined by the `ent/schema` package and writes a migration plan for moving from 
 
 ### Applying migrations
 
-
 To apply the pending migration files onto the database, run the following command:
 
-<AtlasMigrateApply/>
+<AtlasMigrateApply />
 
 For more information head over to the [Atlas documentation](https://atlasgo.io/versioned/apply).
 
@@ -109,13 +108,14 @@ create a diff. In addition, this approach also works if you have multiple deploy
 ![atlas-versioned-migration-process](https://entgo.io/images/assets/migrate-atlas-replay.png)
 
 In order to automatically generate migration files, you can use one of the two approaches:
+
 1. Use [Atlas](https://atlasgo.io) `migrate diff` command against your `ent/schema` package.
 2. Enable the `sql/versioned-migration` feature flag and write a small migration generation script that uses Atlas as
    a package to generate the migration files.
 
 #### Option 1: Use the `atlas migrate diff` command
 
-<AtlasMigrateDiff/>
+<AtlasMigrateDiff />
 
 :::note
 To enable the [`GlobalUniqueID`](migrate.md#universal-ids) option in versioned migration, append the query parameter
@@ -177,7 +177,7 @@ the `ent/generate.go` file as follows:
 ```go
 package ent
 
-//go:generate go run -mod=mod entgo.io/ent/cmd/ent generate --feature sql/versioned-migration ./schema
+//go:generate go run -mod=mod github.com/jogly/ent/cmd/ent generate --feature sql/versioned-migration ./schema
 ```
 
 </TabItem>
@@ -194,8 +194,8 @@ package main
 import (
 	"log"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 )
 
 func main() {
@@ -275,8 +275,8 @@ import (
 	"<project>/ent/migrate"
 
 	atlas "ariga.io/atlas/sql/migrate"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql/schema"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -321,8 +321,8 @@ import (
 	"<project>/ent/migrate"
 
 	"ariga.io/atlas/sql/sqltool"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql/schema"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -366,8 +366,8 @@ import (
 	"<project>/ent/migrate"
 
 	"ariga.io/atlas/sql/sqltool"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql/schema"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -411,8 +411,8 @@ import (
 	"<project>/ent/migrate"
 
 	"ariga.io/atlas/sql/sqltool"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql/schema"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -456,8 +456,8 @@ import (
 	"<project>/ent/migrate"
 
 	"ariga.io/atlas/sql/sqltool"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql/schema"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -501,8 +501,8 @@ import (
 	"<project>/ent/migrate"
 
 	"ariga.io/atlas/sql/sqltool"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql/schema"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -583,9 +583,9 @@ selected changes:
 
 1. Ensure the migration history can be replayed from any point at time.
 2. Protect from unexpected history changes when concurrent migrations are written to the migration directory by multiple
-team members. Read more about the consistency checks in the [section below](#atlas-migration-directory-integrity-file).
+   team members. Read more about the consistency checks in the [section below](#atlas-migration-directory-integrity-file).
 3. Detect whether [destructive](https://atlasgo.io/lint/analyzers#destructive-changes) or irreversible changes have been
-made or whether they are dependent on tables' contents and can cause a migration failure.
+   made or whether they are dependent on tables' contents and can cause a migration failure.
 
 Let's run `atlas migrate lint` with the necessary parameters to run migration linting:
 
@@ -664,7 +664,6 @@ An output of such a run might look as follows:
 	L2: Adding a non-nullable "varchar" column "name" on table "users" without a default value implicitly sets existing rows with ""
 ```
 
-
 #### A Word on Global Unique IDs
 
 **This section only applies to MySQL users using the [global unique id](migrate.md/#universal-ids) feature.**
@@ -690,8 +689,8 @@ import (
 
 	"<project>/ent"
 	"<project>/ent/migrate"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/schema"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/schema"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -716,8 +715,8 @@ func main() {
 ```
 
 :::caution Important
-After an upgrade to MySQL 8 from a previous version, you still have to run the method once to update the starting 
-values. Since MySQL 8 the counter is no longer only stored in memory, meaning subsequent calls to the method are no 
+After an upgrade to MySQL 8 from a previous version, you still have to run the method once to update the starting
+values. Since MySQL 8 the counter is no longer only stored in memory, meaning subsequent calls to the method are no
 longer needed after the first one.
 :::
 
@@ -726,7 +725,7 @@ longer needed after the first one.
 Ent recommends to use the Atlas CLI to apply the generated migration files onto the database. If you want to use any
 other migration management tool, Ent has support for generating migrations for several of them out of the box.
 
-<AtlasMigrateApply/>
+<AtlasMigrateApply />
 
 For more information head over to the [Atlas documentation](https://atlasgo.io/versioned/apply).
 
@@ -747,8 +746,8 @@ versioned migration, you need to take some extra steps.
 
 To do this make sure your schema definition is in sync with your deployed version(s). Then spin up an empty database and
 run the diff command once as described above. This will create the statements needed to create the current state of
-your schema graph. If you happened to have [universal IDs](migrate.md#universal-ids) enabled before, any deployment will 
-have a special database table named `ent_types`. The above command will create the necessary SQL statements to create 
+your schema graph. If you happened to have [universal IDs](migrate.md#universal-ids) enabled before, any deployment will
+have a special database table named `ent_types`. The above command will create the necessary SQL statements to create
 that table as well as its contents (similar to the following):
 
 ```sql
@@ -765,7 +764,7 @@ table present in the database you created the diff from. For example, if you con
 above (`users,groups`) but your deployed table looks like the one below (`groups,users`):
 
 | id  | type   |
-|-----|--------|
+| --- | ------ |
 | 1   | groups |
 | 2   | users  |
 
@@ -856,8 +855,8 @@ the [installation instructions](https://atlasgo.io/cli/getting-started/setting-u
 :::
 
 In previous versions of Ent, the integrity file was opt-in. But we think this is a very important feature that provides
-great value and safety to migrations. Therefore, generation of the sum file is now the default behavior and in the 
-future we might even remove the option to disable this feature. For now, if you really want to remove integrity file 
+great value and safety to migrations. Therefore, generation of the sum file is now the default behavior and in the
+future we might even remove the option to disable this feature. For now, if you really want to remove integrity file
 generation, use the `schema.DisableChecksum()` option.
 
 In addition to the usual `.sql` migration files the migration directory will contain the `atlas.sum` file. Every time

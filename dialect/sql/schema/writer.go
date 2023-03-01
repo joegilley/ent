@@ -16,8 +16,8 @@ import (
 	"time"
 	"unicode"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
 
 	"ariga.io/atlas/sql/migrate"
 )

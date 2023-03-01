@@ -8,12 +8,12 @@ The framework provides a collection of code-generation features that be added or
 
 ## Usage
 
-Feature flags can be provided either by CLI flags or as arguments to the `gen` package. 
+Feature flags can be provided either by CLI flags or as arguments to the `gen` package.
 
 #### CLI
 
 ```console
-go run -mod=mod entgo.io/ent/cmd/ent generate --feature privacy,entql ./ent/schema
+go run -mod=mod github.com/jogly/ent/cmd/ent generate --feature privacy,entql ./ent/schema
 ```
 
 #### Go
@@ -27,8 +27,8 @@ import (
 	"log"
 	"text/template"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 )
 
 func main() {
@@ -84,7 +84,7 @@ This option can be added to a project using the `--feature namedges` flag, and y
 
 The `sql/schemaconfig` option lets you pass alternate SQL database names to models. This is useful when your models don't all live under one database and are spread out across different schemas.
 
-This option can be added to a project using the `--feature sql/schemaconfig` flag. Once you generate the code, you can now use a new option as such: 
+This option can be added to a project using the `--feature sql/schemaconfig` flag. Once you generate the code, you can now use a new option as such:
 
 ```go
 c, err := ent.Open(dialect, conn, ent.AlternateSchema(ent.SchemaConfig{

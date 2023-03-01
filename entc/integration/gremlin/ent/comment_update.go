@@ -11,14 +11,14 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/__"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/p"
-	schemadir "entgo.io/ent/entc/integration/ent/schema/dir"
-	"entgo.io/ent/entc/integration/gremlin/ent/comment"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/__"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/p"
+	schemadir "github.com/jogly/ent/entc/integration/ent/schema/dir"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/comment"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/predicate"
 )
 
 // CommentUpdate is the builder for updating Comment entities.

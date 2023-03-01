@@ -5,11 +5,11 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Pet holds the schema definition for the Pet entity.

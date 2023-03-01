@@ -20,8 +20,8 @@ import (
 	"text/template"
 	"text/template/parse"
 
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/field"
 )
 
 type (
@@ -215,9 +215,9 @@ var (
 		"math":    "math",
 		"strings": "strings",
 		"time":    "time",
-		"ent":     "entgo.io/ent",
-		"dialect": "entgo.io/ent/dialect",
-		"field":   "entgo.io/ent/schema/field",
+		"ent":     "github.com/jogly/ent",
+		"dialect": "github.com/jogly/ent/dialect",
+		"field":   "github.com/jogly/ent/schema/field",
 	}
 )
 

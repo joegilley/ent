@@ -5,11 +5,11 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/entc/integration/customid/sid"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/entc/integration/customid/sid"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Token holds the schema definition for the Token entity.

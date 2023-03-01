@@ -14,10 +14,10 @@ import (
 	"strings"
 	"text/template"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/field"
 )
 
 func main() {

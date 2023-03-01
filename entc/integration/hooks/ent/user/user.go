@@ -7,7 +7,7 @@
 package user
 
 import (
-	"entgo.io/ent"
+	"github.com/jogly/ent"
 )
 
 const (
@@ -98,7 +98,7 @@ func ValidColumn(column string) bool {
 // package on the initialization of the application. Therefore,
 // it should be imported in the main as follows:
 //
-//	import _ "entgo.io/ent/entc/integration/hooks/ent/runtime"
+//	import _ "github.com/jogly/ent/entc/integration/hooks/ent/runtime"
 var (
 	Hooks [2]ent.Hook
 	// DefaultVersion holds the default value on creation for the "version" field.

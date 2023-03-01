@@ -9,12 +9,12 @@ package enttest
 import (
 	"context"
 
-	"entgo.io/ent/examples/jsonencode/ent"
+	"github.com/jogly/ent/examples/jsonencode/ent"
 	// required by schema hooks.
-	_ "entgo.io/ent/examples/jsonencode/ent/runtime"
+	_ "github.com/jogly/ent/examples/jsonencode/ent/runtime"
 
-	"entgo.io/ent/dialect/sql/schema"
-	"entgo.io/ent/examples/jsonencode/ent/migrate"
+	"github.com/jogly/ent/dialect/sql/schema"
+	"github.com/jogly/ent/examples/jsonencode/ent/migrate"
 )
 
 type (

@@ -11,9 +11,9 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/hooks/ent/pet"
-	"entgo.io/ent/entc/integration/hooks/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/hooks/ent/pet"
+	"github.com/jogly/ent/entc/integration/hooks/ent/user"
 )
 
 // Pet is the model entity for the Pet schema.

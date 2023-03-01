@@ -11,12 +11,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/link"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
-	uuidc "entgo.io/ent/entc/integration/customid/uuidcompatible"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/link"
+	"github.com/jogly/ent/entc/integration/customid/ent/predicate"
+	uuidc "github.com/jogly/ent/entc/integration/customid/uuidcompatible"
+	"github.com/jogly/ent/schema/field"
 )
 
 // LinkQuery is the builder for querying Link entities.

@@ -9,7 +9,7 @@ package enttask
 import (
 	"time"
 
-	"entgo.io/ent/entc/integration/ent/schema/task"
+	"github.com/jogly/ent/entc/integration/ent/schema/task"
 )
 
 const (

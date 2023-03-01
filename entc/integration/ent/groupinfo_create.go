@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/group"
-	"entgo.io/ent/entc/integration/ent/groupinfo"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/group"
+	"github.com/jogly/ent/entc/integration/ent/groupinfo"
+	"github.com/jogly/ent/schema/field"
 )
 
 // GroupInfoCreate is the builder for creating a GroupInfo entity.

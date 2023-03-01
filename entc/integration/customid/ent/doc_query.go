@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/doc"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
-	"entgo.io/ent/entc/integration/customid/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/doc"
+	"github.com/jogly/ent/entc/integration/customid/ent/predicate"
+	"github.com/jogly/ent/entc/integration/customid/ent/schema"
+	"github.com/jogly/ent/schema/field"
 )
 
 // DocQuery is the builder for querying Doc entities.

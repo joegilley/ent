@@ -5,12 +5,12 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/entc/integration/edgeschema/ent/privacy"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/privacy"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
 )
 
 // Relationship holds the schema definition for the Relationship entity.

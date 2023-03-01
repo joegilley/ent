@@ -6,8 +6,8 @@
 package fakent
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/entc/load/testdata/cycle"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/entc/load/testdata/cycle"
 )
 
 type Hook = ent.Hook

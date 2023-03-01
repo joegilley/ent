@@ -9,12 +9,12 @@ package enttest
 import (
 	"context"
 
-	"entgo.io/ent/entc/integration/multischema/ent"
+	"github.com/jogly/ent/entc/integration/multischema/ent"
 	// required by schema hooks.
-	_ "entgo.io/ent/entc/integration/multischema/ent/runtime"
+	_ "github.com/jogly/ent/entc/integration/multischema/ent/runtime"
 
-	"entgo.io/ent/dialect/sql/schema"
-	"entgo.io/ent/entc/integration/multischema/ent/migrate"
+	"github.com/jogly/ent/dialect/sql/schema"
+	"github.com/jogly/ent/entc/integration/multischema/ent/migrate"
 )
 
 type (

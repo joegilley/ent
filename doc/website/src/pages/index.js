@@ -1,4 +1,3 @@
-
 /**
  * Copyright 2019-present Facebook Inc. All rights reserved.
  *
@@ -8,33 +7,34 @@
  * @format
  */
 
-const React = require('react');
-import LayoutProvider from '@theme/Layout/Provider';
-import Footer from '@theme/Footer';
-import Link from '@docusaurus/Link';
-
+const React = require("react");
+import LayoutProvider from "@theme/Layout/Provider";
+import Footer from "@theme/Footer";
+import Link from "@docusaurus/Link";
 
 const CompLibrary = {
-  Container: props => <div {...props}></div>,
-  GridBlock: props => <div {...props}></div>,
-  MarkdownBlock: props => <div {...props}></div>
+  Container: (props) => <div {...props}></div>,
+  GridBlock: (props) => <div {...props}></div>,
+  MarkdownBlock: (props) => <div {...props}></div>,
 };
 
 import Layout from "@theme/Layout";
 
-const MarkdownBlock = CompLibrary.MarkdownBlock;/* Used to read markdown */
+const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
-const arrow = '\u2192';
+const arrow = "\u2192";
 
-const Block = props => (
+const Block = (props) => (
   <div className="block">
     <div className="blockTitle">
       <a href={props.link}>
-        <div className="blockTitleText">{props.title}</div>{' '}
+        <div className="blockTitleText">{props.title}</div>{" "}
       </a>
-      <a className="yellowArrow" href={props.link}>{arrow}</a>
+      <a className="yellowArrow" href={props.link}>
+        {arrow}
+      </a>
     </div>
     <div className="blockContent">{props.content}</div>
   </div>
@@ -62,13 +62,13 @@ const Features = () => (
 
 class HomeSplash extends React.Component {
   render() {
-    const {siteConfig, language = ''} = this.props;
-    const {baseUrl, docsUrl} = siteConfig;
-    const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
-    const langPart = `${language ? `${language}/` : ''}`;
-    const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
+    const { siteConfig, language = "" } = this.props;
+    const { baseUrl, docsUrl } = siteConfig;
+    const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
+    const langPart = `${language ? `${language}/` : ""}`;
+    const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
 
-    const SplashContainer = props => (
+    const SplashContainer = (props) => (
       <div className="homeContainer">
         <div className="homeSplashFade">
           <div className="wrapper homeWrapper">{props.children}</div>
@@ -76,7 +76,7 @@ class HomeSplash extends React.Component {
       </div>
     );
 
-    const Logo = props => (
+    const Logo = (props) => (
       <div className="projectLogo">
         <img src={props.img_src} alt="Project Logo" />
       </div>
@@ -96,7 +96,7 @@ class HomeSplash extends React.Component {
       </div>
     );
 
-    const PromoSection = props => (
+    const PromoSection = (props) => (
       <div className="section promoSection">
         <div className="promoRow">
           <div className="pluginRowBlock">{props.children}</div>
@@ -104,7 +104,7 @@ class HomeSplash extends React.Component {
       </div>
     );
 
-    const Button = props => (
+    const Button = (props) => (
       <div className="pluginWrapper buttonWrapper">
         <a className="button" href={props.href} target={props.target}>
           {props.children}
@@ -120,7 +120,7 @@ class HomeSplash extends React.Component {
           <div className="gettingStartedButton">
             <a href="./docs/getting-started">
               <div className="gettingStartedButtonText">
-                <div className="gettingStartedText">{'Getting Started '}</div>
+                <div className="gettingStartedText">{"Getting Started "}</div>
                 <div className="gettingStartedButtonArrow">{arrow}</div>
               </div>
             </a>
@@ -136,21 +136,40 @@ class HomeSplash extends React.Component {
 }
 
 class HomeNav extends React.Component {
-    render() {
-        return <ul className="home-nav">
-            <li className=""><Link to={"/docs/getting-started"}>Docs</Link></li>
-            <li className=""><Link to="/docs/tutorial-setup">Tutorial</Link></li>
-            <li className="header-godoc-link"><a href="https://pkg.go.dev/entgo.io/ent?tab=doc" target="_blank">GoDoc</a></li>
-            <li className=""><a href="https://github.com/ent/ent" target="_blank">Github</a></li>
-            <li className=""><Link to="/blog/">Blog</Link></li>
-        </ul>
-    }
+  render() {
+    return (
+      <ul className="home-nav">
+        <li className="">
+          <Link to={"/docs/getting-started"}>Docs</Link>
+        </li>
+        <li className="">
+          <Link to="/docs/tutorial-setup">Tutorial</Link>
+        </li>
+        <li className="header-godoc-link">
+          <a
+            href="https://pkg.go.dev/github.com/jogly/ent?tab=doc"
+            target="_blank"
+          >
+            GoDoc
+          </a>
+        </li>
+        <li className="">
+          <a href="https://github.com/ent/ent" target="_blank">
+            Github
+          </a>
+        </li>
+        <li className="">
+          <Link to="/blog/">Blog</Link>
+        </li>
+      </ul>
+    );
+  }
 }
 
 class Index extends React.Component {
   render() {
-    const {config: siteConfig, language = ''} = this.props;
-    const {baseUrl} = siteConfig;
+    const { config: siteConfig, language = "" } = this.props;
+    const { baseUrl } = siteConfig;
 
     const Showcase = () => {
       if ((siteConfig.users || []).length === 0) {
@@ -158,14 +177,15 @@ class Index extends React.Component {
       }
 
       const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
+        .filter((user) => user.pinned)
+        .map((user) => (
           <a href={user.infoLink} key={user.infoLink}>
             <img src={user.image} alt={user.caption} title={user.caption} />
           </a>
         ));
 
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
+      const pageUrl = (page) =>
+        baseUrl + (language ? `${language}/` : "") + page;
 
       return (
         <div className="productShowcaseSection paddingBottom">
@@ -173,7 +193,7 @@ class Index extends React.Component {
           <p>This project is used by all these people</p>
           <div className="logos">{showcase}</div>
           <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
+            <a className="button" href={pageUrl("users.html")}>
               More {siteConfig.title} Users
             </a>
           </div>
@@ -190,12 +210,14 @@ class Index extends React.Component {
 }
 
 export default function (props) {
-    return <LayoutProvider>
-        {/*<div className={"section_index"}>*/}
-        {/*    <Navbar/>*/}
-        {/*</div>*/}
-        <HomeNav />
-        <Index {...props} />
-        <Footer/>
-    </LayoutProvider>;
-};
+  return (
+    <LayoutProvider>
+      {/*<div className={"section_index"}>*/}
+      {/*    <Navbar/>*/}
+      {/*</div>*/}
+      <HomeNav />
+      <Index {...props} />
+      <Footer />
+    </LayoutProvider>
+  );
+}

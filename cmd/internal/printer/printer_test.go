@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"entgo.io/ent/entc/gen"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/entc/gen"
+	"github.com/jogly/ent/schema/field"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -43,7 +43,7 @@ User:
 	| age        | int       | false  | false    | true     | false   | false         | false     |           |          0 |         |
 	| created_at | time.Time | false  | false    | true     | false   | false         | true      |           |          0 |         |
 	+------------+-----------+--------+----------+----------+---------+---------------+-----------+-----------+------------+---------+
-	
+
 `,
 		},
 		{
@@ -72,7 +72,7 @@ User:
 	| groups | Group | false   |         | M2M      | false  | true     |         |
 	| spouse | User  | false   |         | O2O      | true   | false    |         |
 	+--------+-------+---------+---------+----------+--------+----------+---------+
-	
+
 `,
 		},
 		{
@@ -107,7 +107,7 @@ User:
 	| groups | Group | false   |         | M2M      | false  | true     |         |
 	| spouse | User  | false   |         | O2O      | true   | false    |         |
 	+--------+-------+---------+---------+----------+--------+----------+---------+
-	
+
 `,
 		},
 		{
@@ -152,7 +152,7 @@ User:
 	| groups | Group | false   |         | M2M      | false  | true     |         |
 	| spouse | User  | false   |         | O2O      | true   | false    |         |
 	+--------+-------+---------+---------+----------+--------+----------+---------+
-	
+
 Group:
 	+-------+--------+--------+----------+----------+---------+---------------+-----------+-----------+------------+---------+
 	| Field |  Type  | Unique | Optional | Nillable | Default | UpdateDefault | Immutable | StructTag | Validators | Comment |
@@ -165,7 +165,7 @@ Group:
 	+-------+------+---------+---------+----------+--------+----------+---------+
 	| users | User | false   |         | M2M      | false  | true     |         |
 	+-------+------+---------+---------+----------+--------+----------+---------+
-	
+
 `,
 		},
 	}

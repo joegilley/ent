@@ -5,8 +5,8 @@
 package base
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // base schema for sharing fields and edges.

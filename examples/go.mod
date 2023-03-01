@@ -1,12 +1,12 @@
-module entgo.io/ent/examples
+module github.com/jogly/ent/examples
 
 go 1.19
 
-replace entgo.io/ent => ../
+replace github.com/jogly/ent => ../
 
 require (
 	ariga.io/atlas v0.9.1-0.20230212142236-47ec3817e19f
-	entgo.io/ent v0.0.0-00010101000000-000000000000
+	github.com/jogly/ent v0.0.0-00010101000000-000000000000
 	github.com/google/uuid v1.3.0
 	github.com/mattn/go-sqlite3 v1.14.16
 	gocloud.dev v0.28.0

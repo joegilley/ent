@@ -11,11 +11,11 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/jsonencode/ent/card"
-	"entgo.io/ent/examples/jsonencode/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/jsonencode/ent/card"
+	"github.com/jogly/ent/examples/jsonencode/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CardQuery is the builder for querying Card entities.

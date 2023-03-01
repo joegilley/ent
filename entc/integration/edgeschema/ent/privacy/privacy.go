@@ -10,10 +10,10 @@ import (
 	"context"
 	"fmt"
 
-	"entgo.io/ent/entc/integration/edgeschema/ent"
-	"entgo.io/ent/entql"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent"
+	"github.com/jogly/ent/entql"
 
-	"entgo.io/ent/privacy"
+	"github.com/jogly/ent/privacy"
 )
 
 var (

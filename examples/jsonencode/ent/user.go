@@ -11,8 +11,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/jsonencode/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/jsonencode/ent/user"
 )
 
 // User is the model entity for the User schema.

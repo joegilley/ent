@@ -8,10 +8,10 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/index"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/index"
 )
 
 type (

@@ -10,9 +10,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/customid/ent/intsid"
-	"entgo.io/ent/entc/integration/customid/sid"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/customid/ent/intsid"
+	"github.com/jogly/ent/entc/integration/customid/sid"
 )
 
 // IntSID is the model entity for the IntSID schema.

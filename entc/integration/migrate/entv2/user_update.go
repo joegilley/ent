@@ -12,14 +12,14 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/dialect/sql/sqljson"
-	"entgo.io/ent/entc/integration/migrate/entv2/car"
-	"entgo.io/ent/entc/integration/migrate/entv2/pet"
-	"entgo.io/ent/entc/integration/migrate/entv2/predicate"
-	"entgo.io/ent/entc/integration/migrate/entv2/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/dialect/sql/sqljson"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/car"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/pet"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/predicate"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserUpdate is the builder for updating User entities.

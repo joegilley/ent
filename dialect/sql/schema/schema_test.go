@@ -7,8 +7,8 @@ package schema
 import (
 	"testing"
 
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/schema/field"
 
 	"github.com/stretchr/testify/require"
 )

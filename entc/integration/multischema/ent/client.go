@@ -12,18 +12,18 @@ import (
 	"fmt"
 	"log"
 
-	"entgo.io/ent"
-	"entgo.io/ent/entc/integration/multischema/ent/migrate"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/entc/integration/multischema/ent/migrate"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/multischema/ent/friendship"
-	"entgo.io/ent/entc/integration/multischema/ent/group"
-	"entgo.io/ent/entc/integration/multischema/ent/pet"
-	"entgo.io/ent/entc/integration/multischema/ent/user"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/multischema/ent/friendship"
+	"github.com/jogly/ent/entc/integration/multischema/ent/group"
+	"github.com/jogly/ent/entc/integration/multischema/ent/pet"
+	"github.com/jogly/ent/entc/integration/multischema/ent/user"
 
-	"entgo.io/ent/entc/integration/multischema/ent/internal"
+	"github.com/jogly/ent/entc/integration/multischema/ent/internal"
 )
 
 // Client is the client that holds all ent builders.

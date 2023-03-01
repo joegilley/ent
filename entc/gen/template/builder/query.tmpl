@@ -4,7 +4,7 @@ This source code is licensed under the Apache 2.0 license found
 in the LICENSE file in the root directory of this source tree.
 */}}
 
-{{/* gotype: entgo.io/ent/entc/gen.Type */}}
+{{/* gotype: github.com/jogly/ent/entc/gen.Type */}}
 
 {{ define "query" }}
 {{ $pkg := base $.Config.Package }}
@@ -90,7 +90,7 @@ func ({{ $receiver }} *{{ $builder }}) Order(o ...OrderFunc) *{{ $builder }} {
 	}
 {{ end }}
 
-// First returns the first {{ $.Name }} entity from the query. 
+// First returns the first {{ $.Name }} entity from the query.
 // Returns a *NotFoundError when no {{ $.Name }} was found.
 func ({{ $receiver }} *{{ $builder }}) First(ctx context.Context) (*{{ $.Name }}, error) {
 	nodes, err := {{ $receiver }}.Limit(1).All(setContextOp(ctx, {{ $receiver }}.ctx, "First"))

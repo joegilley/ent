@@ -12,11 +12,11 @@ import (
 	"fmt"
 	"sync"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/edgeindex/ent/city"
-	"entgo.io/ent/examples/edgeindex/ent/predicate"
-	"entgo.io/ent/examples/edgeindex/ent/street"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/edgeindex/ent/city"
+	"github.com/jogly/ent/examples/edgeindex/ent/predicate"
+	"github.com/jogly/ent/examples/edgeindex/ent/street"
 )
 
 const (

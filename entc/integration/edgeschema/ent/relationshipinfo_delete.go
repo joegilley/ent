@@ -9,11 +9,11 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/predicate"
-	"entgo.io/ent/entc/integration/edgeschema/ent/relationshipinfo"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/predicate"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/relationshipinfo"
+	"github.com/jogly/ent/schema/field"
 )
 
 // RelationshipInfoDelete is the builder for deleting a RelationshipInfo entity.

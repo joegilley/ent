@@ -5,11 +5,11 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/examples/privacytenant/ent/privacy"
-	"entgo.io/ent/examples/privacytenant/rule"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/examples/privacytenant/ent/privacy"
+	"github.com/jogly/ent/examples/privacytenant/rule"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Group holds the schema definition for the Group entity.

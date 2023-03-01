@@ -7,7 +7,7 @@ package graph
 import (
 	"fmt"
 
-	"entgo.io/ent/dialect/gremlin/encoding/graphson"
+	"github.com/jogly/ent/dialect/gremlin/encoding/graphson"
 )
 
 type (

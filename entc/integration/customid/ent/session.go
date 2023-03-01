@@ -10,10 +10,10 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/customid/ent/device"
-	"entgo.io/ent/entc/integration/customid/ent/schema"
-	"entgo.io/ent/entc/integration/customid/ent/session"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/customid/ent/device"
+	"github.com/jogly/ent/entc/integration/customid/ent/schema"
+	"github.com/jogly/ent/entc/integration/customid/ent/session"
 )
 
 // Session is the model entity for the Session schema.

@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/ent/node"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/ent/node"
 )
 
 // Node is the model entity for the Node schema.

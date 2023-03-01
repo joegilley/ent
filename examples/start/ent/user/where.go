@@ -7,9 +7,9 @@
 package user
 
 import (
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/start/ent/predicate"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/start/ent/predicate"
 )
 
 // ID filters vertices based on their ID field.

@@ -7,8 +7,8 @@
 package revision
 
 import (
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/customid/ent/predicate"
 )
 
 // ID filters vertices based on their ID field.

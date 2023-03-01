@@ -6,23 +6,23 @@ sidebar_label: FAQ
 
 ## Questions
 
-[How to create an entity from a struct `T`?](#how-to-create-an-entity-from-a-struct-t)  
-[How to create a struct (or a mutation) level validator?](#how-to-create-a-mutation-level-validator)  
-[How to write an audit-log extension?](#how-to-write-an-audit-log-extension)  
-[How to write custom predicates?](#how-to-write-custom-predicates)  
-[How to add custom predicates to the codegen assets?](#how-to-add-custom-predicates-to-the-codegen-assets)  
-[How to define a network address field in PostgreSQL?](#how-to-define-a-network-address-field-in-postgresql)  
-[How to customize time fields to type `DATETIME` in MySQL?](#how-to-customize-time-fields-to-type-datetime-in-mysql)  
-[How to use a custom generator of IDs?](#how-to-use-a-custom-generator-of-ids)  
-[How to use a custom XID globally unique ID?](#how-to-use-a-custom-xid-globally-unique-id)  
-[How to define a spatial data type field in MySQL?](#how-to-define-a-spatial-data-type-field-in-mysql)  
-[How to extend the generated models?](#how-to-extend-the-generated-models)  
-[How to extend the generated builders?](#how-to-extend-the-generated-builders)   
-[How to store Protobuf objects in a BLOB column?](#how-to-store-protobuf-objects-in-a-blob-column)  
-[How to add `CHECK` constraints to table?](#how-to-add-check-constraints-to-table)  
-[How to define a custom precision numeric field?](#how-to-define-a-custom-precision-numeric-field)  
-[How to configure two or more `DB` to separate read and write?](#how-to-configure-two-or-more-db-to-separate-read-and-write)  
-[How to change the character set and/or collation of a MySQL table?](#how-to-change-the-character-set-andor-collation-of-a-mysql-table)    
+[How to create an entity from a struct `T`?](#how-to-create-an-entity-from-a-struct-t)
+[How to create a struct (or a mutation) level validator?](#how-to-create-a-mutation-level-validator)
+[How to write an audit-log extension?](#how-to-write-an-audit-log-extension)
+[How to write custom predicates?](#how-to-write-custom-predicates)
+[How to add custom predicates to the codegen assets?](#how-to-add-custom-predicates-to-the-codegen-assets)
+[How to define a network address field in PostgreSQL?](#how-to-define-a-network-address-field-in-postgresql)
+[How to customize time fields to type `DATETIME` in MySQL?](#how-to-customize-time-fields-to-type-datetime-in-mysql)
+[How to use a custom generator of IDs?](#how-to-use-a-custom-generator-of-ids)
+[How to use a custom XID globally unique ID?](#how-to-use-a-custom-xid-globally-unique-id)
+[How to define a spatial data type field in MySQL?](#how-to-define-a-spatial-data-type-field-in-mysql)
+[How to extend the generated models?](#how-to-extend-the-generated-models)
+[How to extend the generated builders?](#how-to-extend-the-generated-builders)
+[How to store Protobuf objects in a BLOB column?](#how-to-store-protobuf-objects-in-a-blob-column)
+[How to add `CHECK` constraints to table?](#how-to-add-check-constraints-to-table)
+[How to define a custom precision numeric field?](#how-to-define-a-custom-precision-numeric-field)
+[How to configure two or more `DB` to separate read and write?](#how-to-configure-two-or-more-db-to-separate-read-and-write)
+[How to change the character set and/or collation of a MySQL table?](#how-to-change-the-character-set-andor-collation-of-a-mysql-table)
 [How to configure `json.Marshal` to inline the `edges` keys in the top level object?](#how-to-configure-jsonmarshal-to-inline-the-edges-keys-in-the-top-level-object)
 
 ## Answers
@@ -418,15 +418,15 @@ func (T) Fields() []ent.Field {
 }
 ```
 
-Or as a reusable [Mixin](schema-mixin.md) across multiple schemas: 
+Or as a reusable [Mixin](schema-mixin.md) across multiple schemas:
 
 ```go
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/mixin"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/mixin"
 	"github.com/rs/xid"
 )
 
@@ -484,8 +484,8 @@ import (
 	"database/sql/driver"
 	"fmt"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
 	"github.com/paulmach/orb"
 	"github.com/paulmach/orb/encoding/wkb"
 )
@@ -573,7 +573,7 @@ message Hi {
 }
 ```
 
-We add receiver methods to the generated protobuf struct such that it implements [ValueScanner](https://pkg.go.dev/entgo.io/ent/schema/field#ValueScanner)
+We add receiver methods to the generated protobuf struct such that it implements [ValueScanner](https://pkg.go.dev/github.com/jogly/ent/schema/field#ValueScanner)
 
 ```go
 func (x *Hi) Value() (driver.Value, error) {
@@ -799,9 +799,9 @@ package main
 import (
 	"log"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
-	"entgo.io/ent/schema/edge"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
+	"github.com/jogly/ent/schema/edge"
 )
 
 func main() {

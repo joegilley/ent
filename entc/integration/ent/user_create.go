@@ -11,14 +11,14 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/card"
-	"entgo.io/ent/entc/integration/ent/file"
-	"entgo.io/ent/entc/integration/ent/group"
-	"entgo.io/ent/entc/integration/ent/pet"
-	"entgo.io/ent/entc/integration/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/card"
+	"github.com/jogly/ent/entc/integration/ent/file"
+	"github.com/jogly/ent/entc/integration/ent/group"
+	"github.com/jogly/ent/entc/integration/ent/pet"
+	"github.com/jogly/ent/entc/integration/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserCreate is the builder for creating a User entity.

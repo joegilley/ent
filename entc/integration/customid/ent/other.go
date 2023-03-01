@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/entc/integration/customid/ent/other"
-	"entgo.io/ent/entc/integration/customid/sid"
+	"github.com/jogly/ent/entc/integration/customid/ent/other"
+	"github.com/jogly/ent/entc/integration/customid/sid"
 )
 
 // Other is the model entity for the Other schema.

@@ -7,7 +7,7 @@
 package relationship
 
 import (
-	"entgo.io/ent"
+	"github.com/jogly/ent"
 )
 
 const (
@@ -78,7 +78,7 @@ func ValidColumn(column string) bool {
 // package on the initialization of the application. Therefore,
 // it should be imported in the main as follows:
 //
-//	import _ "entgo.io/ent/entc/integration/edgeschema/ent/runtime"
+//	import _ "github.com/jogly/ent/entc/integration/edgeschema/ent/runtime"
 var (
 	Hooks  [1]ent.Hook
 	Policy ent.Policy

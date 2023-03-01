@@ -9,20 +9,20 @@ authorTwitter: _rtam
 A few months ago, [Ariel](https://github.com/a8m) made a silent but highly-impactful contribution
 to Ent's core, the [Extension API](https://entgo.io/docs/extensions). While Ent has had extension capabilities (such as [Code-gen Hooks](https://entgo.io/docs/code-gen/#code-generation-hooks),
 [External Templates](https://entgo.io/docs/templates/), and [Annotations](https://entgo.io/docs/templates/#annotations))
-for a long time, there wasn't a convenient way to bundle together all of these moving parts into a 
-coherent, self-contained component. The [Extension API](https://entgo.io/docs/extensions) which we 
-discuss in the post does exactly that. 
+for a long time, there wasn't a convenient way to bundle together all of these moving parts into a
+coherent, self-contained component. The [Extension API](https://entgo.io/docs/extensions) which we
+discuss in the post does exactly that.
 
 Many open-source ecosystems thrive specifically because they excel at providing developers an
-easy and structured way to extend a small, core system. Much criticism has been made of the 
+easy and structured way to extend a small, core system. Much criticism has been made of the
 Node.js ecosystem (even by its [original creator Ryan Dahl](https://www.youtube.com/watch?v=M3BM9TB-8yA))
 but it is very hard to argue that the ease of publishing and consuming new `npm` modules
-facilitated the explosion in its popularity. I've discussed on my personal blog how 
-[protoc's plugin system works](https://rotemtam.com/2021/03/22/creating-a-protoc-plugin-to-gen-go-code/) 
+facilitated the explosion in its popularity. I've discussed on my personal blog how
+[protoc's plugin system works](https://rotemtam.com/2021/03/22/creating-a-protoc-plugin-to-gen-go-code/)
 and how that made the Protobuf ecosystem thrive. In short, ecosystems are only created under
-modular designs. 
+modular designs.
 
-In our post today, we will explore Ent's `Extension` API by building a toy example. 
+In our post today, we will explore Ent's `Extension` API by building a toy example.
 
 ### Getting Started
 
@@ -36,9 +36,9 @@ package main
 import (
     "log"
 
-    "entgo.io/ent/entc"
-    "entgo.io/ent/entc/gen"
-    "entgo.io/ent/schema/field"
+    "github.com/jogly/ent/entc"
+    "github.com/jogly/ent/entc/gen"
+    "github.com/jogly/ent/schema/field"
 )
 
 func main() {
@@ -57,7 +57,7 @@ package ent
 
 ### Creating our Extension
 
-All extension's must implement the [Extension](https://pkg.go.dev/entgo.io/ent/entc#Extension) interface:
+All extension's must implement the [Extension](https://pkg.go.dev/github.com/jogly/ent/entc#Extension) interface:
 
 ```go
 type Extension interface {
@@ -81,8 +81,8 @@ type Extension interface {
 	Options() []Option
 }
 ```
-To simplify the development of new extensions, developers can embed [entc.DefaultExtension](https://pkg.go.dev/entgo.io/ent/entc#DefaultExtension)
-to create extensions without implementing all methods. In `entc.go`, add: 
+To simplify the development of new extensions, developers can embed [entc.DefaultExtension](https://pkg.go.dev/github.com/jogly/ent/entc#DefaultExtension)
+to create extensions without implementing all methods. In `entc.go`, add:
 ```go title=ent/entc.go
 // ...
 
@@ -103,7 +103,7 @@ err := entc.Generate("./schema", &gen.Config{}, entc.Extensions(&GreetExtension{
 
 External templates can be bundled into extensions to enhance Ent's core code-generation
 functionality. With our toy example, our goal is to add to each entity a generated method
-name `Greet` that returns a greeting with the type's name when invoked. We're aiming for something 
+name `Greet` that returns a greeting with the type's name when invoked. We're aiming for something
 like:
 
 ```go
@@ -147,8 +147,8 @@ named `ent/schema/user.go`:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // User holds the schema definition for the User entity.
@@ -250,7 +250,7 @@ generated `Greet` method!
 
 ### More Possibilities
 
-In addition to templates and annotations, the Extension API allows developers to bundle 
+In addition to templates and annotations, the Extension API allows developers to bundle
 `gen.Hook`s and `entc.Option`s in extensions to further control the behavior of your code-generation.
 In this post we will not discuss these possibilities, but if you are interested in using them
 head over to the [documentation](https://entgo.io/docs/extensions).
@@ -260,14 +260,14 @@ head over to the [documentation](https://entgo.io/docs/extensions).
 In this post we explored via a toy example how to use the `Extension` API to create new
 Ent code-generation extensions. As we've mentioned above, modular design that allows anyone
 to extend the core functionality of software is critical to the success of any ecosystem.
-We're seeing this claim start to realize with the Ent community, here's a list of some 
+We're seeing this claim start to realize with the Ent community, here's a list of some
 interesting projects that use the Extension API:
 * [elk](https://github.com/masseelch/elk) - an extension to generate REST endpoints from Ent schemas.
 * [entgql](https://github.com/ent/contrib/tree/master/entgql) - generate GraphQL servers from Ent schemas.
-* [entviz](https://github.com/hedwigz/entviz) - generate ER diagrams from Ent schemas. 
+* [entviz](https://github.com/hedwigz/entviz) - generate ER diagrams from Ent schemas.
 
 And what about you? Do you have an idea for a useful Ent extension? I hope this post
-demonstrated that with the new Extension API, it is not a difficult task. 
+demonstrated that with the new Extension API, it is not a difficult task.
 
 Have questions? Need help with getting started? Feel free to join our [Discord server](https://discord.gg/qZmPgTE6RX) or [Slack channel](https://entgo.io/docs/slack/).
 

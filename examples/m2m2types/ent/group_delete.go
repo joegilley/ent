@@ -9,11 +9,11 @@ package ent
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/m2m2types/ent/group"
-	"entgo.io/ent/examples/m2m2types/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/m2m2types/ent/group"
+	"github.com/jogly/ent/examples/m2m2types/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // GroupDelete is the builder for deleting a Group entity.

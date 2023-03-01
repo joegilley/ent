@@ -7,9 +7,9 @@
 package ent
 
 import (
-	"entgo.io/ent/examples/migration/ent/card"
-	"entgo.io/ent/examples/migration/ent/pet"
-	"entgo.io/ent/examples/migration/ent/schema"
+	"github.com/jogly/ent/examples/migration/ent/card"
+	"github.com/jogly/ent/examples/migration/ent/pet"
+	"github.com/jogly/ent/examples/migration/ent/schema"
 	"github.com/google/uuid"
 )
 

@@ -12,11 +12,11 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/entv2/car"
-	"entgo.io/ent/entc/integration/migrate/entv2/pet"
-	"entgo.io/ent/entc/integration/migrate/entv2/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/car"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/pet"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserCreate is the builder for creating a User entity.

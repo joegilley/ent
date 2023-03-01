@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/entv2/blog"
-	"entgo.io/ent/entc/integration/migrate/entv2/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/blog"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // BlogCreate is the builder for creating a Blog entity.

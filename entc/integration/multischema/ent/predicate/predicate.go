@@ -7,7 +7,7 @@
 package predicate
 
 import (
-	"entgo.io/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql"
 )
 
 // Friendship is the predicate function for friendship builders.

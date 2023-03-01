@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgeschema/ent/group"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
-	"entgo.io/ent/entc/integration/edgeschema/ent/usergroup"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/group"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/usergroup"
 )
 
 // UserGroup is the model entity for the UserGroup schema.

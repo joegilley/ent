@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/dialect/gremlin"
-	schemadir "entgo.io/ent/entc/integration/ent/schema/dir"
+	"github.com/jogly/ent/dialect/gremlin"
+	schemadir "github.com/jogly/ent/entc/integration/ent/schema/dir"
 )
 
 // Comment is the model entity for the Comment schema.

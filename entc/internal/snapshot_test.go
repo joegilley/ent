@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc/gen"
 
 	"github.com/stretchr/testify/require"
 )

@@ -41,7 +41,7 @@ go mod init elk-example
 Invoke the ent code generator and create two schemas: User, Pet:
 
 ```shell
-go run -mod=mod entgo.io/ent/cmd/ent new Pet User
+go run -mod=mod github.com/jogly/ent/cmd/ent new Pet User
 ```
 
 Your project should now look like this:
@@ -79,8 +79,8 @@ package main
 import (
 	"log"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 	"github.com/masseelch/elk"
 )
 
@@ -129,8 +129,8 @@ edit `ent/schema/pet.go`:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Pet holds the schema definition for the Pet entity.
@@ -324,9 +324,9 @@ func (Pet) Edges() []ent.Edge {
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // User holds the schema definition for the User entity.
@@ -529,5 +529,5 @@ help, feedback, suggestions and contribution.
 
 #### About the Author
 
-_MasseElch is a software engineer from the windy, flat, north of Germany. When not hiking with his dog Kuro (who has his 
+_MasseElch is a software engineer from the windy, flat, north of Germany. When not hiking with his dog Kuro (who has his
 own Instagram channel :scream:) or playing hide-and-seek with his son, he drinks coffee and enjoys coding._

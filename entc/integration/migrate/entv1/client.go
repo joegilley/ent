@@ -12,16 +12,16 @@ import (
 	"fmt"
 	"log"
 
-	"entgo.io/ent"
-	"entgo.io/ent/entc/integration/migrate/entv1/migrate"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/migrate"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/entv1/car"
-	"entgo.io/ent/entc/integration/migrate/entv1/conversion"
-	"entgo.io/ent/entc/integration/migrate/entv1/customtype"
-	"entgo.io/ent/entc/integration/migrate/entv1/user"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/car"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/conversion"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/customtype"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/user"
 )
 
 // Client is the client that holds all ent builders.

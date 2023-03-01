@@ -11,10 +11,10 @@ import (
 	"net/http"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/entc/integration/ent/role"
-	"entgo.io/ent/entc/integration/ent/schema"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	"github.com/jogly/ent/entc/integration/ent/role"
+	"github.com/jogly/ent/entc/integration/ent/schema"
 	"github.com/google/uuid"
 )
 

@@ -11,9 +11,9 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/fs/ent/file"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/fs/ent/file"
+	"github.com/jogly/ent/schema/field"
 )
 
 // FileCreate is the builder for creating a File entity.

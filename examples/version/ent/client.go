@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"log"
 
-	"entgo.io/ent"
-	"entgo.io/ent/examples/version/ent/migrate"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/examples/version/ent/migrate"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/version/ent/user"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/version/ent/user"
 )
 
 // Client is the client that holds all ent builders.

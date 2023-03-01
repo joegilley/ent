@@ -12,12 +12,12 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgeschema/ent/predicate"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tweet"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tweetlike"
-	"entgo.io/ent/entc/integration/edgeschema/ent/user"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/predicate"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tweet"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tweetlike"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/user"
 )
 
 // TweetLikeQuery is the builder for querying TweetLike entities.

@@ -5,9 +5,9 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	uuidc "entgo.io/ent/entc/integration/customid/uuidcompatible"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	uuidc "github.com/jogly/ent/entc/integration/customid/uuidcompatible"
+	"github.com/jogly/ent/schema/field"
 )
 
 type LinkInformation struct {

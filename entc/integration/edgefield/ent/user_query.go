@@ -12,16 +12,16 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/edgefield/ent/card"
-	"entgo.io/ent/entc/integration/edgefield/ent/info"
-	"entgo.io/ent/entc/integration/edgefield/ent/metadata"
-	"entgo.io/ent/entc/integration/edgefield/ent/pet"
-	"entgo.io/ent/entc/integration/edgefield/ent/predicate"
-	"entgo.io/ent/entc/integration/edgefield/ent/rental"
-	"entgo.io/ent/entc/integration/edgefield/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/card"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/info"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/metadata"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/pet"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/predicate"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/rental"
+	"github.com/jogly/ent/entc/integration/edgefield/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserQuery is the builder for querying User entities.

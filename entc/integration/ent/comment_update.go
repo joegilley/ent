@@ -11,12 +11,12 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/ent/comment"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	schemadir "entgo.io/ent/entc/integration/ent/schema/dir"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/ent/comment"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	schemadir "github.com/jogly/ent/entc/integration/ent/schema/dir"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CommentUpdate is the builder for updating Comment entities.

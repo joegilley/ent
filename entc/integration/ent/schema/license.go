@@ -5,10 +5,10 @@
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/mixin"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/mixin"
 
 	"ariga.io/atlas/sql/postgres"
 )

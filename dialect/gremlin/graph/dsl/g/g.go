@@ -4,7 +4,7 @@
 
 package g
 
-import "entgo.io/ent/dialect/gremlin/graph/dsl"
+import "github.com/jogly/ent/dialect/gremlin/graph/dsl"
 
 // V is the api for calling g.V().
 func V(args ...any) *dsl.Traversal { return dsl.NewTraversal().V(args...) }

@@ -12,7 +12,7 @@ import (
 	"strings"
 	"testing"
 
-	"entgo.io/ent/dialect"
+	"github.com/jogly/ent/dialect"
 	"github.com/stretchr/testify/require"
 )
 
@@ -1626,9 +1626,9 @@ func TestBuilder(t *testing.T) {
 					Where(ColumnsLTE(t1.C("id1"), t1.C("id2")))
 			}(),
 			wantQuery: strings.ReplaceAll(`
-SELECT * FROM "users" 
-WHERE (((("users"."id1" = "users"."id2" AND "users"."id1" <> "users"."id2") 
-AND "users"."id1" > "users"."id2") AND "users"."id1" >= "users"."id2") 
+SELECT * FROM "users"
+WHERE (((("users"."id1" = "users"."id2" AND "users"."id1" <> "users"."id2")
+AND "users"."id1" > "users"."id2") AND "users"."id1" >= "users"."id2")
 AND "users"."id1" < "users"."id2") AND "users"."id1" <= "users"."id2"`, "\n", ""),
 		},
 	}

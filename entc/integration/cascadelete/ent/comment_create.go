@@ -11,10 +11,10 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/cascadelete/ent/comment"
-	"entgo.io/ent/entc/integration/cascadelete/ent/post"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/cascadelete/ent/comment"
+	"github.com/jogly/ent/entc/integration/cascadelete/ent/post"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CommentCreate is the builder for creating a Comment entity.

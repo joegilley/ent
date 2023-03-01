@@ -11,9 +11,9 @@ import (
 	"fmt"
 	"strings"
 
-	"entgo.io/ent/entc/integration/customid/ent/link"
-	"entgo.io/ent/entc/integration/customid/ent/schema"
-	uuidc "entgo.io/ent/entc/integration/customid/uuidcompatible"
+	"github.com/jogly/ent/entc/integration/customid/ent/link"
+	"github.com/jogly/ent/entc/integration/customid/ent/schema"
+	uuidc "github.com/jogly/ent/entc/integration/customid/uuidcompatible"
 )
 
 // Link is the model entity for the Link schema.

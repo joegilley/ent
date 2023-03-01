@@ -11,10 +11,10 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tag"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tweet"
-	"entgo.io/ent/entc/integration/edgeschema/ent/tweettag"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tag"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tweet"
+	"github.com/jogly/ent/entc/integration/edgeschema/ent/tweettag"
 	"github.com/google/uuid"
 )
 

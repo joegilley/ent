@@ -7,9 +7,9 @@ package mixin
 import (
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Schema is the default implementation for the ent.Mixin interface.

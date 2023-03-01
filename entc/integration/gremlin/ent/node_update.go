@@ -11,13 +11,13 @@ import (
 	"errors"
 	"time"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/__"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/p"
-	"entgo.io/ent/entc/integration/gremlin/ent/node"
-	"entgo.io/ent/entc/integration/gremlin/ent/predicate"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/__"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/p"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/node"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/predicate"
 )
 
 // NodeUpdate is the builder for updating Node entities.

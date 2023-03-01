@@ -11,11 +11,11 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/versioned/predicate"
-	"entgo.io/ent/entc/integration/migrate/versioned/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/versioned/predicate"
+	"github.com/jogly/ent/entc/integration/migrate/versioned/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // UserQuery is the builder for querying User entities.

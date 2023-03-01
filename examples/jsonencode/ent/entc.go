@@ -10,9 +10,9 @@ package main
 import (
 	"log"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
-	"entgo.io/ent/schema/edge"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
+	"github.com/jogly/ent/schema/edge"
 )
 
 func main() {

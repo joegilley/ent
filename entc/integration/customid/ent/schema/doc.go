@@ -8,11 +8,11 @@ import (
 	"database/sql/driver"
 	"fmt"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 
 	"ariga.io/atlas/sql/postgres"
 )

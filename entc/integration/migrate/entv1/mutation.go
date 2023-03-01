@@ -12,13 +12,13 @@ import (
 	"fmt"
 	"sync"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/entc/integration/migrate/entv1/car"
-	"entgo.io/ent/entc/integration/migrate/entv1/conversion"
-	"entgo.io/ent/entc/integration/migrate/entv1/customtype"
-	"entgo.io/ent/entc/integration/migrate/entv1/predicate"
-	"entgo.io/ent/entc/integration/migrate/entv1/user"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/car"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/conversion"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/customtype"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/predicate"
+	"github.com/jogly/ent/entc/integration/migrate/entv1/user"
 )
 
 const (

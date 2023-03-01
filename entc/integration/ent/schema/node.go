@@ -7,9 +7,9 @@ package schema
 import (
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/edge"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/edge"
+	"github.com/jogly/ent/schema/field"
 )
 
 // Node holds the schema definition for the linked-list Node entity.

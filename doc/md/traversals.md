@@ -11,7 +11,7 @@ For the purpose of the example, we'll generate the following graph:
 The first step is to generate the 3 schemas: `Pet`, `User`, `Group`.
 
 ```console
-go run -mod=mod entgo.io/ent/cmd/ent new Pet User Group
+go run -mod=mod github.com/jogly/ent/cmd/ent new Pet User Group
 ```
 
 Add the necessary fields and edges for the schemas:
@@ -40,7 +40,7 @@ func (Pet) Edges() []ent.Edge {
 			Unique(),
 	}
 }
-``` 
+```
 
 `ent/schema/user.go`
 
@@ -69,7 +69,7 @@ func (User) Edges() []ent.Edge {
 			Ref("admin"),
 	}
 }
-``` 
+```
 
 `ent/schema/group.go`
 
@@ -94,7 +94,7 @@ func (Group) Edges() []ent.Edge {
 			Unique(),
 	}
 }
-``` 
+```
 
 Let's write the code for populating the vertices and the edges to the graph:
 
@@ -161,7 +161,7 @@ Let's go over a few traversals, and show the code for them:
 
 The traversal above starts from a `Group` entity, continues to its `admin` (edge),
 continues to its `friends` (edge), gets their `pets` (edge), gets each pet's `friends` (edge),
-and requests their owners. 
+and requests their owners.
 
 ```go
 func Traverse(ctx context.Context, client *ent.Client) error {

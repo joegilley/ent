@@ -1,5 +1,5 @@
 ---
-title: Generating Ent Schemas from Existing SQL Databases 
+title: Generating Ent Schemas from Existing SQL Databases
 author: Zeev Manilovich
 authorURL: "https://github.com/zeevmoney"
 authorImageURL: "https://avatars.githubusercontent.com/u/7361100?v=4"
@@ -12,7 +12,7 @@ on: **entimport** - an _importent_ (pun intended) command line tool designed to 
 databases. This is a feature that has been requested by the community for some time, so I hope many people find it
 useful. It can help ease the transition of an existing setup from another language or ORM to Ent. It can also help with
 use cases where you would like to access the same data from different platforms (such as to automatically sync between
-them).  
+them).
 The first version supports both MySQL and PostgreSQL databases, with some limitations described below. Support for other
 relational databases such as SQLite is in the works.
 
@@ -28,7 +28,7 @@ On a high-level, this is what we’re going to do:
 3. Install `entimport`
 4. Run `entimport` against our demo database - next, we will import the database schema that we’ve created into our Ent
    project.
-5. Explain how to use Ent with our generated schemas.  
+5. Explain how to use Ent with our generated schemas.
 
 Let's get started.
 
@@ -125,7 +125,7 @@ go mod init entimport-example
 Run Ent Init:
 
 ```shell
-go run -mod=mod entgo.io/ent/cmd/ent new 
+go run -mod=mod github.com/jogly/ent/cmd/ent new
 ```
 
 The project should look like this:
@@ -140,7 +140,7 @@ The project should look like this:
 
 ### Install entimport
 
-OK, now the fun begins! We are finally ready to install `entimport` and see it in action.  
+OK, now the fun begins! We are finally ready to install `entimport` and see it in action.
 Let’s start by running `entimport`:
 
 ```shell
@@ -269,7 +269,7 @@ import (
 
 	"entimport-example/ent"
 
-	"entgo.io/ent/dialect"
+	"github.com/jogly/ent/dialect"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -366,7 +366,7 @@ fmt.Println("User cars:", cars)
 
 > This part of the example can be found [here](https://github.com/zeevmoney/entimport-example/blob/master/part2/example.go)
 
-Now do: `go run example.go`.  
+Now do: `go run example.go`.
 After Running the code above, the database should hold a user with 2 cars in a O2M relation.
 
 ```sql
@@ -438,7 +438,7 @@ Now we can run `go generate ./ent` again and use the new schema to add a `phone`
 
 ## Future Plans
 
-As mentioned above this initial version supports MySQL and PostgreSQL databases.  
+As mentioned above this initial version supports MySQL and PostgreSQL databases.
 It also supports all types of SQL relations. I have plans to further upgrade the tool and add features such as missing
 PostgreSQL fields, default values, and more.
 

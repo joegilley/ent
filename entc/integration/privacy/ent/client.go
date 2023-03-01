@@ -12,17 +12,17 @@ import (
 	"fmt"
 	"log"
 
-	"entgo.io/ent"
-	"entgo.io/ent/entc/integration/privacy/ent/migrate"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/entc/integration/privacy/ent/migrate"
 
 	"net/http"
 
-	"entgo.io/ent/dialect"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/privacy/ent/task"
-	"entgo.io/ent/entc/integration/privacy/ent/team"
-	"entgo.io/ent/entc/integration/privacy/ent/user"
+	"github.com/jogly/ent/dialect"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/privacy/ent/task"
+	"github.com/jogly/ent/entc/integration/privacy/ent/team"
+	"github.com/jogly/ent/entc/integration/privacy/ent/user"
 )
 
 // Client is the client that holds all ent builders.

@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/entc/integration/ent/schema/task"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/entc/integration/ent/schema/task"
 )
 
 // Task is the model entity for the Task schema.

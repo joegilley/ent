@@ -4,7 +4,7 @@
 
 package field
 
-import "entgo.io/ent/schema"
+import "github.com/jogly/ent/schema"
 
 // Annotation is a builtin schema annotation for
 // configuring the schema fields in codegen.
@@ -40,7 +40,6 @@ type Annotation struct {
 //			field.ID("user_id", "tweet_id"),
 //		}
 //	}
-//
 func ID(first, second string, fields ...string) *Annotation {
 	return &Annotation{ID: append([]string{first, second}, fields...)}
 }

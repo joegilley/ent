@@ -12,10 +12,10 @@ import (
 	"fmt"
 	"sync"
 
-	"entgo.io/ent"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/encryptfield/ent/predicate"
-	"entgo.io/ent/examples/encryptfield/ent/user"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/encryptfield/ent/predicate"
+	"github.com/jogly/ent/examples/encryptfield/ent/user"
 )
 
 const (

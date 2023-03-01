@@ -7,10 +7,10 @@
 package session
 
 import (
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/predicate"
-	"entgo.io/ent/entc/integration/customid/ent/schema"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/predicate"
+	"github.com/jogly/ent/entc/integration/customid/ent/schema"
 )
 
 // ID filters vertices based on their ID field.

@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/customid/ent/group"
-	"entgo.io/ent/entc/integration/customid/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/customid/ent/group"
+	"github.com/jogly/ent/entc/integration/customid/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // GroupCreate is the builder for creating a Group entity.

@@ -10,7 +10,7 @@ import (
 	"log"
 	"time"
 
-	"entgo.io/ent/examples/o2o2types/ent"
+	"github.com/jogly/ent/examples/o2o2types/ent"
 
 	_ "github.com/mattn/go-sqlite3"
 )

@@ -11,11 +11,11 @@ import (
 	"errors"
 	"fmt"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/versioned/group"
-	"entgo.io/ent/entc/integration/migrate/versioned/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/versioned/group"
+	"github.com/jogly/ent/entc/integration/migrate/versioned/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // GroupUpdate is the builder for updating Group entities.

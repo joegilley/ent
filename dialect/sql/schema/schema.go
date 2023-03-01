@@ -11,9 +11,9 @@ import (
 	"strconv"
 	"strings"
 
-	"entgo.io/ent/dialect/entsql"
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/entsql"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/schema/field"
 )
 
 const (

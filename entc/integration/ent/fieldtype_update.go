@@ -14,14 +14,14 @@ import (
 	"net/http"
 	"time"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/dialect/sql/sqljson"
-	"entgo.io/ent/entc/integration/ent/fieldtype"
-	"entgo.io/ent/entc/integration/ent/predicate"
-	"entgo.io/ent/entc/integration/ent/role"
-	"entgo.io/ent/entc/integration/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/dialect/sql/sqljson"
+	"github.com/jogly/ent/entc/integration/ent/fieldtype"
+	"github.com/jogly/ent/entc/integration/ent/predicate"
+	"github.com/jogly/ent/entc/integration/ent/role"
+	"github.com/jogly/ent/entc/integration/ent/schema"
+	"github.com/jogly/ent/schema/field"
 	"github.com/google/uuid"
 )
 

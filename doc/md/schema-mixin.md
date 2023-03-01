@@ -2,7 +2,7 @@
 id: schema-mixin
 title: Mixin
 ---
- 
+
 A `Mixin` allows you to create reusable pieces of `ent.Schema` code that can be injected into other schemas
 using composition.
 
@@ -38,9 +38,9 @@ package schema
 import (
 	"time"
 
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
-	"entgo.io/ent/schema/mixin"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
+	"github.com/jogly/ent/schema/mixin"
 )
 
 // -------------------------------------------------
@@ -134,8 +134,8 @@ In order to use them, add the `mixin.Time` mixin to your schema as follows:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/mixin"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/mixin"
 )
 
 type Pet struct {

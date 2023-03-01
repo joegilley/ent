@@ -15,12 +15,12 @@ import (
 	"net/http"
 	"time"
 
-	"entgo.io/ent/dialect/gremlin"
-	"entgo.io/ent/dialect/gremlin/graph/dsl"
-	"entgo.io/ent/dialect/gremlin/graph/dsl/g"
-	"entgo.io/ent/entc/integration/ent/role"
-	"entgo.io/ent/entc/integration/ent/schema"
-	"entgo.io/ent/entc/integration/gremlin/ent/fieldtype"
+	"github.com/jogly/ent/dialect/gremlin"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl"
+	"github.com/jogly/ent/dialect/gremlin/graph/dsl/g"
+	"github.com/jogly/ent/entc/integration/ent/role"
+	"github.com/jogly/ent/entc/integration/ent/schema"
+	"github.com/jogly/ent/entc/integration/gremlin/ent/fieldtype"
 	"github.com/google/uuid"
 )
 

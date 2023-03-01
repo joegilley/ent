@@ -12,11 +12,11 @@ import (
 	"fmt"
 	"math"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/fs/ent/file"
-	"entgo.io/ent/examples/fs/ent/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/fs/ent/file"
+	"github.com/jogly/ent/examples/fs/ent/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // FileQuery is the builder for querying File entities.

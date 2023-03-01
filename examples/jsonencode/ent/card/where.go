@@ -7,8 +7,8 @@
 package card
 
 import (
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/examples/jsonencode/ent/predicate"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/examples/jsonencode/ent/predicate"
 )
 
 // ID filters vertices based on their ID field.

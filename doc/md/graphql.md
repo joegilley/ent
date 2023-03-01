@@ -10,7 +10,7 @@ provides various integrations, such as:
 3. Filtering, pagination (including nested) and compliant support with the [Relay Cursor Connections Spec](https://relay.dev/graphql/connections.htm).
 4. Efficient [field collection](tutorial-todo-gql-field-collection.md) to overcome the N+1 problem without requiring data
    loaders.
-5. [Transactional mutations](tutorial-todo-gql-tx-mutation.md) to ensure consistency in case of failures. 
+5. [Transactional mutations](tutorial-todo-gql-tx-mutation.md) to ensure consistency in case of failures.
 
 Check out the website's [GraphQL tutorial](tutorial-todo-gql.mdx#basic-setup) for more information.
 
@@ -31,8 +31,8 @@ package main
 import (
 	"log"
 
-	"entgo.io/ent/entc"
-	"entgo.io/ent/entc/gen"
+	"github.com/jogly/ent/entc"
+	"github.com/jogly/ent/entc/gen"
 	"entgo.io/contrib/entgql"
 )
 

@@ -9,11 +9,11 @@ package entv2
 import (
 	"context"
 
-	"entgo.io/ent/dialect/sql"
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/entc/integration/migrate/entv2/car"
-	"entgo.io/ent/entc/integration/migrate/entv2/predicate"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/car"
+	"github.com/jogly/ent/entc/integration/migrate/entv2/predicate"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CarDelete is the builder for deleting a Car entity.

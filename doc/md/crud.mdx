@@ -3,8 +3,8 @@ id: crud
 title: CRUD API
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 As mentioned in the [introduction](code-gen.md) section, running `ent` on the schemas,
 will generate the following assets:
@@ -182,7 +182,6 @@ a8m, err = a8m.Update().	// User update builder.
 	Save(ctx)				// Save and return.
 ```
 
-
 ## Update By ID
 
 ```go
@@ -192,7 +191,6 @@ pedro, err := client.Pet.	// PetClient.
 	SetOwnerID(owner).		// Set unique edge, using id.
 	Save(ctx)				// Save and return.
 ```
-
 
 #### Update One With Condition
 
@@ -222,6 +220,7 @@ case err != nil:
     fmt.Println("update error:", err)
 }
 ```
+
 </TabItem>
 <TabItem label="By Entity" value="by-entity" default>
 
@@ -244,6 +243,7 @@ case err != nil:
     fmt.Println("update error:", err)
 }
 ```
+
 </TabItem>
 <TabItem label="Update Directly" value="update-directly" default>
 
@@ -267,6 +267,7 @@ case err != nil:
     fmt.Println("update error:", err)
 }
 ```
+
 </TabItem>
 </Tabs>
 
@@ -278,11 +279,11 @@ Filter using predicates.
 n, err := client.User.			// UserClient.
 	Update().					// User update builder.
 	Where(						//
-		user.Or(				// (age >= 30 OR name = "bar") 
+		user.Or(				// (age >= 30 OR name = "bar")
 			user.AgeGT(30), 	//
 			user.Name("bar"),	// AND
-		),						//  
-		user.HasFollowers(),	// UserHasFollowers()  
+		),						//
+		user.HasFollowers(),	// UserHasFollowers()
 	).							//
 	SetName("foo").				// Set field name.
 	Save(ctx)					// exec and return.
@@ -293,7 +294,7 @@ Query edge-predicates.
 ```go
 n, err := client.User.			// UserClient.
 	Update().					// User update builder.
-	Where(						// 
+	Where(						//
 		user.HasFriendsWith(	// UserHasFriendsWith (
 			user.Or(			//   age = 20
 				user.Age(20),	//      OR
@@ -307,7 +308,7 @@ n, err := client.User.			// UserClient.
 
 ## Upsert One
 
-Ent supports [upsert](https://en.wikipedia.org/wiki/Merge_(SQL)) records using the [`sql/upsert`](features.md#upsert)
+Ent supports [upsert](<https://en.wikipedia.org/wiki/Merge_(SQL)>) records using the [`sql/upsert`](features.md#upsert)
 feature-flag.
 
 ```go
@@ -363,7 +364,7 @@ err := client.User.
 	Create().
 	SetName("Ariel").
 	OnConflict(
-	    sql.ConflictColumns(user.FieldName),	
+	    sql.ConflictColumns(user.FieldName),
 	).
 	UpdateNewValues().
 	Exec(ctx)
@@ -373,7 +374,7 @@ err := client.User.
 	Create().
 	SetName("Ariel").
 	OnConflict(
-	    sql.ConflictConstraint(constraint),	
+	    sql.ConflictConstraint(constraint),
 	).
 	UpdateNewValues().
 	Exec(ctx)
@@ -417,6 +418,7 @@ err := client.User.             // UserClient
 ## Query The Graph
 
 Get all users with followers.
+
 ```go
 users, err := client.User.		// UserClient.
 	Query().					// User query builder.
@@ -425,6 +427,7 @@ users, err := client.User.		// UserClient.
 ```
 
 Get all followers of a specific user; Start the traversal from a node in the graph.
+
 ```go
 users, err := a8m.
 	QueryFollowers().
@@ -432,6 +435,7 @@ users, err := a8m.
 ```
 
 Get all pets of the followers of a user.
+
 ```go
 users, err := a8m.
 	QueryFollowers().
@@ -440,18 +444,19 @@ users, err := a8m.
 ```
 
 Count the number of posts without comments.
+
 ```go
 n, err := client.Post.
 	Query().
 	Where(
 		post.Not(
-		    post.HasComments(),	
+		    post.HasComments(),
 		)
 	).
 	Count(ctx)
 ```
 
-More advance traversals can be found in the [next section](traversals.md). 
+More advance traversals can be found in the [next section](traversals.md).
 
 ## Field Selection
 
@@ -526,7 +531,7 @@ pedro, err := client.Pet.
 	Save(ctx)
 ```
 
-## Delete One 
+## Delete One
 
 Delete an entity:
 
@@ -569,7 +574,6 @@ case err != nil:
 }
 ```
 
-
 ## Delete Many
 
 Delete using predicates:
@@ -585,7 +589,7 @@ affected, err := client.File.
 
 Each generated node type has its own type of mutation. For example, all [`User` builders](crud.mdx#create-an-entity), share
 the same generated `UserMutation` object.
-However, all builder types implement the generic <a target="_blank" href="https://pkg.go.dev/entgo.io/ent?tab=doc#Mutation">`ent.Mutation`</a> interface.
+However, all builder types implement the generic <a target="_blank" href="https://pkg.go.dev/github.com/jogly/ent?tab=doc#Mutation">`ent.Mutation`</a> interface.
 
 For example, in order to write a generic code that apply a set of methods on both `ent.UserCreate`
 and `ent.UserUpdate`, use the `UserMutation` object:

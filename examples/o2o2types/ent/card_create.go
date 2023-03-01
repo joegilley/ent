@@ -12,10 +12,10 @@ import (
 	"fmt"
 	"time"
 
-	"entgo.io/ent/dialect/sql/sqlgraph"
-	"entgo.io/ent/examples/o2o2types/ent/card"
-	"entgo.io/ent/examples/o2o2types/ent/user"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent/dialect/sql/sqlgraph"
+	"github.com/jogly/ent/examples/o2o2types/ent/card"
+	"github.com/jogly/ent/examples/o2o2types/ent/user"
+	"github.com/jogly/ent/schema/field"
 )
 
 // CardCreate is the builder for creating a Card entity.

@@ -1,5 +1,5 @@
 ---
-id: generating-ent-schemas 
+id: generating-ent-schemas
 title: Generating Schemas
 ---
 
@@ -99,8 +99,8 @@ import (
 	"log"
 
 	"entgo.io/contrib/schemast"
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema/field"
 )
 
 func main() {
@@ -136,9 +136,9 @@ After running this program, observe two new files exist in the schema directory:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/field"
 )
 
 type User struct {
@@ -160,9 +160,9 @@ func (User) Annotations() []schema.Annotation {
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema"
-	"entgo.io/ent/schema/field"
+	"github.com/jogly/ent"
+	"github.com/jogly/ent/schema"
+	"github.com/jogly/ent/schema/field"
 )
 
 type Team struct {
@@ -205,7 +205,7 @@ func withType(e ent.Edge, typeName string) ent.Edge {
 func newEdgeTo(edgeName, otherType string) ent.Edge {
     // we pass a placeholder type to the edge constructor:
     e := edge.To(edgeName, placeholder.Type)
-    // then we override the other type's name directly on the edge descriptor: 
+    // then we override the other type's name directly on the edge descriptor:
     return withType(e, otherType)
 }
 ```

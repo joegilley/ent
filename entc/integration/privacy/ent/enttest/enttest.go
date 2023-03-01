@@ -9,12 +9,12 @@ package enttest
 import (
 	"context"
 
-	"entgo.io/ent/entc/integration/privacy/ent"
+	"github.com/jogly/ent/entc/integration/privacy/ent"
 	// required by schema hooks.
-	_ "entgo.io/ent/entc/integration/privacy/ent/runtime"
+	_ "github.com/jogly/ent/entc/integration/privacy/ent/runtime"
 
-	"entgo.io/ent/dialect/sql/schema"
-	"entgo.io/ent/entc/integration/privacy/ent/migrate"
+	"github.com/jogly/ent/dialect/sql/schema"
+	"github.com/jogly/ent/entc/integration/privacy/ent/migrate"
 )
 
 type (
