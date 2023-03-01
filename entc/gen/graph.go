@@ -458,7 +458,7 @@ func (g *Graph) resolve(t *Type) error {
 				e.Rel.Table = e.Type.Table()
 			}
 			if !e.M2M() {
-				e.Rel.Columns = []string{fmt.Sprintf("%s_%s", t.Label(), snake(e.Name))}
+				e.Rel.Columns = []string{fmt.Sprintf("%s_id", snake(e.Name))}
 			}
 		}
 	}
